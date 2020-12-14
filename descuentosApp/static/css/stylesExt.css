@@ -20,7 +20,7 @@
 }
 
 .headerColor {
-    background-color: #3699FF !important;
+    background-color: transparent !important;
 }
 
 .imgLogo {
@@ -30,6 +30,12 @@
 
 .tamanyoIconoUser {
     font-size: 25px !important;
+    margin-left: 276px !important;
+}
+
+.iconoUserSesion {
+    font-size: 25px !important;
+    margin-left: 224px !important;
 }
 
 .noFlechaInput {
@@ -44,4 +50,72 @@
 .botonAzul:hover {
     background-color: white !important;
     color: #3699FF !important;
+}
+
+.imagenIcono {
+    width: 35px !important;
+}
+
+.margenBurguer {
+    margin-top: 10px !important;
+    margin-left: 20px !important;
+}
+
+.formularioResponsive {
+    padding: 10px !important;
+    background-color: #ffffff !important;
+    border-radius: 50px !important;
+}
+
+.flotarDerecha {
+    float: right !important;
+}
+
+
+/* ESTILOS DEL FORMULARIO DE REGISTRO */
+
+#regForm {
+    background-color: #ffffff;
+    margin: 100px auto;
+    font-family: Raleway;
+    padding: 40px;
+    width: 70%;
+    min-width: 300px;
+}
+
+input.invalid {
+    background-color: #ffdddd;
+}
+
+.tab {
+    display: none;
+}
+
+#prevBtn {
+    background-color: #bbbbbb;
+}
+
+.step {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbbbbb;
+    border: none;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+}
+
+.step.active {
+    opacity: 1;
+}
+
+.step.finish {
+    background-color: #4CAF50;
+}
+
+@media screen and (max-width: 767px) {
+    .botonAzul {
+        float: right;
+    }
 }

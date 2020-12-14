@@ -19,8 +19,11 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'css/plugin.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'demo/css/plugin.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'switcher/skin-purple.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/dashboard.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/perfect-scrollbar.css' %}">
 
     <link rel="icon" type="image/png" href="{%static 'images/EPCircular.ico'%}" with="32" height="32">
+
 </head>
 
 <body>
@@ -42,7 +45,7 @@
                                 <a class="navbar-brand logoEP" href="{% url 'base' %}"><img src="{%static 'images/EPCircularBlanco.png' %}" alt="logo" class="img-fluid"></a>
                             </div>
                             <div class="col-xl-9 col-md-9 col-6">
-                                 <nav class="site-navigation float-left">
+                                <nav class="site-navigation float-left">
                                     <div class="container">
                                         <ul class="site-menu js-clone-nav d-none d-lg-block">
                                             <li>
@@ -57,32 +60,76 @@
                                             <li>
                                                 <a href="{% url 'Descuentos' %}">Descuentos</a>
                                             </li>
-                                            <li class="d-lg-none"><a class="btn v1" href="add-listing.html">Add Listing <i class="ion-plus-round"></i></a></li>
-                                        </ul>
+
+                                            {% if user.is_authenticated %}
+                                      
+                                            <li>
+                                                <div class="header-button-item has-noti js-item-menu">
+                                                    <i class="ion-ios-bell-outline iconoUserSesion"></i>
+                                                    <div class="notifi-dropdown js-dropdown">
+                                                        <div class="notifi__title">
+                                                            <p>You have 2 Notifications</p>
+                                                        </div>
+                                                        <div class="notifi__item">
+                                                            <div class="bg-c1 red">
+                                                                <i class="icofont-check"></i>
+                                                            </div>
+                                                            <div class="content">
+                                                                <p>Your listing <b>Hotel Ocean Paradise</b> has been approved!</p>
+                                                                <span class="date">5min ago</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="notifi__item">
+                                                            <div class="bg-c1 green">
+                                                                <i class="icofont-ui-message"></i>
+                                                            </div>
+                                                            <div class="content">
+                                                                <p>You have 3 unread Messages</p>
+                                                                <span class="date">5min ago</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="notify-bottom text-center pad-tb-20">
+                                                            <a href="#">View All Notification</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                           
+                                            <li>
+                                                <div class="header-button-item has-noti js-item-menu">                                                  
+                                                    <img src="{%static 'avatars/001-boy.png'%}"/>
+                                                    <div class="notifi-dropdown js-dropdown">
+                                                        <div class="notifi__item">                                                       
+                                                            <div class="content">
+                                                                <p class="flotarDerecha">Editar perfil</p>                                                             
+                                                            </div>
+                                                        </div>
+                                                        <div class="notifi__item">
+                                                            <div class="content">
+                                                                <a href="{% url 'logout' %}"><span class="flotarDerecha">Salir</span></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>                                                                          
+                                        
+                                            {%else%}
+                                                <li><a class="btn" href="{% url 'login' %}"><i class="ion-person tamanyoIconoUser"></i></a></li>             
+                                            {% endif %}
+                                        </ul>                                                        
                                     </div>
                                 </nav>
+
+                                <!-- ICONO MENÚ RESPONSIVE -->
                                 <div class="d-lg-none sm-right">
                                     <a href="#" class="mobile-bar js-menu-toggle">
                                         <span class="ion-android-menu"></span>
                                     </a>
                                 </div>
-                                
-                                {% if user.is_authenticated %}
-                                 <div class="add-list float-right">
-                                    <span> Hello, {{user.username}}</span>
-                                    <a class="btn v8" href="{% url 'logout' %}">Logout</i></a>
-                                </div>
-
-                                {%else%}
-
-                                    <div class="add-list float-right">
-                                        <a class="btn v8" href="{% url 'login' %}"><i class="ion-ios-person-outline tamanyoIconoUser"></i></a>  
-                                    </div>
-                                {% endif %}
+                                <!--  -->
+                            
                             </div>
-                        </div>
-
-                        
+                        </div>   
                     </div>
                     <!--mobile-menu starts -->
                     <div class="site-mobile-menu">
@@ -117,13 +164,13 @@
                         <div class="col-md-12 text-center mar-top-20">
                             <form class="hero__form v2 mar-bot-30">
                                 <div class="row">
-                                    <div class="col-lg-10 col-md-12">
-                                        <input class="hero__form-input custom-select no-border noFlechaInput" type="nombre" name="place-event" id="place-event" placeholder="¿Qué ciudad o universidad estas buscando?">
+                                    <div class="col-lg-10 col-md-10 col-12">
+                                        <input class="hero__form-input custom-select no-border noFlechaInput formularioResponsive" type="nombre" name="place-event" id="place-event" placeholder="¿Qué ciudad o universidad estas buscando?">
                                     </div>
                                     
-                                    <div class="col-lg-2 col-md-12">
-                                        <div class="submit_btn text-right md-left">
-                                            <button class="btn v3  mar-right-5 botonAzul" type="submit"><i class="ion-ios-search" aria-hidden="true"></i> Buscar</button>
+                                    <div class="col-lg-2 col-md-2 col-12">
+                                        <div class="submit_btn text-right md-right">
+                                            <button class="btn v3 mar-right-5 botonAzul" type="submit"><i class="ion-ios-search" aria-hidden="true"></i> Buscar</button>
                                         </div>
                                     </div>
                                 </div>
@@ -1216,6 +1263,8 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_8C7p0Ws2gUu7wo0b6pK9Qu7LuzX2iWY&amp;libraries=places&amp;callback=initAutocomplete"></script>
     <!--Main js-->
     <script src="static/js/main.js"></script>
+    <script src="static/js/dashboard.js"></script>
+    <script src="static/js/perfect-scrollbar.min.js"></script>
 
 </body>
 
