@@ -1,0 +1,47 @@
+* {
+    font-family: Poppins !important;
+}
+
+.logoEP {
+    width: 50px !important;
+}
+
+.logoEPGif {
+    width: 200px !important;
+}
+
+.enlaceMenu:hover {
+    color: white !important;
+    text-decoration: underline !important;
+}
+
+.tituloBlanco {
+    color: white !important;
+}
+
+.headerColor {
+    background-color: #3699FF !important;
+}
+
+.imgLogo {
+    width: 450px !important;
+    margin-bottom: 20px !important;
+}
+
+.tamanyoIconoUser {
+    font-size: 25px !important;
+}
+
+.noFlechaInput {
+    background: none !important;
+}
+
+.botonAzul {
+    background-color: #3699FF !important;
+    color: white !important;
+}
+
+.botonAzul:hover {
+    background-color: white !important;
+    color: #3699FF !important;
+}
