@@ -8,6 +8,7 @@ urlpatterns = [
 	path('guide/<int:pk>/', views.GuideDetailView.as_view(), name = 'GuideDetailView'),
 	path('city-list/', views.CityList, name='CityList'),
 	path('descuentos/', views.Descuentos, name='Descuentos'),
+	path('adminSite/', views.Admin, name='Admin'),
 	#path('registrer/', views.Progress_bar_register, name='registrer')
 
 ]

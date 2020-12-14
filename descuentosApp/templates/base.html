@@ -61,7 +61,24 @@
                                                 <a href="{% url 'Descuentos' %}">Descuentos</a>
                                             </li>
 
+
+
                                             {% if user.is_authenticated %}
+                                            <!--ADMIN SITE -->
+                                            {% if user.is_superuser %}
+
+                                           <li>
+                                            <a class="btn" href="{% url 'Admin' %}">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock-fill" viewBox="0 0 16 16">
+                                              <path d="M2.5 9a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-7a2 2 0 0 1-2-2V9z"/>
+                                              <path fill-rule="evenodd" d="M4.5 4a3.5 3.5 0 1 1 7 0v3h-1V4a2.5 2.5 0 0 0-5 0v3h-1V4z"/>
+                                            </svg>Admin</i></a></li> 
+
+                                           {% endif%}
+
+                                            <!--END ADMIN SITE -->
+
+                                            
                                       
                                             <li>
                                                 <div class="header-button-item has-noti js-item-menu">
@@ -112,7 +129,7 @@
                                                     </div>
                                                 </div>
                                             </li>                                                                          
-                                        
+                                      
                                             {%else%}
                                                 <li><a class="btn" href="{% url 'login' %}"><i class="ion-person tamanyoIconoUser"></i></a></li>             
                                             {% endif %}

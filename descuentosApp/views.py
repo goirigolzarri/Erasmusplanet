@@ -44,3 +44,8 @@ def Descuentos(request):
 #def Progress_bar_register(request):
 
 #	return render(request, 'progress_bar_register.html')
+
+
+def Admin(request):
+        
+    return render(request, 'admin.html')
