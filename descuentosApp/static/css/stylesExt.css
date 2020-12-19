@@ -20,7 +20,7 @@
 }
 
 .headerColor {
-    background-color: transparent !important;
+    background-color: #3699FF !important;
 }
 
 .imgLogo {
@@ -74,15 +74,6 @@
 
 /* ESTILOS DEL FORMULARIO DE REGISTRO */
 
-#regForm {
-    background-color: #ffffff;
-    margin: 100px auto;
-    font-family: Raleway;
-    padding: 40px;
-    width: 70%;
-    min-width: 300px;
-}
-
 input.invalid {
     background-color: #ffdddd;
 }
@@ -112,6 +103,24 @@ input.invalid {
 
 .step.finish {
     background-color: #4CAF50;
+}
+
+.margenFormTop {
+    margin-top: 1rem !important;
+}
+
+.noMargenTop {
+    margin-top: 0px !important;
+}
+
+.inputTexto {
+    padding: 22px .75rem !important;
+}
+
+@media screen and (max-width: 1200px) {
+    .tamanyoIconoUser {
+        margin-left: 10px !important;
+    }
 }
 
 @media screen and (max-width: 767px) {

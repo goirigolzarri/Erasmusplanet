@@ -49,7 +49,7 @@
                                     <div class="container">
                                         <ul class="site-menu js-clone-nav d-none d-lg-block">
                                             <li>
-                                                <a href="https://students.rent/" target="_blank">Alojamiento</a>
+                                                <a href="{%url 'Alojamiento' %}">Alojamiento</a>
                                             </li>
                                             <li>
                                                 <a href="#">Red Social</a>
@@ -59,80 +59,10 @@
                                             </li>
                                             <li>
                                                 <a href="{% url 'Descuentos' %}">Descuentos</a>
+                                            </li>  
+                                            <li class="d-lg-none">
+                                                asd
                                             </li>
-
-
-
-                                            {% if user.is_authenticated %}
-                                            <!--ADMIN SITE -->
-                                            {% if user.is_superuser %}
-
-                                           <li>
-                                            <a class="btn" href="{% url 'Admin' %}">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock-fill" viewBox="0 0 16 16">
-                                              <path d="M2.5 9a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-7a2 2 0 0 1-2-2V9z"/>
-                                              <path fill-rule="evenodd" d="M4.5 4a3.5 3.5 0 1 1 7 0v3h-1V4a2.5 2.5 0 0 0-5 0v3h-1V4z"/>
-                                            </svg>Admin</i></a></li> 
-
-                                           {% endif%}
-
-                                            <!--END ADMIN SITE -->
-
-                                            
-                                      
-                                            <li>
-                                                <div class="header-button-item has-noti js-item-menu">
-                                                    <i class="ion-ios-bell-outline iconoUserSesion"></i>
-                                                    <div class="notifi-dropdown js-dropdown">
-                                                        <div class="notifi__title">
-                                                            <p>You have 2 Notifications</p>
-                                                        </div>
-                                                        <div class="notifi__item">
-                                                            <div class="bg-c1 red">
-                                                                <i class="icofont-check"></i>
-                                                            </div>
-                                                            <div class="content">
-                                                                <p>Your listing <b>Hotel Ocean Paradise</b> has been approved!</p>
-                                                                <span class="date">5min ago</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="notifi__item">
-                                                            <div class="bg-c1 green">
-                                                                <i class="icofont-ui-message"></i>
-                                                            </div>
-                                                            <div class="content">
-                                                                <p>You have 3 unread Messages</p>
-                                                                <span class="date">5min ago</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="notify-bottom text-center pad-tb-20">
-                                                            <a href="#">View All Notification</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                           
-                                            <li>
-                                                <div class="header-button-item has-noti js-item-menu">                                                  
-                                                    <img src="{%static 'avatars/001-boy.png'%}"/>
-                                                    <div class="notifi-dropdown js-dropdown">
-                                                        <div class="notifi__item">                                                       
-                                                            <div class="content">
-                                                                <p class="flotarDerecha">Editar perfil</p>                                                             
-                                                            </div>
-                                                        </div>
-                                                        <div class="notifi__item">
-                                                            <div class="content">
-                                                                <a href="{% url 'logout' %}"><span class="flotarDerecha">Salir</span></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>                                                                          
-                                      
-                                            {%else%}
-                                                <li><a class="btn" href="{% url 'login' %}"><i class="ion-person tamanyoIconoUser"></i></a></li>             
-                                            {% endif %}
                                         </ul>                                                        
                                     </div>
                                 </nav>
@@ -144,7 +74,20 @@
                                     </a>
                                 </div>
                                 <!--  -->
-                            
+
+                                {% if user.is_authenticated %}
+                                    
+                                    <div class="add-list float-right">
+                                        <a class="btn v8" href="{% url 'logout' %}">Salir</a>
+                                    </div>
+                                    
+                                    {%else%}
+
+                                    <div class="add-list float-right">
+                                        <a class="btn v8" href="{% url 'login' %}">Entrar</a>
+                                    </div>
+                                                    
+                                    {% endif %}
                             </div>
                         </div>   
                     </div>
@@ -1280,8 +1223,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_8C7p0Ws2gUu7wo0b6pK9Qu7LuzX2iWY&amp;libraries=places&amp;callback=initAutocomplete"></script>
     <!--Main js-->
     <script src="static/js/main.js"></script>
-    <script src="static/js/dashboard.js"></script>
-    <script src="static/js/perfect-scrollbar.min.js"></script>
+   
 
 </body>
 

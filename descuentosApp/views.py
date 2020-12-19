@@ -34,18 +34,15 @@ def CityList(request):
 	city_list = City.objects.all()
 	return render(request, 'city_list.html', {'city_list': city_list})
 
-
-
 def Descuentos(request):
         
     return render(request, 'descuentos.html')
+
+def Alojamiento(request):
+        
+    return render(request, 'alojamiento.html')
 
 
 #def Progress_bar_register(request):
 
 #	return render(request, 'progress_bar_register.html')
-
-
-def Admin(request):
-        
-    return render(request, 'admin.html')
