@@ -1,4 +1,4 @@
-{%load static%}
+﻿{%load static%}
 {% load i18n %}
 
 <!DOCTYPE html>
@@ -54,16 +54,16 @@
                                                 <a href="#">Red Social</a>
                                             </li>
                                             <li>
-                                                <a href="https://www.what2do.click/" target="_blank">Ocio</a>                                              
+                                                <a href="https://www.what2do.click/" target="_blank">Ocio</a>
                                             </li>
                                             <li>
                                                 <a href="{% url 'Descuentos' %}">Descuentos</a>
-                                            </li>  
-                                            
+                                            </li>
+
                                             <li class="d-lg-none">
                                                 asd
                                             </li>
-                                        </ul>                                                        
+                                        </ul>
                                     </div>
                                 </nav>
 
@@ -74,20 +74,25 @@
                                     </a>
                                 </div>
                                 <!--  -->
-
                                 {% if user.is_authenticated %}
-                                    
-                                    <div class="add-list float-right">
-                                        <a class="btn v8" href="{% url 'logout' %}">Salir</a>
-                                    </div>
-                                    
-                                    {%else%}
 
-                                    <div class="add-list float-right">
-                                        <a class="btn v8" href="{% url 'login' %}">Entrar</a>
-                                    </div>
-                                                    
-                                    {% endif %}
+                                <div class="add-list float-right">
+                                    <a class="btn v8" href="{% url 'logout' %}">Salir</a>
+                                </div>
+
+                                {%if user.is_superuser %}
+                                <div class="add-list float-right">
+                                    <a class="btn v8" href="{% url 'Admin' %}">Admin</a>
+                                </div>
+
+                                {% endif %}
+                                {%else%}
+
+                                <div class="add-list float-right">
+                                    <a class="btn v8" href="{% url 'login' %}">Entrar</a>
+                                </div>
+
+                                {% endif %}
                             </div>
                         </div>   
                     </div>
