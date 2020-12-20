@@ -74,17 +74,70 @@
 
 /* ESTILOS DEL FORMULARIO DE REGISTRO */
 
+.noMargenTop {
+    margin-top: 0px !important;
+}
+
+.alturaSelect {
+    height: auto !important;
+}
+
+.margenBotonNext {
+    margin-bottom: 15px !important;
+}
+
+#regForm {
+    background-color: #ffffff;
+    margin: 100px auto;
+    font-family: Raleway;
+    padding: 40px;
+    width: 70%;
+    min-width: 300px;
+}
+
+input {
+    padding: 10px;
+    width: 100%;
+    font-size: 17px;
+    font-family: Raleway;
+    border: 1px solid #aaaaaa;
+    border-radius: 5px;
+}
+
+
+/* Mark input boxes that gets an error on validation: */
+
 input.invalid {
     background-color: #ffdddd;
 }
+
+
+/* Hide all steps by default: */
 
 .tab {
     display: none;
 }
 
+button {
+    background-color: #4CAF50;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 17px;
+    font-family: Poppins;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
 #prevBtn {
     background-color: #bbbbbb;
 }
+
+
+/* Make circles that indicate the steps of the form: */
 
 .step {
     height: 15px;
@@ -101,9 +154,15 @@ input.invalid {
     opacity: 1;
 }
 
+
+/* Mark the steps that are finished and valid: */
+
 .step.finish {
     background-color: #4CAF50;
 }
+
+
+/**************************************/
 
 .margenFormTop {
     margin-top: 1rem !important;
