@@ -20,7 +20,7 @@ class Country(models.Model):
 
 class Province(models.Model):
 	country = models.ForeignKey(Country, on_delete=models.CASCADE)
-	name = models.CharField(max_length=10)
+	name = models.CharField(max_length=50)
 
 
 
@@ -47,7 +47,7 @@ class City(models.Model):
 
 class University(models.Model):
 	city = models.ForeignKey(City, on_delete=models.CASCADE)
-	name = models.CharField(max_length=10)
+	name = models.CharField(max_length=50)
 
 
 

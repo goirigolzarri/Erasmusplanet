@@ -4,11 +4,12 @@ from .models import Guide, City
 from django.urls import reverse
 from django.urls import reverse_lazy
 from django.views.generic import DetailView, ListView, CreateView
+from django.db.models import Q
+
 # Create your views here.
 
 
 	
-
 def base(request):
 
 	#from django.utils import translation
@@ -18,9 +19,28 @@ def base(request):
 	#if translation.LANGUAGE_SESSION_KEY in request.session:
 	#del request.session[translation.LANGUAGE_SESSION_KEY]
 	
+	model = Guide
 	city_list = City.objects.all()
 
-	return render(request, 'base.html', {'city_list': city_list})
+
+	queryset= request.GET.get("search")
+	guides = Guide.objects.all()
+	query = False
+	errormessage='Todavia no trabajamos ahi'
+
+	if queryset:
+		
+		
+		guides = Guide.objects.filter(Q(title__icontains = queryset)).distinct()
+		if not guides:
+			query = True
+		else: 
+			context = {'guides': guides}
+			query = True
+		
+
+
+	return render(request, 'base.html', {'guides': guides, 'query' : query})
 
 
 

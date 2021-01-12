@@ -1,4 +1,4 @@
-{%load static%}
+﻿{%load static%}
 {% load i18n %}
 
 <!DOCTYPE html>
@@ -107,12 +107,10 @@
                         <div class="imgLogo">
                             <img src="{% static 'images/EPCircularTexto.png' %}">
                         </div>
+                            
                             <ul class="ui-list nav nav-tabs justify-content-center mar-bot-30" role="tablist">
                                 <li class="nav-item">
                                     <a class="nav-link active" data-toggle="tab" href="#login" role="tab" aria-selected="true">Inicia sesión</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#register" role="tab" aria-selected="true">Registrarme</a>
                                 </li>
                             </ul>
                             <div class="ui-dash tab-content">
@@ -120,14 +118,14 @@
                                     <form id="login-form" action="#" method="post">
                                         {% csrf_token %}
                                         <div class="form-group">
-                                            <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="email" value="" required>
+                                            <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="username" value="" required>
                                         </div>
                                         <div class="form-group">
                                             <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
                                         </div>
-                                        <div class="row mar-top-20">
+                                        <div class="row mar-top-30">
                                             <div class="col-md-6 col-12 text-left">
-                                                <div class="res-box">
+                                                <div class="res-box text-left">
                                                     <input type="checkbox" tabindex="3" class="" name="remember" id="remember">
                                                     <label for="remember">Remember Me</label>
                                                 </div>
@@ -141,146 +139,13 @@
                                         <div class="res-box text-center mar-top-30">
                                             <button type="submit" class="btn v3 float-right"><i class="ion-log-in"></i>Entrar</button>                                        
                                         </div>
-                                    </form>                               
+
+                                    </form> 
+                                    <div class="res-box text-left">
+                                        <a class="btn v8" href="{% url 'UserRegistrationView' %}">Sign Up</a>
+                                    </div>                              
                                 </div>
-                                <div class="tab-pane fade" id="register" role="tabpanel">
-
-                                    <form id="#" action="#" method="#">
-                                        <!-- PASO 1 -->
-                                        <div class="tab">
-                                            <div class="row">
-                                                <div class="col-xl-6 col-sm-12">
-                                                    <p><input type="text" placeholder="Nombre" oninput="this.className = ''" name=""></p>
-                                                </div>
-                                                <div class="col-xl-6 col-sm-12">
-                                                    <p><input type="text" placeholder="Apellido" oninput="this.className = ''" name=""></p>
-                                                </div>
-                                            </div>
-
-                                            <div class="row">
-                                                <div class="col-xl-6 col-sm-12">
-                                                    <div class="nice-select filter-input noMargenTop" tabindex="0"><span class="current">Selecciona tu sexo</span>
-                                                        <ul class="list alturaSelect">
-                                                            <li class="option selected focus">Femenino</li>
-                                                            <li class="option">Masculino</li>
-                                                            <li class="option">Prefiero no decirlo</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="col-xl-6 col-sm-12 margenBotonNext">
-                                                    <div id="datepicker-from" class="input-group date" data-date-format="dd-mm-yyyy">
-                                                        <input class="form-control" type="text" placeholder="Select date">
-                                                        <span class="input-group-addon"><i class="icofont-ui-calendar"></i></span>
-                                                    </div>
-                                                </div>
-                                            </div>                                           
-                                        </div>
-
-                                        <!-- PASO 2 -->
-                                        <div class="tab">
-                                            <div class="row">
-                                                <div class="col-xl-6 col-sm-12">
-                                                    <p><input type="email" placeholder="E-mail" oninput="this.className = ''" name=""></p>
-                                                </div>
-                                                <div class="col-xl-6 col-sm-12">
-                                                    <p><input type="tel" placeholder="Teléfono" oninput="this.className = ''" name=""></p>
-                                                </div>
-                                            </div>
-
-                                            <div class="row">
-                                                <div class="col-xl-6 col-sm-12">
-                                                    <p><input type="password" placeholder="Contraseña" oninput="this.className = ''" name=""></p>
-                                                </div>
-                                                <div class="col-xl-6 col-sm-12">
-                                                    <p><input type="password" placeholder="Repite la contraseña" oninput="this.className = ''" name=""></p>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- PASO 3 -->
-                                        <div class="tab">
-                                            <div class="row margenBotonNext">                                           
-                                                <div class="col-xl-12 col-sm-12">
-                                                    <div class="nice-select filter-input noMargenTop" tabindex="0"><span class="current">¿Qué tipo de estudiante eres?</span>
-                                                        <ul class="list alturaSelect">
-                                                            <li class="option selected focus">Grado, máster...</li>
-                                                            <li class="option">FP, Prácticas...</li>
-                                                            <li class="option">Au pair, otros...</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- GRADO O MASTER -->
-
-                                            <div class="row margenBotonNext">
-                                                <div class="col-xl-12 col-sm-12">
-                                                    <p><input type="text" placeholder="Estudios" oninput="this.className = ''" name=""></p>
-                                                </div>                         
-                                            </div>
-
-                                            <div class="row">
-                                                <div class="col-xl-6 col-sm-12">
-                                                    <p><input type="text" placeholder="Ciudad de origen" oninput="this.className = ''" name=""></p>
-                                                </div>
-                                                <div class="col-xl-6 col-sm-12">
-                                                    <p><input type="text" placeholder="Universidad de origen" oninput="this.className = ''" name=""></p>
-                                                </div>
-                                            </div>
-
-                                            <div class="row">
-                                                <div class="col-xl-6 col-sm-12">
-                                                    <p><input type="text" placeholder="Ciudad de destino" oninput="this.className = ''" name=""></p>
-                                                </div>
-                                                <div class="col-xl-6 col-sm-12">
-                                                    <p><input type="text" placeholder="Universidad de destino" oninput="this.className = ''" name=""></p>
-                                                </div>
-                                            </div>
-
-                                            <!-- FP, PRACTICAS -->
-
-                                            <div class="row margenBotonNext">
-                                                <div class="col-xl-12 col-sm-12">
-                                                    <p><input type="text" placeholder="Empresa de destino" oninput="this.className = ''" name=""></p>
-                                                </div>                         
-                                            </div>
-
-                                            <div class="row">
-                                                <div class="col-xl-6 col-sm-12">
-                                                    <p><input type="text" placeholder="Ciudad de origen" oninput="this.className = ''" name=""></p>
-                                                </div>
-                                                <div class="col-xl-6 col-sm-12">
-                                                    <p><input type="text" placeholder="Ciudad de destino" oninput="this.className = ''" name=""></p>
-                                                </div>
-                                            </div>
-
-                                            <!-- AU PAIR, OTROS -->
-
-                                            <div class="row">
-                                                <div class="col-xl-6 col-sm-12">
-                                                    <p><input type="text" placeholder="Ciudad de origen" oninput="this.className = ''" name=""></p>
-                                                </div>
-                                                <div class="col-xl-6 col-sm-12">
-                                                    <p><input type="text" placeholder="Ciudad de destino" oninput="this.className = ''" name=""></p>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div style="overflow:auto;">
-                                            <div style="float:right;">
-                                                <button type="button" id="prevBtn" class="btn v3 float-left" onclick="nextPrev(-1)">Volver</button>
-                                                <button type="button" id="nextBtn" class="btn v3 float-right" onclick="nextPrev(1)">Siguiente</button>
-                                            </div>
-                                        </div>
-                                        <!-- Circles which indicates the steps of the form: -->
-                                        <div style="text-align:center;margin-top:40px;">
-                                            <span class="step"></span>
-                                            <span class="step"></span>
-                                            <span class="step"></span>
-                                        </div>
-                                    </form>
-
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
