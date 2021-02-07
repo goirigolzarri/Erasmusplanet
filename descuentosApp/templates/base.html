@@ -111,8 +111,8 @@
               <!--Main Menu ends-->
           </header>
           <!--Hero section starts-->
-          <div class="video-area v1">
-              <div class="video-container">
+          <div class="video-area v1" style="height: 46vh !important;">
+              <div class="video-container" style="height: 46vh !important;">
                   <div class="overlay op-5"></div>
                   <div id="video-wrapper" style="background-image: url(images/header/video-bg.jpg)"> </div>
                   <a class="player" data-property="{videoURL:'https://youtu.be/GDGB68VD5DE'}"></a>
@@ -148,6 +148,9 @@
           <!--Hero section ends-->
           {% if query %}
           <br />
+
+          <!-- BLOQUE SI NO ENCUENTRA LA CIUDAD INTRODUCIDA -->
+
           {% if not guides %}
 
           <center><h1>Error 404</h1> </center>
@@ -155,6 +158,8 @@
           {%  else %}
 
           {%for guide in guides %}
+
+          <!-- BLOQUE DE INFORMACIÓN BASICA DE LA CIUDAD, CON BOTON A PAGINA DE GUIA -->
 
           <div class="swiper-slide single-testimonial-item">
               <div class="testimonial-img text-center">

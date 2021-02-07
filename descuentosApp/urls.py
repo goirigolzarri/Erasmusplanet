@@ -11,6 +11,7 @@ urlpatterns = [
 	path('alojamiento/', views.Alojamiento, name='Alojamiento'), 
     path('adminsite/', views.AdminSite, name='Admin'), 
     path('adminsite/addguide', views.AddGuide.as_view(), name='AddGuide'), 
+	
 	#path('registrer/', views.Progress_bar_register, name='registrer')
 
 ]
