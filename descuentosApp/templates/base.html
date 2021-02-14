@@ -3,21 +3,21 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <title>Erasmus Planet</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Updates and statistics" />
-    <meta name="author" content="LionCoders" />
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/stylesExt.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/plugin.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'demo/css/plugin.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'switcher/skin-purple.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/plugin.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/switcher/skin-purple.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/dashboard.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/perfect-scrollbar.css' %}">
 
@@ -77,7 +77,7 @@
                                   {% if user.is_authenticated %}
 
                                   <div class="add-list float-right">
-                                      <a class="btn v8" href="{% url 'logout' %}">Salir</a>
+                                      <a class="btn v8" href="{% url 'logout' %}">Log out</a>
                                   </div>
 
                                   {%if user.is_superuser %}
@@ -89,7 +89,7 @@
                                   {%else%}
 
                                   <div class="add-list float-right">
-                                      <a class="btn v8" href="{% url 'login' %}">Entrar</a>
+                                      <a class="btn v8" href="{% url 'login' %}">Log in</a>
                                   </div>
 
                                   {% endif %}
@@ -111,11 +111,15 @@
               <!--Main Menu ends-->
           </header>
           <!--Hero section starts-->
-          <div class="video-area v1" style="height: 46vh !important;">
-              <div class="video-container" style="height: 46vh !important;">
+          <div class="video-area v1" style="height: 50vh !important;">
+              <div class="video-container" style="height: 55vh !important;">
                   <div class="overlay op-5"></div>
-                  <div id="video-wrapper" style="background-image: url(images/header/video-bg.jpg)"> </div>
+
+
+                  <div id="video-wrapper" style="background-image: url(static/images/header/video-bg.jpg)"></div>
                   <a class="player" data-property="{videoURL:'https://youtu.be/GDGB68VD5DE'}"></a>
+
+
                   <div class="container video-content">
                       <div class="row">
                           <div class="col-md-12 text-center">
@@ -127,15 +131,15 @@
                               </p>
                           </div>
                           <div class="col-md-12 text-center mar-top-20">
-                              <form class="hero__form v2 mar-bot-30">
+                              <form class="hero__form v2 mar-bot-30" autocomplete="off">
                                   <div class="row">
                                       <div class="col-lg-10 col-md-10 col-12">
-                                          <input class="hero__form-input custom-select no-border noFlechaInput formularioResponsive" name="search" id="search" placeholder="¿Qué ciudad o universidad estas buscando?">
+                                          <input class="hero__form-input custom-select no-border noFlechaInput formularioResponsive" name="search" id="search" placeholder="What city or university are you looking for?">
                                       </div>
 
                                       <div class="col-lg-2 col-md-2 col-12">
                                           <div class="submit_btn text-right md-right">
-                                              <button class="btn v3 mar-right-5 botonAzul" type="submit"><i class="ion-ios-search" aria-hidden="true"></i> Buscar</button>
+                                              <button class="btn v3 mar-right-5 botonAzul" type="submit"><i class="ion-ios-search" aria-hidden="true"></i>Look for</button>
                                           </div>
                                       </div>
                                   </div>
@@ -145,46 +149,123 @@
                   </div>
               </div>
           </div>
-          <!--Hero section ends-->
-          {% if query %}
-          <br />
 
-          <!-- BLOQUE SI NO ENCUENTRA LA CIUDAD INTRODUCIDA -->
+          
 
-          {% if not guides %}
 
-          <center><h1>Error 404</h1> </center>
 
-          {%  else %}
 
-          {%for guide in guides %}
+          {% if not query %}
 
-          <!-- BLOQUE DE INFORMACIÓN BASICA DE LA CIUDAD, CON BOTON A PAGINA DE GUIA -->
 
-          <div class="swiper-slide single-testimonial-item">
-              <div class="testimonial-img text-center">
-                  <img src="static/images/clients/client_1.jpg" alt="...">
-              </div>
-              <div class="testimonial-content text-center">
-                  <ul class="product-rating">
-                      <li><i class="ion-android-star"></i></li>
-                      <li><i class="ion-android-star"></i></li>
-                      <li><i class="ion-android-star"></i></li>
-                      <li><i class="ion-android-star-half"></i></li>
-                      <li><i class="ion-android-star-half"></i></li>
-                  </ul>
-                  <h5>{{guide.title}} </h5>
-                  <span>{{guide.city}}</span>
-                  <p>{{gide.description}}</p>
-                  <a href="{%url 'GuideDetailView' guide.id %}" class="btn btn-primary">Go to Guide</a>
+          <div class="hero-client-section pad-bot-90 section-padding RESPONSIVE">
+              <div class="container">
+                  <div class="row">
+                      <div class="col-md-8 offset-md-2 text-center">
+                          <h2 class="section-title v1">CITIES</h2>
+                      </div>
+                      <div class="col-md-12 mar-bot-60">
+                          <div class="testimonial-wrapper swiper-container">
+                                <!-- Tarjetas de guias -->
+                                <div class="swiper-wrapper">
+                                {% for guia in guiasTarjetas %}
+                                  <div class="swiper-slide single-testimonial-item">
+                                      <div class="testimonial-img text-center">
+                                          <img src="static/images/clients/client_1.jpg" alt="...">
+                                      </div>
+                                      <div class="testimonial-content text-center">
+                                          <ul class="product-rating">
+                                              <li><i class="ion-android-star"></i></li>
+                                              <li><i class="ion-android-star"></i></li>
+                                              <li><i class="ion-android-star"></i></li>
+                                              <li><i class="ion-android-star-half"></i></li>
+                                              <li><i class="ion-android-star-half"></i></li>
+                                          </ul>
+                                          <h5>{{guia.city}}</h5>
+                                          <span>{{guia.title}}</span>
+                                          <p>{{guia.body | safe}}</p>
+                                      </div>
+                                  </div>
+                                {% endfor %}
+                              </div>
+                          </div>
+                          <div class="client-pagination"></div>
+                      </div>
+                  </div>
               </div>
           </div>
 
+
+           <!--Hero section ends-->
+          {% else %}
+          <br />
+         
+
+          <!-- BLOQUE SI NO ENCUENTRA LA CIUDAD INTRODUCIDA -->
+
+            {% if not guides %}
+
+            <center><h1>Error 404</h1> </center>
+
+            {%  else %}
+
+            {%for guide in guides %}
+
+            <!-- BLOQUE DE INFORMACIÓN BASICA DE LA CIUDAD, CON BOTON A PAGINA DE GUIA -->
+     <!--       <div class="hero-client-section pad-bot-90 section-padding RESPONSIVE">
+              <div class="testimonial-wrapper">
+                <div class="card justify-content-center" style="width: 400px; margin: auto auto">
+                  <div class="card text-white">
+                      <div class="testimonial-img text-center">
+                          <img src="static/images/clients/client_1.jpg" alt="...">
+                      </div>
+                      <div class="testimonial-content bg-secondary text-center mar-top-55">
+                          <ul class="product-rating">
+                              <li><i class="ion-android-star"></i></li>
+                              <li><i class="ion-android-star"></i></li>
+                              <li><i class="ion-android-star"></i></li>
+                              <li><i class="ion-android-star-half"></i></li>
+                              <li><i class="ion-android-star-half"></i></li>
+                          </ul>
+                          <h5>{{guide.title}} </h5>
+                          <span>{{guide.city}}</span>
+                          <p>{{guide.description}}</p>
+                          <a href="{% url 'Guia' %}" class="btn btn-primary">Go to Guide</a>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>-->
+
+
+
+
+            <div class="jumbotron RESPONSIVE justify-content-center mar-top-55" style="width: 1000px; margin: auto auto">
+              <h3 class="display-4 justify-content-center">{{guide.title}}</h3>
+              <p class="lead">{{guide.city}}</p>
+                <ul class="product-rating">
+                    <li><i class="ion-android-star"></i></li>
+                    <li><i class="ion-android-star"></i></li>
+                    <li><i class="ion-android-star"></i></li>
+                    <li><i class="ion-android-star-half"></i></li>
+                    <li><i class="ion-android-star-half"></i></li>
+                </ul>
+              <hr class="my-4">
+                <div class="mar-top-55">
+                  
+                  <p>{{guide.description}}</p>
+                  <p class="lead">
+                    <a href="{% url 'Guia' %}" class="btn btn-primary">Go to Guide</a>
+                  </p>
+                </div>
+            </div>
+
           {% endfor %}
           {% endif %}
+        {% endif %}
 
           <!--Popular Category starts-->
-          {% else %}
+          
           <div class="popular-catagory pad-bot-50 mar-top-20 section-padding">
               <div class="container">
                   <div class="row">
@@ -249,7 +330,7 @@
           </div>
           <!--Popular Category ends-->
 
-           {% endif %}
+            
           <!--Trending Place starts-->
           <div class="trending-places section-padding pad-bot-130  bg-pn">
               <div class="container">
@@ -753,7 +834,7 @@
           </div>
           <!--Coupon ends-->
           <!--Call to action starts-->
-          <div class="call-to-action pad-tb-70" style="background-image: url(images/bg/memphis-colorful.png)">
+          <div class="call-to-action pad-tb-70" style="background-image: url(static/images/bg/memphis-colorful.png)">
               <div class="overlay op-7 green"></div>
               <div class="container">
                   <div class="row align-items-center">
@@ -1041,90 +1122,12 @@
           </div>
           <!--Trending events ends-->
           <!--Testimonial Section start-->
-          <div class="hero-client-section pad-bot-70 section-padding">
-              <div class="container">
-                  <div class="row">
-                      <div class="col-md-8 offset-md-2 text-center">
-                          <h2 class="section-title v1">People Talking About Us</h2>
-                      </div>
-                      <div class="col-md-12 mar-bot-70">
-                          <div class="testimonial-wrapper swiper-container">
-                              <div class="swiper-wrapper">
-                                  <div class="swiper-slide single-testimonial-item">
-                                      <div class="testimonial-img text-center">
-                                          <img src="static/images/clients/client_1.jpg" alt="...">
-                                      </div>
-                                      <div class="testimonial-content text-center">
-                                          <ul class="product-rating">
-                                              <li><i class="ion-android-star"></i></li>
-                                              <li><i class="ion-android-star"></i></li>
-                                              <li><i class="ion-android-star"></i></li>
-                                              <li><i class="ion-android-star-half"></i></li>
-                                              <li><i class="ion-android-star-half"></i></li>
-                                          </ul>
-                                          <h5>Frank Jane</h5>
-                                          <span>CEO, Bloomberg</span>
-                                          <p>Lorem ipsum dolor adipisicing elit.iusto at laborum hic qui, minus, quasi modi assumenda quis corrupti.</p>
-                                      </div>
-                                  </div>
-                                  <div class="swiper-slide single-testimonial-item">
-                                      <div class="testimonial-img text-center">
-                                          <img src="static/images/clients/client_3.jpg" alt="...">
-                                      </div>
-                                      <div class="testimonial-content text-center">
-                                          <ul class="product-rating">
-                                              <li><i class="ion-android-star"></i></li>
-                                              <li><i class="ion-android-star"></i></li>
-                                              <li><i class="ion-android-star"></i></li>
-                                              <li><i class="ion-android-star-half"></i></li>
-                                              <li><i class="ion-android-star-half"></i></li>
-                                          </ul>
-                                          <h5>Amanda Gordon</h5>
-                                          <span>CMO, TechTelsa</span>
-                                          <p>Lorem ipsum dolor adipisicing elit.iusto at laborum hic qui, minus, quasi modi assumenda quis corrupti.</p>
-                                      </div>
-                                  </div>
-                                  <div class="swiper-slide single-testimonial-item">
-                                      <div class="testimonial-img text-center">
-                                          <img src="static/images/clients/client_2.jpg" alt="...">
-                                      </div>
-                                      <div class="testimonial-content text-center">
-                                          <ul class="product-rating">
-                                              <li><i class="ion-android-star"></i></li>
-                                              <li><i class="ion-android-star"></i></li>
-                                              <li><i class="ion-android-star"></i></li>
-                                              <li><i class="ion-android-star-half"></i></li>
-                                              <li><i class="ion-android-star-half"></i></li>
-                                          </ul>
-                                          <h5>Lee Priest</h5>
-                                          <span>MD, Cornia Inc</span>
-                                          <p>Lorem ipsum dolor adipisicing elit.iusto at laborum hic qui, minus, quasi modi assumenda quis corrupti.</p>
-                                      </div>
-                                  </div>
-                                  <div class="swiper-slide single-testimonial-item">
-                                      <div class="testimonial-img text-center">
-                                          <img src="static/images/clients/client_4.jpg" alt="...">
-                                      </div>
-                                      <div class="testimonial-content text-center">
-                                          <ul class="product-rating">
-                                              <li><i class="ion-android-star"></i></li>
-                                              <li><i class="ion-android-star"></i></li>
-                                              <li><i class="ion-android-star"></i></li>
-                                              <li><i class="ion-android-star-half"></i></li>
-                                              <li><i class="ion-android-star-half"></i></li>
-                                          </ul>
-                                          <h5>Mark Henry</h5>
-                                          <span>CEO, Alpha Inc</span>
-                                          <p>Lorem ipsum dolor adipisicing elit.iusto at laborum hic qui, minus, quasi modi assumenda quis corrupti.</p>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="client-pagination"></div>
-                      </div>
-                  </div>
-              </div>
-          </div>
+          
+
+
+
+
+
           <!--Testimonial Section ends-->
           <!--Partner section starts-->
           <div class="partner-section style1 pad-top-60 pad-bot-110">
@@ -1167,7 +1170,7 @@
       <!--Page Wrapper ends-->
      
       <!--Footer Starts-->
-      <div class="footer-wrapper no-pad-tb footer-fixed v1" style="background-image: url(images/bg/footer-bg-1.png)">
+      <div class="footer-wrapper no-pad-tb footer-fixed v1">
           <div class="overlay op-1"></div>
           <div class="footer-top-area section-padding">
               <div class="container">
@@ -1300,13 +1303,14 @@
 
 
       <!---->
-      <script src="https://kit.fontawesome.com/yourcode.js"></script>
+      <!--<script src="https://kit.fontawesome.com/yourcode.js"></script>-->
       <!--plugin js-->
       <script src="static/js/plugin.js"></script>
       <!--google maps-->
       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_8C7p0Ws2gUu7wo0b6pK9Qu7LuzX2iWY&amp;libraries=places&amp;callback=initAutocomplete"></script>
       <!--Main js-->
       <script src="static/js/main.js"></script>
+      <script type="text/javascript" src="static/js/autocomplete.js"></script>
 
 
   </body>

@@ -21,6 +21,7 @@ def base(request):
 	
 	model = Guide
 	city_list = City.objects.all()
+	guiasTarjetas = Guide.objects.all()
 
 
 	queryset= request.GET.get("search")
@@ -40,15 +41,9 @@ def base(request):
 		
 
 
-	return render(request, 'base.html', {'guides': guides, 'query' : query})
+	return render(request, 'base.html', {'guides': guides, 'query' : query, 'guiasTarjetas': guiasTarjetas})
 
 
-
-
-
-class GuideDetailView(DetailView):
-	model = Guide
-	template_name='guide_detail.html'
 
 def CityList(request):
 
@@ -78,6 +73,9 @@ class AddGuide(CreateView):
     success_url = reverse_lazy('Admin')
 
 
-#def Progress_bar_register(request):
 
-#	return render(request, 'progress_bar_register.html')
+
+
+def Guia(request):
+    
+   return render(request, 'guia.html')
