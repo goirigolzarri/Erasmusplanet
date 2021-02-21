@@ -1114,8 +1114,8 @@ ul.list-inline li {
 
 .btn.v3:hover {
     background: #fff;
-    color: #333 !important;
-    border: 1px solid #ddd;
+    color: #333;
+    border: 1px solid #6ae;
 }
 
 .btn.v3.white {
@@ -1235,7 +1235,8 @@ ul.list-inline li {
 
 .btn.v8:hover {
     background: #fff;
-    color: #333 !important;
+    color: #333;
+    border: 1px solid #6ae;
 }
 
 .btn.v8 i {
@@ -8242,7 +8243,6 @@ span.infobox_rate {
         padding: 0 2px 0 0;
     }
 }
-
 
 
 /*@media only screen (max-width:767px) and(orientation:landscape){

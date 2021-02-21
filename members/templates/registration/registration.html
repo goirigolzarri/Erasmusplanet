@@ -18,7 +18,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/stylesExt.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/plugin.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/plugin.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/switcher/skin-purple.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/switcher/blue.css' %}">
 
     <link rel="icon" type="image/png" href="{%static 'images/EPCircular.ico'%}" with="32" height="32">
 </head>
@@ -97,23 +97,17 @@
                         </div>
 
         
-                            <ul class="ui-list nav nav-tabs justify-content-center mar-bot-30" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active" data-toggle="tab" href="#register" role="tab" aria-selected="true"><h3>Register</h3></a>
-                                </li>
-                            </ul>
+                            <div class="textoDegradado">
+                            <h3 class="margen50">Registrate</h3>
+                        </div>
                             <div class="ui-dash tab-content">
                                 <div class="form-group" id="#" role="tabpanel">
                                     <form method="POST"> 
                                         {% csrf_token %}
                                             <!-- PASO 1 -->
-                                            <div class="tab">
-                                                
+                                            <div class="tab">  
                                                 <div class="row mar-top-35">
-                                                    
-                                    
                                                     <div class= "field" style = "margin-left:auto;margin-right:auto;">
-                                                        <label for="" class="label">Name</label>
                                                         <div class="control has-icons-left">
                                                             {{ form.first_name }}
                                                             <span class="icon is-small is-left">
@@ -124,7 +118,6 @@
                                                     
 
                                                     <div class= "field" style = "margin-left:auto;margin-right:auto;padding-left:25px;">
-                                                        <label for="" class="label">Last name</label>
                                                         <div class="control has-icons-left">
                                                             {{ form.last_name }}
                                                             <span class="icon is-small is-left">
@@ -137,36 +130,39 @@
 
                                                                                     
                                                 <div class="row mar-top-35">
-                                                    
+                                                    <div class="col-xl-6">
                                                     <div class= "field">
-                                                        <div class="control has-icons-left" style ="margin-left:auto;margin-right:auto;">
-                                                            {{form.gender.label}}{{ form.gender }}
+                                                        <div class="control has-icons-left">
+                                                            {{ form.gender }}
                                                             <span class="icon is-small is-left">
                                                                 <i class="fa transgender-alt"></i>
                                                             </span>
                                                         </div>
                                                     </div>
+                                                    </div>
 
                                                 <!--    <div class="col-xl-6 col-sm-16">
                                                         {{form.gender.label}}{{ form.gender }}
                                                     </div>-->
-                                                    <div class="col-xl-6 col-sm-12 margenBotonNext" style = "margin-left:auto;margin-right:auto;padding-left:55px;">
-                                                        
-                                                        {{ form.date.label }}
-                                                        {{ form.date }}                                                          
-                                                        
-                                                    </div>
+                                                    <div class="control has-icons-left" style = "margin-left:auto;margin-right:auto;">
+                                                            {{ form.country }}
+                                                            <span class="icon is-small is-left">
+                                                                <i class="fa transgender-alt"></i>
+                                                            </span>                                                                
+                                                        </div>  
                                                 </div>
 
                                                 <div class="row mar-top-25">
 
                                                     <div class= "field">
-                                                        <div class="control has-icons-left" style = "margin-left:auto;margin-right:auto;">
-                                                            {{form.country.label}}{{ form.country }}
-                                                            <span class="icon is-small is-left">
-                                                                <i class="fa transgender-alt"></i>
-                                                            </span>                                                                
-                                                        </div>                                             
+                                                                                                   
+                                                    </div>
+
+                                                    <div class="col-xl-12 col-sm-12 margenBotonNext">
+                                                        
+                                                        {{ form.date.label }}
+                                                        {{ form.date }}                                                          
+                                                        
                                                     </div>
                                                 </div>
 
@@ -313,10 +309,8 @@
                                             </div>
 
                                             <div style="overflow:auto;">
-                                                <div style="float:right;">
-                                                    <button type="button" id="prevBtn" class="btn v3 float-left" onclick="nextPrev(-1)">Volver</button>
-                                                    <button type="button" id="nextBtn" class="btn v3 float-right" onclick="nextPrev(1)">Siguiente</button>
-                                                </div>
+                                                <button type="button" id="prevBtn" class="btn v3 float-left fuenteBoton" onclick="nextPrev(-1)">Volver</button>
+                                                <button type="button" id="nextBtn" class="btn v3 float-right fuenteBoton" onclick="nextPrev(1)">Siguiente</button>                                                
                                             </div>
 
                                             
@@ -330,7 +324,7 @@
                                     </form>
 
                                     <div class= "mt-4">
-                                            <div class="mar-top-40 res-box text-left">Already have an account? <a class="btn v8" href="{% url 'Login' %}" class="ml-2">Log in</a>
+                                            <div class="mar-top-40 res-box text-left">¿Eres miembro de Erasmus Planet?, <a class="btn v8" href="{% url 'Login' %}" class="ml-2">Inicia sesión</a>
                                             </div>
                                     </div>
                                 </div>

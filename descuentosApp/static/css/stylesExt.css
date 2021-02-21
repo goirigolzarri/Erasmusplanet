@@ -71,8 +71,49 @@
     float: right !important;
 }
 
+.noSubrayadoEnlace {
+    text-decoration: none;
+}
+
+.noSubrayadoEnlace:hover {
+    text-decoration: none;
+}
+
+.enlaceContrasenya {
+    text-decoration: none !important;
+    color: #088dff;
+}
+
+.enlaceContrasenya:hover {
+    text-decoration: none !important;
+    color: #6ae;
+}
+
+.textoDegradado {
+    color: #6ae;
+}
+
+.fuenteBoton {
+    background: #6ae !important;
+    color: white !important;
+}
+
+.fuenteBoton:hover {
+    color: #6ae !important;
+    background: white !important;
+}
+
 
 /* ESTILOS DEL FORMULARIO DE REGISTRO */
+
+.margenTop50 {
+    margin-top: 50px !important;
+}
+
+.margen50 {
+    margin-top: 50px !important;
+    margin-bottom: 50px !important;
+}
 
 .noMargenTop {
     margin-top: 0px !important;

@@ -24,22 +24,22 @@ class SignUpForm(UserCreationForm):
 
 class CreateUserForm(UserCreationForm):
 	username = forms.CharField(label="Username", max_length=30,
-		widget=forms.TextInput(attrs={'class': 'mdl-textfield__input', 'type' :'text', 'id' : 'username', 'size' : '10px','placeholder': 'Username...'}))
+		widget=forms.TextInput(attrs={'class': 'mdl-textfield__input', 'type' :'text', 'id' : 'username', 'size' : '10px','placeholder': 'Nombre de usuario'}))
 
 	email = forms.EmailField(label="Email",
-		widget=forms.EmailInput(attrs={'class': 'mdl-emailfield__input', 'type' :'text', 'id' : 'email', 'placeholder': 'Email...'}))
+		widget=forms.EmailInput(attrs={'class': 'mdl-emailfield__input', 'type' :'text', 'id' : 'email', 'placeholder': 'Email'}))
 
 	first_name = forms.CharField(label='Name', max_length=30,
-		widget=forms.TextInput(attrs={'class': 'mdl-textfield__input', 'size': '23', 'type' :'text', 'id' : 'first_name', 'placeholder': 'Name...'}))
+		widget=forms.TextInput(attrs={'class': 'mdl-textfield__input', 'size': '23', 'type' :'text', 'id' : 'first_name', 'placeholder': 'Nombre'}))
 	
 	last_name = forms.CharField(label='Last name', max_length=30,
-		widget=forms.TextInput(attrs={'class': 'mdl-textfield__input', 'size': '23', 'type' :'text', 'id' : 'last_name', 'placeholder': 'Last name...'}))
+		widget=forms.TextInput(attrs={'class': 'mdl-textfield__input', 'size': '23', 'type' :'text', 'id' : 'last_name', 'placeholder': 'Apellido'}))
 
 	#gender = forms.ChoiceField(
 	#	widget=forms.Select(attrs={'class': 'form-control', 'size': '7'}))
 	
-	date = forms.DateField(label='Birthday',
-		widget=forms.DateInput(attrs={'class': 'mdl-datefield__input', 'size': '40', 'type' :'date', 'id' : 'date', 'placeholder': 'Birthday...'}))
+	date = forms.DateField(label='Fecha de nacimiento',
+		widget=forms.DateInput(attrs={'class': 'mdl-datefield__input', 'size': '40', 'type' :'date', 'id' : 'date', 'placeholder': 'Fecha de nacimiento'}))
 	
 	phone = forms.CharField(label="Phone", max_length=30,
 		widget=forms.TextInput(attrs={'class': 'mdl-textfield__input', 'type' :'text', 'id' : 'phone', 'placeholder': 'Phone...'}))
