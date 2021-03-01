@@ -8,7 +8,11 @@ from django.urls import reverse
 
 class Country(models.Model):
 
-	name = models.CharField(max_length=10)
+	name = models.CharField(max_length=30)
+
+	class Meta:
+        
+		ordering = ['name']
 
 
 

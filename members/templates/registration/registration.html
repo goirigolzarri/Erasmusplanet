@@ -9,16 +9,15 @@
     <meta charset="utf-8">
     <title>Erasmus Planet | Registration</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Updates and statistics" />
-    <meta name="author" content="LionCoders" />
+    <meta name="description" content="Updates and statistics"/>
+    <meta name="author" content="LionCoders"/>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/stylesExt.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/plugin.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/plugin.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/switcher/blue.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/switcher/skin-purple.css' %}">
 
     <link rel="icon" type="image/png" href="{%static 'images/EPCircular.ico'%}" with="32" height="32">
 </head>
@@ -88,26 +87,28 @@
         </header>
         <!--User Login section starts-->
         <div class="user-login-section section-padding bg-fixed">
-            <div class="container">
+            <div class="container margenTop50">
                 <div class="row">
                     <div class="col-md-10 offset-md-1  text-center">
                         <div class="login-wrapper">
                         <div class="imgLogo">
                             <img src="{% static 'images/EPCircularTexto.png' %}">
                         </div>
-
-        
-                            <div class="textoDegradado">
-                            <h3 class="margen50">Registrate</h3>
+                        <div class="textoDegradado">
+                            <h3 class="margen50">Register</h3>
                         </div>
                             <div class="ui-dash tab-content">
-                                <div class="form-group" id="#" role="tabpanel">
-                                    <form method="POST"> 
+                                <div class="tab-pane fade show active" id="login" role="tabpanel">
+                                    <form id="login-form" action="#" method="post">
                                         {% csrf_token %}
                                             <!-- PASO 1 -->
-                                            <div class="tab">  
+                                            <div class="tab">
+                                                
                                                 <div class="row mar-top-35">
-                                                    <div class= "field" style = "margin-left:auto;margin-right:auto;">
+                                                    
+                                    
+                                                    <div class="col-xl-6 col-sm-6 margenBotonNext">
+                                                        <label for="" class="label">Name</label>
                                                         <div class="control has-icons-left">
                                                             {{ form.first_name }}
                                                             <span class="icon is-small is-left">
@@ -117,7 +118,8 @@
                                                     </div>
                                                     
 
-                                                    <div class= "field" style = "margin-left:auto;margin-right:auto;padding-left:25px;">
+                                                    <div class="col-xl-6 col-sm-6 margenBotonNext">
+                                                        <label for="" class="label">Last name</label>
                                                         <div class="control has-icons-left">
                                                             {{ form.last_name }}
                                                             <span class="icon is-small is-left">
@@ -130,32 +132,12 @@
 
                                                                                     
                                                 <div class="row mar-top-35">
-                                                    <div class="col-xl-6">
-                                                    <div class= "field">
-                                                        <div class="control has-icons-left">
-                                                            {{ form.gender }}
-                                                            <span class="icon is-small is-left">
-                                                                <i class="fa transgender-alt"></i>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                    </div>
-
-                                                <!--    <div class="col-xl-6 col-sm-16">
-                                                        {{form.gender.label}}{{ form.gender }}
-                                                    </div>-->
-                                                    <div class="control has-icons-left" style = "margin-left:auto;margin-right:auto;">
-                                                            {{ form.country }}
-                                                            <span class="icon is-small is-left">
-                                                                <i class="fa transgender-alt"></i>
-                                                            </span>                                                                
-                                                        </div>  
-                                                </div>
-
-                                                <div class="row mar-top-25">
-
-                                                    <div class= "field">
-                                                                                                   
+                                                    
+                                                    <div class="col-xl-12 col-sm-12 margenBotonNext">
+                                                        
+                                                        {{ form.gender.label }}
+                                                        {{ form.gender }}                                                          
+                                                        
                                                     </div>
 
                                                     <div class="col-xl-12 col-sm-12 margenBotonNext">
@@ -166,6 +148,15 @@
                                                     </div>
                                                 </div>
 
+                                                                                                
+                                                    <div class="col-xl-14 col-sm-14 margenBotonNext">
+                                                        Country: {{ form.country }}
+                                                        <span class="icon is-small is-left">
+                                                            <i class="fa transgender-alt"></i>
+                                                        </span>                                                                
+                                                    </div>                                             
+                                             
+
                                             </div>
 
                                             <!-- PASO 2 -->
@@ -173,34 +164,35 @@
 
                                                 <div class="row mar-top-35">
 
-                                                    <div class= "field" style = "margin-left:auto;margin-right:auto;">
-                                                        <label for="" class="label">Username</label>
-                                                        <div class="control has-icons-left">
-                                                            {{ form.username }}
-                                                            <span class="icon is-small is-left">
-                                                                <i class="fa fa-user"></i>
-                                                            </span>
-                                                        </div>
+                                                    <div class="col-xl-12 col-sm-12 margenBotonNext">
+                                                        
+                                                        {{ form.username.label }}
+                                                        {{ form.username }}                                                          
+                                                        
                                                     </div>
 
 
-                                                    <div class= "field" style = "margin-left:auto;margin-right:auto;">
-                                                        <label for="" class="label">Email</label>
-                                                        <div class="control has-icons-left">
-                                                            {{ form.email }}
-                                                            <span class="icon is-small is-left">
-                                                                <i class="fa fa-user"></i>
-                                                            </span>
-                                                        </div>
+                                                    <div class="col-xl-12 col-sm-12 margenBotonNext">
+                                                        
+                                                        {{ form.email.label }}
+                                                        {{ form.email }}                                                          
+                                                        
                                                     </div>
                                                 </div>
 
 
-                                                <div class="row mar-top-35">
+                                                <div class="row mar-top-30">
 
                                                     <div class= "field">
-                                                        <div class="control has-icons-left" style = "margin-left:auto;margin-right:auto;">
-                                                            {{ form.phone_prefix }}
+                                                        <div class="control has-icons-left col-xl-7 col-sm-12 margenBotonNext" style = "margin-left:auto;margin-right:auto;">
+                                                            <label>Prefix</label>
+                                                            <div class="input-group input-group-solid">
+                                                                <div class="input-group-prepend">
+                                                                    <span class="input-group-text">+</span>
+                                                                    <input type='text' id='prefix' readonly="readonly" class='form-control'/>
+                                                                </div>
+                                                                
+                                                            </div>
                                                             <span class="icon is-small is-left">
                                                                 <i class="fa fa-user"></i>
                                                             </span>
@@ -208,13 +200,15 @@
                                                     </div>
 
 
-                                                    <div class= "field" style = "margin-left:auto;margin-right:auto;">
-                                                        <label for="" class="label">Phone</label>
-                                                        <div class="control has-icons-left">
-                                                            {{ form.phone }}
-                                                            <span class="icon is-small is-left">
-                                                                <i class="fa fa-user"></i>
-                                                            </span>
+                                                    <div class= "field">
+                                                        <div class="control has-icons-left col-xl-18 col-sm-12 margenBotonNext" style = "margin-left:auto;margin-right:auto;">
+                                                            <label for="" class="label">Phone</label>
+                                                            <div class="control has-icons-left">
+                                                                {{ form.phone }}
+                                                                <span class="icon is-small is-left">
+                                                                    <i class="fa fa-user"></i>
+                                                                </span>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -308,10 +302,14 @@
 
                                             </div>
 
-                                            <div style="overflow:auto;">
-                                                <button type="button" id="prevBtn" class="btn v3 float-left fuenteBoton" onclick="nextPrev(-1)">Volver</button>
-                                                <button type="button" id="nextBtn" class="btn v3 float-right fuenteBoton" onclick="nextPrev(1)">Siguiente</button>                                                
+                                            <div class="mar-top-35" style="overflow:auto;">
+                                                <div style="float:right;">
+                                                    <button type="button" id="prevBtn" class="btn v3 float-left" onclick="nextPrev(-1)">Return</button>
+                                                    <button type="button" id="nextBtn" class="btn v3 float-right" onclick="nextPrev(1), Prefix(), Hide()">Next</button>
+                                                </div>
                                             </div>
+
+                                            {{form.errors}}
 
                                             
                                             <!-- Circles which indicates the steps of the form: -->
@@ -324,14 +322,12 @@
                                     </form>
 
                                     <div class= "mt-4">
-                                            <div class="mar-top-40 res-box text-left">¿Eres miembro de Erasmus Planet?, <a class="btn v8" href="{% url 'Login' %}" class="ml-2">Inicia sesión</a>
+                                            <div class="mar-top-40 res-box text-left">Already have an account? <a class="btn v8" href="{% url 'Login' %}" class="ml-2">Log in</a>
                                             </div>
                                     </div>
                                 </div>
 
-                               
-                                {{form.errors}}
-                            
+                                                                                         
 
                             </div>
                         </div>
@@ -450,6 +446,7 @@
     <script src="{% static 'js/register.js' %}"></script>
     <!-- Register js -->
     <script src="{% static 'js/hiding_atributes.js' %}"></script>
+    <script src="{% static 'js/prefix.js' %}"></script>
     <!--Scripts ends-->
 
 </body>

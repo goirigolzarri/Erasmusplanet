@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'descuentosApp',
     'ckeditor',
     'jquery',
-    'members'
+    'members',
+    'import_export'
 ]
 
 MIDDLEWARE = [

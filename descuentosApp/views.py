@@ -6,6 +6,7 @@ from django.urls import reverse_lazy
 from django.views.generic import DetailView, ListView, CreateView
 from django.db.models import Q
 
+
 # Create your views here.
 
 

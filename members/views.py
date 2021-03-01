@@ -1,3 +1,4 @@
+from descuentosApp.models import Country
 from django.shortcuts import render, redirect
 from django.views import generic
 from django.contrib.auth.forms import UserCreationForm
@@ -13,6 +14,7 @@ from django.contrib.auth  import authenticate, login, logout
 class NewUserRegistrationView(generic.CreateView):
 	
     form_class = CreateUserForm
+    model = Country
     template_name = 'registration/registration.html'
     success_url = reverse_lazy('login')
 
