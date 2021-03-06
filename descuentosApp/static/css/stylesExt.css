@@ -43,13 +43,13 @@
 }
 
 .botonAzul {
-    background-color: #3699FF !important;
+    background-color: #66AAEE !important;
     color: white !important;
 }
 
 .botonAzul:hover {
     background-color: white !important;
-    color: #3699FF !important;
+    color: #66AAEE !important;
 }
 
 .imagenIcono {
@@ -205,6 +205,63 @@ button:hover {
 
 /**************************************/
 
+
+/****** EFECTOS MENU CON ICONO ********/
+
+.menu {
+    display: flex;
+    justify-content: center;
+}
+
+.menu a span:first.child {
+    display: inline-block;
+}
+
+.menu a {
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+.menu a .hide {
+    display: block;
+}
+
+.menu a span:last-child {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-100%);
+}
+
+.menu a span {
+    transition: transform 0.2s ease-out;
+}
+
+.menu a:hover span:first-child {
+    transform: translateY(200%);
+}
+
+.menu a:hover span:last-child {
+    transform: none;
+}
+
+.menu[data-animation="to-top"] a span:last-child {
+    transform: translateY(100%);
+}
+
+.menu[data-animation="to-top"] a:hover span:first-child {
+    transform: translateY(-100%);
+}
+
+
+/**************************************/
+
 .margenFormTop {
     margin-top: 1rem !important;
 }
@@ -223,8 +280,14 @@ button:hover {
     }
 }
 
+@media screen and (max-width: 991px) {
+    .imgResponsive {
+        display: none;
+    }
+}
+
 @media screen and (max-width: 767px) {
     .botonAzul {
-        float: right;
+        float: right !important;
     }
 }
