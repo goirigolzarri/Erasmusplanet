@@ -63,7 +63,13 @@ class Guide(models.Model):
 
 	city = models.ForeignKey(City, on_delete=models.CASCADE)
 	title = models.CharField(max_length=50, default='')
-	body = RichTextField(blank=True)
+	informacion_general = RichTextField(blank=True)
+	como_llegar = RichTextField(blank=True)
+	alojamiento = RichTextField(blank=True)
+	ocio = RichTextField(blank=True)
+	divisas = RichTextField(blank=True)
+	banco_sim = RichTextField(blank=True)
+	donde_comprar = RichTextField(blank=True)
 
 	def __str__(self):
 

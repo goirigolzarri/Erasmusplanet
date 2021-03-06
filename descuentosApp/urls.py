@@ -10,7 +10,7 @@ urlpatterns = [
 	path('alojamiento/', views.Alojamiento, name='Alojamiento'), 
     path('adminsite/', views.AdminSite, name='Admin'), 
     path('adminsite/addguide', views.AddGuide.as_view(), name='AddGuide'), 
-	path('guia/', views.Guia, name='Guia'),
+	path('guia/<int:pk>', views.Guia.as_view(), name='Guia'),
     
 
 ]

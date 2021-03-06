@@ -24,7 +24,6 @@ for item in choices_country:
 
 #generos
 gender_list=['Male ', 'Female', 'Unisex']
-studentType_list=['Academic ', 'Au Pair', 'Master', 'Practices']
 
 class SignUpForm(UserCreationForm):
 	email =forms.EmailField(widget=forms.EmailInput(attrs={'class': 'form-control'}))
@@ -74,7 +73,6 @@ class CreateUserForm(UserCreationForm):
 			'course': forms.TextInput(attrs={'class':'form-control ', 'placeholder': 'Course...'}),
 			'company': forms.TextInput(attrs={'class':'form-control ', 'placeholder': 'Company...'}),
 			'password1': forms.PasswordInput(attrs={'class':'form-control'}),
-			'studentType': forms.Select(choices=studentType_list, attrs={'class':'form-control '}),
 
 
         }

@@ -76,7 +76,7 @@ class AddGuide(CreateView):
 
 
 
-
-def Guia(request):
+class Guia(DetailView):
     
-   return render(request, 'guia.html')
+	model = Guide
+	template_name = 'guia.html'

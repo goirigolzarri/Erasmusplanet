@@ -305,11 +305,9 @@
                                             <div class="mar-top-35" style="overflow:auto;">
                                                 <div style="float:right;">
                                                     <button type="button" id="prevBtn" class="btn v3 float-left" onclick="nextPrev(-1)">Return</button>
-                                                    <button type="button" id="nextBtn" class="btn v3 float-right" onclick="nextPrev(1), Prefix(), Hide()">Next</button>
+                                                    <button type="button" id="nextBtn" class="btn v3 float-right" onclick="nextPrev(1), Prefix()">Next</button>
                                                 </div>
                                             </div>
-
-                                            {{form.errors}}
 
                                             
                                             <!-- Circles which indicates the steps of the form: -->
@@ -327,7 +325,9 @@
                                     </div>
                                 </div>
 
-                                                                                         
+                               
+                                {{form.errors}}
+                            
 
                             </div>
                         </div>
