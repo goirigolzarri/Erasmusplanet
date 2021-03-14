@@ -21,6 +21,7 @@
 
 .headerColor {
     background-color: #3699FF !important;
+    padding: 0px 0px !important;
 }
 
 .imgLogo {
@@ -204,6 +205,60 @@ button:hover {
 
 
 /**************************************/
+
+
+/****** ESTILOS DE ANIMACIÓN DEL MENU ******/
+
+.menu {
+    display: flex;
+    justify-content: center;
+}
+
+.menu a span:first-child {
+    display: inline-block;
+    padding: 10px;
+}
+
+.menu a {
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+.menu a span:last-child {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-100%);
+}
+
+.menu a span {
+    transition: transform 0.2s ease-out;
+}
+
+.menu a:hover span:first-child {
+    transform: translateY(100%);
+}
+
+.menu a:hover span:last-child {
+    transform: none;
+}
+
+.menu[data-animation="to-top"] a span:last-child {
+    transform: translateY(100%);
+}
+
+.menu[data-animation="to-top"] a:hover span:first-child {
+    transform: translateY(-100%);
+}
+
+
+/**************/
 
 .margenFormTop {
     margin-top: 1rem !important;

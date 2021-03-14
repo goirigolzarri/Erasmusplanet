@@ -1,4 +1,4 @@
-{%load static%}
+﻿{%load static%}
 {% load i18n %}
 
 <!DOCTYPE html>
@@ -17,7 +17,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/stylesExt.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/plugin.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/plugin.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/switcher/skin-purple.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/switcher/skin-blue.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/dashboard.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/perfect-scrollbar.css' %}">
 
@@ -49,24 +49,23 @@
                                           <ul class="site-menu js-clone-nav d-none d-lg-block menu">
                                               <li>
                                                   <a href="https://www.students.rent/" target="_blank">
-                                                        <span class="hide">
-                                                            Alojamiento
-                                                        </span>
-                                                        <span>
-                                                            <!--<i class="ion-ios-home icofont-2x" aria-hidden="true"></i>-->
-                                                            <img src="{%static 'images/menu/homeIcon.png' %}" width="30" height="30" class="imgResponsive">
-                                                        </span>
+                                                    <span class="hide">
+                                                        Alojamiento
+                                                    </span>
+                                                    <span>
+                                                        <img src="{%static 'images/menu/homeIcon.png' %}" width="30" height="30" class="imgResponsive">
+                                                    </span>
                                                   </a>
                                               </li>
 
                                               <li>
                                                   <a href="https://www.what2do.click/" target="_blank">
-                                                  <span class="hide">
-                                                    Ocio
-                                                  </span>
-                                                  <span>
-                                                    <img src="{%static 'images/menu/ocio.png' %}" width="30" height="30" class="imgResponsive">
-                                                  </span>
+                                                    <span class="hide">
+                                                        Ocio
+                                                    </span>
+                                                    <span>
+                                                        <img src="{%static 'images/menu/ocio.png' %}" width="30" height="30" class="imgResponsive">
+                                                    </span>
                                                   </a>
                                               </li>
                                    <!--           <li>
@@ -90,6 +89,16 @@
                                                         </span>
                                                     </a>
                                               </li>-->
+                                              <li>
+                                                    <a href="#">
+                                                        <span class="hide">
+                                                            Tienda
+                                                        </span>
+                                                        <span>
+                                                            <img src="{%static 'images/menu/tienda.png' %}" width="30" height="30" class="imgResponsive">
+                                                        </span>
+                                                    </a>
+                                              </li>
 
                                               <li class="d-lg-none">
                                                   asd
@@ -142,8 +151,8 @@
               <!--Main Menu ends-->
           </header>
           <!--Hero section starts-->
-          <div class="video-area v1" style="height: 50vh !important;">
-              <div class="video-container" style="height: 55vh !important;">
+          <div class="video-area v1" style="height: 60vh !important;">
+              <div class="video-container" style="height: 60vh !important;">
                   <div class="overlay op-5"></div>
 
 
@@ -263,13 +272,13 @@
 
 
 
-            <div class="jumbotron justify-content-center mar-top-55" style="background-image: url({%static 'images/bg/pattern.png'%}); border-radius: 0px;"> 
+            <div class="jumbotron justify-content-center mar-top-55" style="background: white; border-radius: 0px;"> 
             <!-- -->
                 <div class="item-wrapper">
                     <div class="tab-content">
                         <div id="grid-view" class="tab-pane active  product-grid">
                             <div class="row">
-                                <div class="col-xl-12 col-md-12">
+                                <div class="col-xl-4 col-md-12">
                                     <div class="trending-place-item">
                                         <div class="trending-img">
                                             <img src="{%static 'images/category/places/place-11.jpg'%}" alt="#" style="height: 300px;">
@@ -305,11 +314,10 @@
                                                     <p>www.laresorta.com</p>
                                                 </li>
                                             </ul>
-                                            <div class="trending-bottom mar-top-15 pad-bot-30">
+                                            <div class="trending-bottom mar-top-15 pad-bot-40">
                                                 <div class="trend-left float-left">
                                                     <span class="round-bg pink"><i class="icofont-hotel"></i></span>
                                                     <p><a href="#">Hotel</a></p>
-
                                                 </div>
                                                 <div class="trend-right float-right">
                                                     <div class="trend-open">
@@ -351,7 +359,7 @@
                               <a href="index.html"> <img class="logoEP" src="static/images/EPCircular.png" alt="logo"></a>
                               <div class="company-desc">
                                   <p>
-                                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio excepturi nam totam sequi, ipsam consequatur repudiandae libero illum.
+                                      
                                   </p>
                               </div>
                           </div>
@@ -362,7 +370,6 @@
                               <ul class="list">
                                   <li><a class="link-hov style2" href="#">Login</a></li>
                                   <li><a class="link-hov style2" href="#">My Account</a></li>
-                                  <li><a class="link-hov style2" href="#">Add Listing</a></li>
                                   <li><a class="link-hov style2" href="#">Privacy policy</a></li>
                               </ul>
                           </div>
@@ -372,9 +379,6 @@
                               <h2 class="title">Category</h2>
                               <ul class="list">
                                   <li><a class="link-hov style2" href="#">Shop</a></li>
-                                  <li><a class="link-hov style2" href="#">Travel</a></li>
-                                  <li><a class="link-hov style2" href="#">Sport</a></li>
-                                  <li><a class="link-hov style2" href="#">Restaurant</a></li>
                               </ul>
                           </div>
                       </div>
@@ -382,20 +386,13 @@
                           <div class="footer-content nav">
                               <h2 class="title">Contact us</h2>
                               <ul class="list footer-list">
-                                  <li>
-                                      <div class="contact-info">
-                                          <div class="icon">
-                                              <i class="ion-ios-location"></i>
-                                          </div>
-                                          <div class="text">13th North Ave, Florida, USA</div>
-                                      </div>
-                                  </li>
+                                
                                   <li>
                                       <div class="contact-info">
                                           <div class="icon">
                                               <i class="ion-email"></i>
                                           </div>
-                                          <div class="text"><a href="#">info@listagram.com</a></div>
+                                          <div class="text"><a href="#">info@erasmusplanet.com</a></div>
                                       </div>
                                   </li>
                                   <li>
@@ -403,16 +400,13 @@
                                           <div class="icon">
                                               <i class="ion-ios-telephone"></i>
                                           </div>
-                                          <div class="text">+44 078 767 595</div>
+                                          <div class="text">+34 697 96 26 71</div>
                                       </div>
                                   </li>
                               </ul>
                               <ul class="social-buttons style2">
-                                  <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                                  <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-                                  <li><a href="#"><i class="ion-social-pinterest"></i></a></li>
-                                  <li><a href="#"><i class="ion-social-youtube"></i></a></li>
-                                  <li><a href="#"><i class="ion-social-dribbble"></i></a></li>
+                                  <li><a href="https://www.instagram.com/erasmus.planet/" target="_blank"><i class="ion-social-instagram"></i></a></li>
+                                  
                               </ul>
                           </div>
                       </div>
