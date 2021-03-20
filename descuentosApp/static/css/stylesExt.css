@@ -146,6 +146,19 @@ input {
     border-radius: 5px;
 }
 
+.anchoRegistro {
+    width: 100%;
+}
+
+.alturaInput {
+    height: calc(2.25rem + 2px) !important;
+}
+
+.botonAtras {
+    background-color: #f91942 !important;
+    color: white !important;
+}
+
 
 /* Mark input boxes that gets an error on validation: */
 
