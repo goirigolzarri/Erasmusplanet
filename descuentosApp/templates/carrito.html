@@ -1,4 +1,4 @@
-﻿{%load static%}
+{%load static%}
 {% load i18n %}
 
 <!DOCTYPE html>
@@ -151,197 +151,140 @@
               </div>
               <!--Main Menu ends-->
           </header>
-          <!--Hero section starts-->
-          <div class="video-area v1" style="height: 60vh !important;">
-              <div class="video-container" style="height: 60vh !important;">
-                  <div class="overlay op-5"></div>
-
-
-                  <div id="video-wrapper" style="background-image: url(static/images/header/video-bg.jpg)"></div>
-                  <a class="player" data-property="{videoURL:'https://youtu.be/GDGB68VD5DE'}"></a>
-
-
-                  <div class="container video-content">
-                      <div class="row">
-                          <div class="col-md-12 text-center">
-                              <h1 class="hero-title v2">
-                                  Erasmus Planet
-                              </h1>
-                              <p class="hero-desc v2">
-                                  You can’t imagine, what is waiting for you around your city
-                              </p>
-                          </div>
-                          <div class="col-md-12 text-center mar-top-20">
-                              <form class="hero__form v2 mar-bot-30" autocomplete="off">
-                                  <div class="row">
-                                      <div class="col-lg-10 col-md-10 col-12">
-                                          <input class="hero__form-input custom-select no-border noFlechaInput formularioResponsive" autocomplete="off" name="search" id="search" placeholder="What city or university are you looking for?">
-                                      </div>
-
-                                      <div class="col-lg-2 col-md-2 col-12">
-                                          <div class="submit_btn text-right md-right">
-                                              <button class="btn v3 mar-right-5 botonAzul" type="submit"><i class="ion-ios-search" aria-hidden="true"></i>Look for</button>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </form>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-
-        
-          {% if not query %}
-
-
-         <div class="hero-client-section pad-bot-90 section-padding RESPONSIVE">
-              <div class="container">
-                  <div class="row">
-                      <div class="col-md-8 offset-md-2 text-center">
-                          <h2 class="section-title v1">CITIES</h2>
-                      </div>
-                      <div class="col-md-12 mar-bot-60">
-                          <div class="testimonial-wrapper swiper-container">
-                                <!-- Tarjetas de guias -->
-                                <div class="swiper-wrapper">
-                                {% for guia in guiasTarjetas %}
-                                  <div class="swiper-slide single-testimonial-item">
-                                      <div class="testimonial-img text-center">
-                                          <img src="static/images/clients/client_1.jpg" alt="...">
-                                      </div>
-                                      <div class="testimonial-content text-center">
-                                          <ul class="product-rating">
-                                              <li><i class="ion-android-star"></i></li>
-                                              <li><i class="ion-android-star"></i></li>
-                                              <li><i class="ion-android-star"></i></li>
-                                              <li><i class="ion-android-star-half"></i></li>
-                                              <li><i class="ion-android-star-half"></i></li>
-                                          </ul>
-                                          <h5>{{guia.city}}</h5>
-                                          <span>{{guia.title}}</span>
-                                          <p>{{guia.body | safe}}</p>
-                                      </div>
-                                  </div>
-                                {% endfor %}
-                              </div>
-                              <!-- FIN TARJETA GUIA-->
-                          </div>
-                          <div class="client-pagination"></div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-
-
-           <!--Hero section ends-->
-          {% else %}
-          <br />
          
-
-          <!-- BLOQUE SI NO ENCUENTRA LA CIUDAD INTRODUCIDA -->
-
-            {% if not guides %}
-
-            <!--error  start-->
-        <div class="error-section section-padding mar-top-20 pad-bot-20">
+       <!-- CABECERA CARRITO -->
+        <div class="breadcrumb-section" style="background-image: url(images/breadcrumb/breadcrumb-3.jpg)">
+            <div class="overlay op-5"></div>
             <div class="container">
-                <div class="row">
-                    <div class="col-md-6 offset-md-3  error-text text-center">
-                        <div class="error-content">
-                            <i class="ion-sad-outline"></i>
-                            <h4>Ohh! Page Not Found</h4>
-                            <p>Perhaps searching can help or go back to <a href="#">Homepage</a> </p>
+                <div class="row align-items-center  pad-top-80">
+                    <div class="col-md-6 col-12">
+                        <div class="breadcrumb-menu">
+                            <h2 class="page-title">Booking Info</h2>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <div class="breadcrumb-menu text-right sm-left">
+                            <ul>
+                                <li class="active"><a href="#">Home</a></li>
+                                <li><a href="#">Booking Info</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!--error ends-->
+        <!-- FIN CABECERA CARRITO -->
 
-            {%  else %}
-
-            {%for guide in guides %}
-
-
-            <!-- BLOQUE CUANDO ENCUENTRA LA CIUDAD, CON RESUMEN Y ENLACE A LA GUIA -->
-
-            <!-- -->
-                        
-
-            <!-- -->
-
-
-
-            <div class="jumbotron justify-content-center mar-top-55" style="background: white; border-radius: 0px;"> 
-            <!-- -->
-                <div class="item-wrapper">
-                    <div class="tab-content">
-                        <div id="grid-view" class="tab-pane active  product-grid">
+        <!-- COMIENZO CARRITO  -->
+        <div class="list-details-section section-padding  add_list">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7 col-md-12">
+                        <div class="add_list_content">
+                            <h4> <i class="ion-ios-information-outline"></i> Personal Information :</h4>
                             <div class="row">
-                                <div class="col-xl-4 col-md-12">
-                                    <div class="trending-place-item">
-                                        <div class="trending-img">
-                                            <img src="{%static 'images/category/places/place-11.jpg'%}" alt="#" style="height: 300px;">
-                                            <span class="trending-rating-green">7</span>
-                                            <span class="save-btn"><i class="icofont-heart"></i></span>
-                                        </div>
-                                        <div class="trending-title-box">
-                                            <h4>{{guide.city}}</h4>
-                                            <div class="customer-review">
-                                                <div class="rating-summary float-left">
-                                                    <div class="rating-result" title="60%">
-                                                        <ul class="product-rating">
-                                                            <li><i class="ion-android-star"></i></li>
-                                                            <li><i class="ion-android-star"></i></li>
-                                                            <li><i class="ion-android-star"></i></li>
-                                                            <li><i class="ion-android-star-half"></i></li>
-                                                            <li><i class="ion-android-star-half"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="review-summury float-right">
-                                                    <p><a href="#">3 Reviews</a></p>
-                                                </div>
-                                            </div>
-                                            <ul class="trending-address">
-                                                <li><i class="ion-ios-location"></i>
-                                                    <p>4210 Khale Street,Florence,USA</p>
-                                                </li>
-                                                <li><i class="ion-ios-telephone"></i>
-                                                    <p>+843-600-2040</p>
-                                                </li>
-                                                <li><i class="ion-android-globe"></i>
-                                                    <p>www.laresorta.com</p>
-                                                </li>
-                                            </ul>
-                                            <div class="trending-bottom mar-top-15 pad-bot-40">
-                                                <div class="trend-left float-left">
-                                                    <span class="round-bg pink"><i class="icofont-hotel"></i></span>
-                                                    <p><a href="#">Hotel</a></p>
-                                                </div>
-                                                <div class="trend-right float-right">
-                                                    <div class="trend-open">
-                                                        <a href="{% url 'Guia' guide.pk %}" class="btn v3 botonAzul">Go to Guide</a>
-                                                    </div>
-                                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="fname">First name</label>
+                                        <input id="fname" type="text" class="form-control filter-input">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="lname">Last name</label>
+                                        <input id="lname" type="text" class="form-control filter-input">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="email">Email*</label>
+                                        <input id="email" type="text" class="form-control filter-input">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="phone">Phone*</label>
+                                        <input id="phone" type="text" class="form-control filter-input">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="payment-options">
+                                        <h4> <i class="icofont-pay"></i>Payment Method :</h4>
+                                        <label class="custom-checkbox">
+                                            <input type="radio" name="bank-transfer">
+                                            <span class="sm-heading">Direct Bank Transfer</span>
+                                        </label>
+                                        <div class="alert-general no-border mar-bot-0">
+                                            <div class="alert-text">
+                                                <p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won’t be shipped until the funds have cleared in our account.</p>
                                             </div>
                                         </div>
+                                        <label class="custom-checkbox">
+                                            <input type="radio" name="bank-transfer">
+                                            <span class="sm-heading">Credit card</span>
+                                            <span class="card-options"><img src="images/payment/payment-1.png" alt="..."></span>
+                                            <span class="card-options pad-right-5"><img src="images/payment/payment-2.png" alt="..."></span>
+                                            <span class="card-options pad-right-5"><img src="images/payment/payment-3.png" alt="..."></span>
+
+                                        </label>
+                                        <label class="custom-checkbox">
+                                            <input type="radio" name="bank-transfer">
+                                            <span class="sm-heading">Paypal</span>
+                                            <span class="card-options"><img src="images/payment/payment-2.png" alt="..."></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mar-top-20">
+                                <div class="col-sm-8  text-left">
+                                    <div class="res-box mar-top-10">
+                                        <input type="checkbox" tabindex="3" class="" name="remember" id="remember">
+                                        <label for="remember">I've read and accept <a href="terms.html">terms &amp; conditions</a></label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4  text-right">
+                                    <div class="res-box sm-left">
+                                        <a href="booking-confirmation.html" class="btn v7" type="submit">Confirm &amp; Pay</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="col-lg-5 col-md-12">
+                        <div class="boxed-widget summary">
+                            <h3><i class="icofont-book-alt"></i> Booking Summary</h3>
+                            <ul>
+                                <li>Date <span>10.3.2019</span></li>
+                                <li>Hour <span>5:30 PM</span></li>
+                                <li>Guests <span>2 Adults</span></li>
+                            </ul>
+                            <div class="total_cost clearfix border-top">
+                                <div class="float-left">
+                                    <h4>Subtotal</h4>
+                                </div>
+                                <div class="float-right"><span>$110.00</span></div>
+                            </div>
+                            <div class="coupon-code-wrap">
+                                <form action="#">
+                                    <input placeholder="Have a Coupon ? enter here. . . .">
+                                    <input type="submit" class="coupon_code" value="Apply">
+                                </form>
+                            </div>
+                            <div class="total_cost clearfix mar-top-40 border-top">
+                                <div class="float-left">
+                                    <h4>Total</h4>
+                                </div>
+                                <div class="float-right"><span>$110.00</span></div>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
-            <!-- -->
-            
             </div>
+        </div>
+        <!-- FIN CARRITO -->
 
-            <!-- -->
 
-          {% endfor %}
-          {% endif %}
-        {% endif %}
 
           <!-- Scroll to top starts-->
           <span class="scrolltotop"><i class="ion-arrow-up-c"></i></span>

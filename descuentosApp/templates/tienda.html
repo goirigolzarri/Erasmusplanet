@@ -1,0 +1,454 @@
+{%load static%}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <title>Erasmus Planet</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/stylesExt.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/plugin.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/plugin.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/switcher/skin-blue.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/dashboard.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/perfect-scrollbar.css' %}">
+
+    <link rel="icon" type="image/png" href="{%static 'images/EPCircular.ico'%}" with="32" height="32">
+
+</head>
+
+  <body>
+
+      <div class="preloader js-preloader">
+          <img src="static/images/EPCircular.gif" alt="..." class="logoEPGif">
+      </div>
+      <!--Preloader ends-->
+      <!--Page Wrapper starts-->
+      <div class="page-wrapper fixed-footer">
+          <!--header starts-->
+          <header class="header transparent scroll-hide">
+              <!--Main Menu starts-->
+              <div class="site-navbar-wrap v1 headerColor">
+                  <div class="container">
+                      <div class="site-navbar">
+                          <div class="row align-items-center">
+                              <div class="col-xl-3 col-md-3 col-6">
+                                  <a class="navbar-brand logoEP" href="{% url 'base' %}"><img src="{%static 'images/EPCircularBlanco.png' %}" alt="logo" class="img-fluid"></a>
+                              </div>
+                              <div class="col-xl-9 col-md-9 col-6">
+                                  <nav class="site-navigation float-left">
+                                      <div class="container">
+                                          <ul class="site-menu js-clone-nav d-none d-lg-block menu">
+                                              <li>
+                                                  <a href="https://www.students.rent/" target="_blank">
+                                                    <span class="hide">
+                                                        Alojamiento
+                                                    </span>
+                                                    <span>
+                                                        <img src="{%static 'images/menu/homeIcon.png' %}" width="30" height="30" class="imgResponsive">
+                                                    </span>
+                                                  </a>
+                                              </li>
+
+                                              <li>
+                                                  <a href="https://www.what2do.click/" target="_blank">
+                                                    <span class="hide">
+                                                        Ocio
+                                                    </span>
+                                                    <span>
+                                                        <img src="{%static 'images/menu/ocio.png' %}" width="30" height="30" class="imgResponsive">
+                                                    </span>
+                                                  </a>
+                                              </li>
+                                   <!--           <li>
+                                                    <a href="#">
+                                                        <span class="hide">
+                                                        Red Social
+                                                        </span>
+                                                        <span>
+                                                            <img src="{%static 'images/menu/redSocial.png' %}" width="30" height="30" class="imgResponsive">
+                                                        </span>
+                                                    </a>
+                                              </li>-->
+                                              
+                                          <!--    <li>
+                                                    <a href="{% url 'Descuentos' %}">
+                                                        <span class="hide">
+                                                            Descuentos
+                                                        </span>
+                                                        <span>
+                                                            <img src="{%static 'images/menu/discount.png' %}" width="30" height="30" class="imgResponsive">
+                                                        </span>
+                                                    </a>
+                                              </li>-->
+                                              <li>
+                                                    <a href="#">
+                                                        <span class="hide">
+                                                            Tienda
+                                                        </span>
+                                                        <span>
+                                                            <img src="{%static 'images/menu/tienda.png' %}" width="30" height="30" class="imgResponsive">
+                                                        </span>
+                                                    </a>
+                                              </li>
+
+                                              <li class="d-lg-none">
+                                                  
+                                              </li>
+                                          </ul>
+                                      </div>
+                                  </nav>
+
+                                  <!-- ICONO MENÚ RESPONSIVE -->
+                                <div class="d-lg-none sm-right">
+                                      <a href="#" class="mobile-bar js-menu-toggle">
+                                          <span class="ion-android-menu"></span>
+                                      </a>
+                                  </div>
+                                  
+                                  {% if user.is_authenticated %}
+
+                                  <div class="add-list float-right">
+                                      <a class="btn v3 botonAzul botonAcceso" href="#">Mi perfil</a>
+                                      <a class="btn v3 botonAzul botonAcceso" href="{% url 'logout' %}">Log out</a>
+                                  </div>
+
+                                  {%if user.is_superuser %}
+                                  <div class="add-list float-right">
+                                      <a class="btn v3 botonAzul botonAcceso" href="{% url 'Admin' %}">Admin</a>
+                                  </div>
+
+                                  {% endif %}
+                                  {%else%} 
+
+                                  <div class="add-list float-right">
+                                      <a class="btn v3 botonAzul botonAcceso" href="{% url 'login' %}">Log in</a>
+                                  </div>
+
+                                  {% endif %}
+                              </div>
+                          </div>
+                      </div>
+                      <!--mobile-menu starts -->
+                      <div class="site-mobile-menu">
+                          <div class="site-mobile-menu-header">
+                              <div class="site-mobile-menu-close  js-menu-toggle">
+                                  <span class="ion-ios-close-empty"></span>
+                              </div>
+                          </div>
+                          <div class="site-mobile-menu-body"></div>
+                      </div>
+                      <!--mobile-menu ends-->
+                  </div>
+              </div>
+              <!--Main Menu ends-->
+          </header>
+         
+        <!-- CABECERA TIENDA -->
+        
+        <div class="breadcrumb-section" style="background-image: url(images/breadcrumb/breadcrumb-8.jpg)">
+            <div class="overlay op-5"></div>
+            <div class="container">
+                <div class="row align-items-center  pad-top-80">
+                    <div class="col-md-6 col-12">
+                        <div class="breadcrumb-menu">
+                            <h2 class="page-title">News Left sidebar</h2>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <div class="breadcrumb-menu text-right sm-left">
+                            <ul>
+                                <li class="active"><a href="#">Home</a></li>
+                                <li><a href="#">News</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FIN CABECERA TIENDA-->
+        
+        <!-- INICIO TIENDA -->
+        <div class="blog-area section-padding pad-bot-40 mar-top-20">
+            <div class="container">
+                <div class="row">
+                    <!-- left Sidebar starts-->
+                    <div class="col-xl-3 col-md-12 sidebar">
+                        <div class="widget search">
+                            <form>
+                                <input type="text" class="form-control" placeholder="Search">
+                                <button type="submit" class="search-button"><i class="ion-ios-search"></i></button>
+                            </form>
+                        </div>
+                        
+                        <!-- Tags -->
+                        <div class="widget">
+                            <h3 class="widget-title">Tags</h3>
+                            <ul class="list-tags">
+                                <li><a href="#" class="btn v6 dark">Hotel</a></li>
+                                <li><a href="#" class="btn v6 dark">Travel</a></li>
+                                <li><a href="#" class="btn v6 dark">Living</a></li>
+                                <li><a href="#" class="btn v6 dark">Eat &amp; Drink</a></li>
+                                <li><a href="#" class="btn v6 dark">Luxury</a></li>
+                                <li><a href="#" class="btn v6 dark">Food</a></li>
+                                <li><a href="#" class="btn v6 dark">Restaurant</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- left Sidebar ends -->
+                    <!--Blog post starts-->
+                    <div class="col-xl-9 col-md-12 no-pad-lr">
+                        <div class="blog-section style1">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <a href="grid-fullwidth.html">
+                                            <div class="popular-catagory-content v2">
+                                                <div class="popular-catagory-img">
+                                                    <img src="images/category/cat_5.jpg" alt="..." class="img_fluid">
+                                                    <div class="overlay op-5"></div>
+                                                </div>
+                                                <div class="cat-content">
+                                                    <i class="icofont-travelling"></i>
+                                                    <h4 class="title">Tours &amp; Travels</h4>
+                                                    <span>34 Listings</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="card single-blog-item v1 mar-bot-30">
+                                            <img src="images/blog/news_7.jpg" alt="...">
+                                            <a href="#" class="blog-cat btn v6 red">Hotel</a>
+                                            <div class="card-body">
+                                                <h4 class="card-title"><a href="single-news-one.html">Top 10 Homestay in London That you don't miss out</a></h4>
+                                                <div class="bottom-content">
+                                                    <p class="date">Dec 5th , 2018 by <a href="#" class="text-dark">Adam D'Costa</a></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="card single-blog-item v1 mar-bot-30">
+                                            <img src="images/blog/news_9.jpg" alt="...">
+                                            <a href="#" class="blog-cat btn v6 red">Travel</a>
+                                            <div class="card-body">
+                                                <h4 class="card-title"><a href="single-news-one.html">Top 50 Greatest Street Arts in Paris</a></h4>
+                                                <div class="bottom-content">
+                                                    <p class="date">Dec 5th , 2018 by <a href="#" class="text-dark">Adam D'Costa</a></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="card single-blog-item v1 mar-bot-30">
+                                            <img src="images/blog/news_13.jpg" alt="...">
+                                            <a href="#" class="blog-cat btn v6 red">Hotel</a>
+                                            <div class="card-body">
+                                                <h4 class="card-title"><a href="single-news-one.html">The world’s most beautiful floral hotels</a></h4>
+                                                <div class="bottom-content">
+                                                    <p class="date">Dec 5th , 2018 by <a href="#" class="text-dark">Adam D'Costa</a></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="card single-blog-item v1 mar-bot-30">
+                                            <img src="images/blog/news_10.jpg" alt="...">
+                                            <a href="#" class="blog-cat btn v6 red">Eat &amp; Drink</a>
+                                            <div class="card-body">
+                                                <h4 class="card-title"><a href="single-news-one.html">Upcoming Fairway Food Festival 2019 in Italy</a></h4>
+                                                <div class="bottom-content">
+                                                    <p class="date">Dec 5th , 2018 by <a href="#" class="text-dark">Adam D'Costa</a></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="card single-blog-item v1 mar-bot-30">
+                                            <img src="images/blog/news_12.jpg" alt="...">
+                                            <a href="#" class="blog-cat btn v6 red">Travel</a>
+                                            <div class="card-body">
+                                                <h4 class="card-title"><a href="single-news-one.html">Beauty of Singapore through the eyes of Kalyra</a></h4>
+                                                <div class="bottom-content">
+                                                    <p class="date">Mar 12th , 2019 by <a href="#" class="text-dark">Adam D'Costa</a></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--pagination starts-->
+                                <div class="post-nav nav-res pad-top-20 pad-bot-60">
+                                    <div class="row">
+                                        <div class="col-md-8 offset-md-2  col-xs-12 ">
+                                            <div class="page-num text-center">
+                                                <ul>
+                                                    <li class="active"><a href="#">1</a></li>
+                                                    <li><a href="#">2</a></li>
+                                                    <li><a href="#">3</a></li>
+                                                    <li><a href="#">4</a></li>
+                                                    <li><a href="#"><i class="ion-ios-arrow-right"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--pagination ends-->
+                            </div>
+                        </div>
+                    </div>
+                    <!--Blog post ends-->
+                </div>
+            </div>
+        </div>
+        <!-- FIN TIENDA -->
+
+          <!-- Scroll to top starts-->
+          <span class="scrolltotop"><i class="ion-arrow-up-c"></i></span>
+          <!-- Scroll to top ends-->
+      </div>
+      <!--Page Wrapper ends-->
+     
+      <!--Footer Starts-->
+      <div class="footer-wrapper no-pad-tb footer-fixed v1">
+          <div class="overlay op-1"></div>
+          <div class="footer-top-area section-padding">
+              <div class="container">
+                  <div class="row nav-folderized">
+                      <div class="col-lg-3 col-md-12">
+                          <div class="footer-logo">
+                              <a href="index.html"> <img class="logoEP" src="static/images/EPCircular.png" alt="logo"></a>
+                              <div class="company-desc">
+                                  <p>
+                                      
+                                  </p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-lg-3 col-md-12">
+                          <div class="footer-content nav">
+                              <h2 class="title">Helpful Links</h2>
+                              <ul class="list">
+                                  <li><a class="link-hov style2" href="#">Login</a></li>
+                                  <li><a class="link-hov style2" href="#">My Account</a></li>
+                                  <li><a class="link-hov style2" href="#">Privacy policy</a></li>
+                              </ul>
+                          </div>
+                      </div>
+                      <div class="col-lg-3 col-md-12">
+                          <div class="footer-content nav">
+                              <h2 class="title">Category</h2>
+                              <ul class="list">
+                                  <li><a class="link-hov style2" href="#">Shop</a></li>
+                              </ul>
+                          </div>
+                      </div>
+                      <div class="col-lg-3 col-md-12">
+                          <div class="footer-content nav">
+                              <h2 class="title">Contact us</h2>
+                              <ul class="list footer-list">
+                                
+                                  <li>
+                                      <div class="contact-info">
+                                          <div class="icon">
+                                              <i class="ion-email"></i>
+                                          </div>
+                                          <div class="text"><a href="#">info@erasmusplanet.com</a></div>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <div class="contact-info">
+                                          <div class="icon">
+                                              <i class="ion-ios-telephone"></i>
+                                          </div>
+                                          <div class="text">+34 697 96 26 71</div>
+                                      </div>
+                                  </li>
+                              </ul>
+                              <ul class="social-buttons style2">
+                                  <li><a href="https://www.instagram.com/erasmus.planet/" target="_blank"><i class="ion-social-instagram"></i></a></li>
+                                  
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="footer-bottom-area">
+              <div class="container">
+                  <div class="row">
+                      <div class="col-md-8 offset-md-2 text-center">
+                          <p>&copy; 2020 Erasmus Planet. Todos los derechos reservados.</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!--Footer ends-->
+      <!-- VENTANA MODAL DE DESCUENTOS -->
+
+      <div class="modal fade" id="coupon_wrap">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h4 class="modal-title" id="myModalLabel">Get a Coupon</h4>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="ion-ios-close-empty"></i></span></button>
+                  </div>
+                  <div class="modal-body">
+                      <div class="modal-coupon-code">
+                          <div class="store-content">
+                              <div class="text">
+                                  Stores :
+                                  <span> La Poma ,</span>
+                                  <span>Gucci</span>
+                              </div>
+                              <div class="store-content">Cashback : <span>25% cashback </span></div>
+                              <div class="store-content">Valid till : <span>25-5-2019 </span></div>
+                              <div class="cashback-text">
+                                  <p>Cashback will be added in your wallet in next 5 Minute of your purchase.</p>
+                              </div>
+                          </div>
+                          <div class="coupon-code"
+                                <h5>
+                                    Coupon Code: <span class="coupon-code-wrapper">
+
+                                        12345
+                                    </span>
+                                </h5>
+                            </div>
+                      </div>
+                  </div>
+                  <div class="coupon-bottom">
+                      <div class="float-left"><a href="single-listing-one.html" class="btn v1">Go to Deal</a></div>
+                      <button type="button" class="btn v1 float-right" data-dismiss="modal">Close</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+
+
+      <!---->
+      <!--<script src="https://kit.fontawesome.com/yourcode.js"></script>-->
+      <!--plugin js-->
+      <script src="static/js/plugin.js"></script>
+      <!--google maps-->
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_8C7p0Ws2gUu7wo0b6pK9Qu7LuzX2iWY&amp;libraries=places&amp;callback=initAutocomplete"></script>
+      <!--Main js-->
+      <script src="static/js/main.js"></script>
+      <script type="text/javascript" src="static/js/autocomplete.js"></script>
+
+
+  </body>
+
+    
+ </html>
