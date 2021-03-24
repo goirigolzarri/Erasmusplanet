@@ -1,10 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.views.generic.edit import DeleteView
 from .models import Guide, City
 from django.urls import reverse
 from django.urls import reverse_lazy
-from django.views.generic import DetailView, ListView, CreateView
+from django.views.generic import DetailView, ListView, CreateView, UpdateView
 from django.db.models import Q
+from .forms import AñadirGuia, EditarGuia
 
 
 # Create your views here.
@@ -68,11 +70,24 @@ def AdminSite(request):
     return render(request, 'admin.html', context)
 
 class AddGuide(CreateView):
-    model = Guide
-    template_name = 'add_guide.html'
-    fields = '__all__'
-    success_url = reverse_lazy('Admin')
+	model = Guide
+	form_class = AñadirGuia
+	template_name = 'add_guide.html'
 
+	success_url = reverse_lazy('Admin')
+
+class EditGuide(UpdateView):
+	model = Guide
+	form_class = EditarGuia
+	template_name = 'edit_guide.html'
+
+	success_url = reverse_lazy('Admin')
+
+class DeleteGuide(DeleteView):
+
+	model = Guide
+	template_name = 'delete_guide.html'
+	success_url = reverse_lazy('Admin')
 
 
 
@@ -80,3 +95,16 @@ class Guia(DetailView):
     
 	model = Guide
 	template_name = 'guia.html'
+
+
+
+def UserProfile(request):
+
+    return render(request, 'userProfile.html')
+
+
+
+
+def Tienda(request):
+
+    return render(request, 'tienda.html')
