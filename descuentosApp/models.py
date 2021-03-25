@@ -63,8 +63,10 @@ class Guide(models.Model):
 
 	city = models.ForeignKey(City, on_delete=models.CASCADE)
 	title = models.CharField(max_length=50, default='')
+	imagen_informacion_general = models.ImageField(null=True, blank=True, upload_to="images/")
 	informacion_general = RichTextField(blank=True)
 	como_llegar = RichTextField(blank=True)
+	comida = RichTextField(blank=True, default = '')
 	alojamiento = RichTextField(blank=True)
 	ocio = RichTextField(blank=True)
 	divisas = RichTextField(blank=True)

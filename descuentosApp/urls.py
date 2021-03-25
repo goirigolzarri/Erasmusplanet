@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from django.contrib.auth.decorators import login_required
 
 
 urlpatterns = [
@@ -11,6 +12,9 @@ urlpatterns = [
     path('adminsite/', views.AdminSite, name='Admin'), 
     path('adminsite/addguide', views.AddGuide.as_view(), name='AddGuide'), 
 	path('guia/<int:pk>', views.Guia.as_view(), name='Guia'),
-    
+	path('adminsite/editguide/<int:pk>', views.EditGuide.as_view(), name='EditGuide'),
+    path('adminsite/deleteguide/<int:pk>', login_required(views.DeleteGuide.as_view()), name='DeleteGuide'),
+    path('userprofile/', views.UserProfile, name='UserProfile'), 
+    path('tienda/', views.Tienda, name='Tienda'),
 
 ]
