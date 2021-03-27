@@ -5,142 +5,116 @@
 {%load static%}
 
 {% load i18n %}
-        
-<!-- CABECERA CARRITO -->
-<div class="breadcrumb-section" style="background-image: url(images/breadcrumb/breadcrumb-3.jpg)">
-    <div class="overlay op-5"></div>
-    <div class="container">
-        <div class="row align-items-center  pad-top-80">
-            <div class="col-md-6 col-12">
-                <div class="breadcrumb-menu">
-                    <h2 class="page-title">Booking Info</h2>
-                </div>
-            </div>
-            <div class="col-md-6 col-12">
-                <div class="breadcrumb-menu text-right sm-left">
-                    <ul>
-                        <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#">Booking Info</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- FIN CABECERA CARRITO -->
 
-<!-- COMIENZO CARRITO  -->
-<div class="list-details-section section-padding  add_list">
+<!--Invoice starts-->
+<div class="payment_receipt section-padding bg-grey mar-top-60">
     <div class="container">
         <div class="row">
-            <div class="col-lg-7 col-md-12">
-                <div class="add_list_content">
-                    <h4> <i class="ion-ios-information-outline"></i> Personal Information :</h4>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="fname">First name</label>
-                                <input id="fname" type="text" class="form-control filter-input">
-                            </div>
+            <div class="col-lg-10 offset-lg-1">
+                <div class="payment_receipt--wrapper">
+                    <div class="payment_receipt--contents">
+                        <h2 class="atbd_thank_you">Thank you for your order!</h2>
+                        <div class="atbd_payment_instructions">
+                            <p>Please make your payment directly to our bank account
+                                and use your ORDER ID (#103) as a Reference. Our bank account information is given
+                                below.</p>
+                            <h4>Account details:</h4>
+                            <ul class="list-unstyled">
+                                <li>Account Name: <span>listagram Inc.</span></li>
+                                <li>Account Number: <span>000-333-880-55</span></li>
+                                <li>Bank Name: <span>State Bank, Neverland</span></li>
+                            </ul>
+                            <p>Please remember that your order may be canceled if you do not make your payment within next 48 hours.</p>
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="lname">Last name</label>
-                                <input id="lname" type="text" class="form-control filter-input">
+                        <div class="row atbd_payment_summary_wrapper">
+                            <div class="col-md-12">
+                                <p class="atbd_payment_summary">Here is your order summery:</p>
                             </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="email">Email*</label>
-                                <input id="email" type="text" class="form-control filter-input">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="phone">Phone*</label>
-                                <input id="phone" type="text" class="form-control filter-input">
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="payment-options">
-                                <h4> <i class="icofont-pay"></i>Payment Method :</h4>
-                                <label class="custom-checkbox">
-                                    <input type="radio" name="bank-transfer">
-                                    <span class="sm-heading">Direct Bank Transfer</span>
-                                </label>
-                                <div class="alert-general no-border mar-bot-0">
-                                    <div class="alert-text">
-                                        <p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won’t be shipped until the funds have cleared in our account.</p>
-                                    </div>
+                            <div class="col-lg-6">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered">
+                                        <tbody>
+                                            <tr>
+                                                <td>ORDER #</td>
+                                                <td>103</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Total Amount</td>
+                                                <td>$ 110.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Date</td>
+                                                <td>Feb 9, 2019 9:17 pm</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
-                                <label class="custom-checkbox">
-                                    <input type="radio" name="bank-transfer">
-                                    <span class="sm-heading">Credit card</span>
-                                    <span class="card-options"><img src="images/payment/payment-1.png" alt="..."></span>
-                                    <span class="card-options pad-right-5"><img src="images/payment/payment-2.png" alt="..."></span>
-                                    <span class="card-options pad-right-5"><img src="images/payment/payment-3.png" alt="..."></span>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered">
+                                        <tbody>
+                                            <tr>
+                                                <td>Payment Method</td>
+                                                <td>Bank Transfer</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Payment Status</td>
+                                                <td>Created</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Transaction ID</td>
+                                                <td>#CD1234</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
 
-                                </label>
-                                <label class="custom-checkbox">
-                                    <input type="radio" name="bank-transfer">
-                                    <span class="sm-heading">Paypal</span>
-                                    <span class="card-options"><img src="images/payment/payment-2.png" alt="..."></span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mar-top-20">
-                        <div class="col-sm-8  text-left">
-                            <div class="res-box mar-top-10">
-                                <input type="checkbox" tabindex="3" class="" name="remember" id="remember">
-                                <label for="remember">I've read and accept <a href="terms.html">terms &amp; conditions</a></label>
-                            </div>
-                        </div>
-                        <div class="col-sm-4  text-right">
-                            <div class="res-box sm-left">
-                                <a href="booking-confirmation.html" class="btn v7" type="submit">Confirm &amp; Pay</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-5 col-md-12">
-                <div class="boxed-widget summary">
-                    <h3><i class="icofont-book-alt"></i> Booking Summary</h3>
-                    <ul>
-                        <li>Date <span>10.3.2019</span></li>
-                        <li>Hour <span>5:30 PM</span></li>
-                        <li>Guests <span>2 Adults</span></li>
-                    </ul>
-                    <div class="total_cost clearfix border-top">
-                        <div class="float-left">
-                            <h4>Subtotal</h4>
-                        </div>
-                        <div class="float-right"><span>$110.00</span></div>
-                    </div>
-                    <div class="coupon-code-wrap">
-                        <form action="#">
-                            <input placeholder="Have a Coupon ? enter here. . . .">
-                            <input type="submit" class="coupon_code" value="Apply">
-                        </form>
-                    </div>
-                    <div class="total_cost clearfix mar-top-40 border-top">
-                        <div class="float-left">
-                            <h4>Total</h4>
-                        </div>
-                        <div class="float-right"><span>$110.00</span></div>
-                    </div>
+                        <p class="atbd_payment_summary">Ordered Item(s)</p>
+                        <div class="checkout-table table-responsive">
+                            <table id="directorist-checkout-table" class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th colspan="2">Details</th>
+                                        <th><strong>Price</strong></th>
+                                    </tr>
+                                </thead>
 
+                                <tbody>
+                                    <tr>
+                                        <td colspan="2">
+                                            <h4>Standard Pass</h4>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo,
+                                                labore.</p>
+                                        </td>
+                                        <td>
+                                            $110.00
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" class="text-right">
+                                            <strong>Total amount</strong>
+                                        </td>
+                                        <td class="">
+                                            <div id="atbdp_checkout_total_amount">$110.00</div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="text-center mar-top-20"><a href="" class="btn v3">Print this invoice</a></div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- FIN CARRITO -->
-
+<!--Invoice ends-->
 <!-- Scroll to top starts-->
 <span class="scrolltotop"><i class="ion-arrow-up-c"></i></span>
 <!-- Scroll to top ends-->
-
+ 
 {% endblock %}
-      
+
