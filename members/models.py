@@ -1,4 +1,6 @@
 from django.db import models
+from django.db.models.fields import NullBooleanField
+from django.urls.base import reverse
 
 from descuentosApp.models import Country, Province, City, University, Guide
 
@@ -22,8 +24,37 @@ class User(AbstractUser):
     cityDestination1 =  models.CharField(max_length=50, null=False)
     cityDestination2 =  models.CharField(max_length=50, blank=True)
     cityDestination3 =  models.CharField(max_length=50, blank=True)
-    universityOrigin =  models.CharField(max_length=50, blank=True)
-    universityDestination =  models.CharField(max_length=50, blank=True)
-    studies =  models.CharField(max_length=50, blank=True)
-    course =  models.CharField(max_length=50, blank=True)
-    company = models.CharField(max_length=50, blank=True)
+    universityOrigin =  models.CharField(max_length=50,null= True, blank=True)
+    universityDestination =  models.CharField(max_length=50, null=True, blank=True)
+    studies =  models.CharField(max_length=50, null=True, blank=True)
+    course =  models.CharField(max_length=50, null= True, blank=True)
+    company = models.CharField(max_length=50,null= True, blank=True)
+
+
+    def get_absolute_url(self):
+    #return reverse('article-detail', args=(str(self.id)))
+     return reverse('base')
+
+    # def studenttypefunction(self):
+    #     if self.studentType == 1:
+    #         self.company = ''
+
+    #     if self.studentType == 2:
+    #         self.universityOrigin = ''
+    #         self.universityDestination = ''
+    #         self.course = ''
+    #         self.studies = ''
+    #         self.company = ''
+            
+    #     if self.studentType == 3:
+    #         self.course = ''
+    #         self.company = ''
+        
+    #     if self.studentType == 2:
+    #         self.universityOrigin = ''
+    #         self.universityDestination = ''
+    #         self.course = ''
+    #         self.studies = ''
+        
+    #     self.save()
+

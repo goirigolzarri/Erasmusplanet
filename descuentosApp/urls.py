@@ -14,7 +14,8 @@ urlpatterns = [
 	path('guia/<int:pk>', views.Guia.as_view(), name='Guia'),
 	path('adminsite/editguide/<int:pk>', views.EditGuide.as_view(), name='EditGuide'),
     path('adminsite/deleteguide/<int:pk>', login_required(views.DeleteGuide.as_view()), name='DeleteGuide'),
-    path('userprofile/', views.UserProfile, name='UserProfile'), 
+    
     path('tienda/', views.Tienda, name='Tienda'),
+	path('carrito/', views.Carrito, name='Carrito'),
 
 ]
