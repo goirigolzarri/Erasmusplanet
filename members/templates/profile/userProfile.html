@@ -28,14 +28,14 @@
                                 </div>
                                 <div class="profile-wrap">
                                     <div class="row">
-                                        <div class="col-md-8 offset-md-2 py-4">
-                                            <div class="edit-profile-photo text-center">
+                                        <div class="col-md-8 offset-md-2">
+                                            <div class="edit-profile-photo text-center mt-3">
                                                 <img src="{%static 'images/clients/reviewer-4.png'%}" alt="">
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="my-profile">
-                                                <ul class="db-profile-info">
+                                                <ul class="db-profile-info float-left">
                                                     <li>
                                                         <h6>Username :</h6>
                                                         <span>{{user.username}} </span>
@@ -51,7 +51,10 @@
                                                     <li>
                                                         <h6>Email Id :</h6>
                                                         <span> {{user.email}}</span>
-                                                    </li>
+                                                    </li>                                                   
+                                                </ul>
+
+                                                <ul class="db-profile-info float-right">   
                                                     <li>
                                                         <h6>Country :</h6>
                                                         <span> {{user.country}}</span>
@@ -67,16 +70,10 @@
                                                         <span> {{user.get_studentType_display}}</span>
                                                     </li>
                                                     <li>
-                                                        <h6>Social Profile :</h6>
-                                                        <ul class="social-profile">
-                                                            <li class="bg-fb"><a href="https://www.facebook.com"><i class="ion-social-facebook"></i></a></li>
-                                                            <li class="bg-tt"><a href="https://www.twitter.com"><i class="ion-social-twitter"></i></a></li>
-                                                            <li class="bg-ig"><a href="https://www.instagram.com"><i class="ion-social-instagram"></i></a></li>
-                                                        </ul>
+                                                        <a href="{% url 'EditUserProfile'%}" class="btn v3">Edit profile</a>
                                                     </li>
-
                                                 </ul>
-                                                <a href="{% url 'EditUserProfile'%}" class="btn v5">Edit profile</a>
+                                                
                                             </div>
                                         </div>
                                     </div>
