@@ -1,12 +1,17 @@
 function recogeID(clickID){ 
 
     document.getElementById("id_studentType").value = clickID;
+   
 
     if (clickID == 1) {
         // NOT Displayed   
         document.getElementById("companyDiv").style.display = "none";
         // NOT Required
+        if( document.getElementById('id_company').value != null ){
+            document.getElementById('id_company').value= '' ;
+        }
         document.getElementById("id_company").removeAttribute("required");
+        
         // DISPLAYED
         document.getElementById("studiesDiv").style.display = "";
         // REQUIRED
@@ -28,33 +33,62 @@ function recogeID(clickID){
     if (clickID == 2) {
         document.getElementById("companyDiv").style.display = "none";
         // NOT Required
+        if( document.getElementById('id_company').value != null ){
+            document.getElementById('id_company').value= '' ;
+        }
         document.getElementById("id_company").removeAttribute("required");
+        
         // NOT Displayed   
-        document.getElementById("studiesDiv").style.display = "none";
+        document.getElementById("studiesDiv").style.display = "none";  
         // NOT Required
+        if( document.getElementById('id_studies').value != null ){
+            document.getElementById('id_studies').value= '' ;
+        }
         document.getElementById("id_studies").removeAttribute("required");
+        
         // NOT Displayed   
         document.getElementById("courseDiv").style.display = "none";
         // NOT Required
+        if( document.getElementById('id_course').value != null ){
+            document.getElementById('id_course').value= '' ;
+        }
         document.getElementById("id_course").removeAttribute("required");
+        
         // NOT Displayed   
         document.getElementById("universityOriginDiv").style.display = "none";
         // NOT Required
+        if( document.getElementById('id_universityOrigin').value != null ){
+            document.getElementById('id_universityOrigin').value= '' ;
+        }
         document.getElementById("id_universityOrigin").removeAttribute("required");
+        
+        
         // NOT Displayed   
         document.getElementById("universityDestinationDiv").style.display = "none";
         // NOT Required
+        if( document.getElementById('id_universityDestination').value != null ){
+            document.getElementById('id_universityDestination').value= '' ;
+        }
         document.getElementById("id_universityDestination").removeAttribute("required");
+        
     }
     if (clickID == 3) {
         // NOT Displayed   
         document.getElementById("companyDiv").style.display = "none";
         // NOT Required
+        if( document.getElementById('id_company').value != null ){
+            document.getElementById('id_company').value= '' ;
+        }
         document.getElementById("id_company").removeAttribute("required");
+        
         // NOT Displayed   
         document.getElementById("courseDiv").style.display = "none";
         // NOT Required
+        if( document.getElementById('id_course').value != null ){
+            document.getElementById('id_course').value= '' ;
+        }
         document.getElementById("id_course").removeAttribute("required");
+        
         // DISPLAYED
         document.getElementById("studiesDiv").style.display = "";
         // REQUIRED
@@ -72,22 +106,39 @@ function recogeID(clickID){
         document.getElementById("companyDiv").style.display = "";
         // REQUIRED
         document.getElementById("id_company").setAttribute("required", "");
+
         // NOT Displayed  
         document.getElementById("courseDiv").style.display = "none";
         // NOT Required
+        if( document.getElementById('id_course').value != null ){
+            document.getElementById('id_course').value= '' ;
+        }
         document.getElementById("id_course").removeAttribute("required");
+        
         // NOT Displayed  
         document.getElementById("studiesDiv").style.display = "none";
         // NOT Required
+        if( document.getElementById('id_studies').value != null ){
+            document.getElementById('id_studies').value= '' ;
+        }
         document.getElementById("id_studies").removeAttribute("required");
+        
         // NOT Displayed  
         document.getElementById("universityOriginDiv").style.display = "none";
         // NOT Required
+        if( document.getElementById('id_universityOrigin').value != null ){
+            document.getElementById('id_universityOrigin').value= '' ;
+        }
         document.getElementById("id_universityOrigin").removeAttribute("required");
+        
         // NOT Displayed  
         document.getElementById("universityDestinationDiv").style.display = "none";
         // NOT Required
+        if( document.getElementById('id_universityDestination').value != null ){
+            document.getElementById('id_universityDestination').value= '' ;
+        }
         document.getElementById("id_universityDestination").removeAttribute("required");
+        
     }
 }
 

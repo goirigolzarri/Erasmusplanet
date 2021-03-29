@@ -9,19 +9,23 @@
 <!-- CABECERA TIENDA -->
 
 <div class="breadcrumb-section" style="background-image: url(images/breadcrumb/breadcrumb-8.jpg)">
-    <div class="overlay op-5"></div>
+    <div class="overlay op-4"></div>
     <div class="container">
-        <div class="row align-items-center  pad-top-80">
-            <div class="col-md-6 col-12">
+        <div class="row align-items-center pad-top-80">
+            <div class="col-md-6 col-6">
                 <div class="breadcrumb-menu">
-                    <h2 class="page-title">News Left sidebar</h2>
+                    <h2 class="page-title">Shop</h2>
                 </div>
             </div>
-            <div class="col-md-6 col-12">
+            <div class="col-md-6 col-6">
                 <div class="breadcrumb-menu text-right sm-left">
                     <ul>
-                        <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#">News</a></li>
+                        
+                        <a class="btn v3 botonAzul botonAcceso" href="{% url 'Carrito' %}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                        </svg>  Shopping cart</a>
+                        
+                        
                     </ul>
                 </div>
             </div>
@@ -45,17 +49,12 @@
                     </form>
                 </div>
                 
-                <!-- Tags -->
+            <!--    <!-- Tags -->
                 <div class="widget">
-                    <h3 class="widget-title">Tags</h3>
+                    <h3 class="widget-title">Category</h3>
                     <ul class="list-tags">
-                        <li><a href="#" class="btn v6 dark">Hotel</a></li>
-                        <li><a href="#" class="btn v6 dark">Travel</a></li>
-                        <li><a href="#" class="btn v6 dark">Living</a></li>
-                        <li><a href="#" class="btn v6 dark">Eat &amp; Drink</a></li>
-                        <li><a href="#" class="btn v6 dark">Luxury</a></li>
-                        <li><a href="#" class="btn v6 dark">Food</a></li>
-                        <li><a href="#" class="btn v6 dark">Restaurant</a></li>
+                        <li><a href="#" class="btn v6 dark">Clothing</a></li>
+                       
                     </ul>
                 </div>
             </div>
@@ -68,11 +67,11 @@
                             <div class="col-md-6">
                                 <div class="card single-blog-item v1 mar-bot-30">
                                     <img src="{%static 'images/blog/news_7.jpg'%}" alt="...">
-                                    <a href="#" class="blog-cat btn v6 red">Hotel</a>
+                                <!--    <a href="#" class="blog-cat btn v6 red">Hotel</a>-->
                                     <div class="card-body">
-                                        <h4 class="card-title"><a href="#">Top 10 Homestay in London That you don't miss out</a></h4>
+                                        <h4 class="card-title"><a href="#">Sudadera</a></h4>
                                         <div class="bottom-content">
-                                            <p class="date">Dec 5th , 2018 by <a href="#" class="text-dark">Adam D'Costa</a></p>
+                                            <p class="date"> <a href="#" class="text-dark"></a></p>
                                         </div>
                                     </div>
                                 </div>
@@ -80,16 +79,16 @@
                             <div class="col-md-6">
                                 <div class="card single-blog-item v1 mar-bot-30">
                                     <img src="{%static 'images/blog/news_7.jpg'%}" alt="...">
-                                    <a href="#" class="blog-cat btn v6 red">Hotel</a>
+                                  <!--  <a href="#" class="blog-cat btn v6 red">Hotel</a>-->
                                     <div class="card-body">
-                                        <h4 class="card-title"><a href="#">Top 10 Homestay in London That you don't miss out</a></h4>
+                                        <h4 class="card-title"><a href="#">Camiseta</a></h4>
                                         <div class="bottom-content">
-                                            <p class="date">Dec 5th , 2018 by <a href="#" class="text-dark">Adam D'Costa</a></p>
+                                            <p class="date"><a href="#" class="text-dark"></a></p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                        <!--    <div class="col-md-6">
                                 <div class="card single-blog-item v1 mar-bot-30">
                                     <img src="images/blog/news_9.jpg" alt="...">
                                     <a href="#" class="blog-cat btn v6 red">Travel</a>
@@ -100,43 +99,10 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="card single-blog-item v1 mar-bot-30">
-                                    <img src="images/blog/news_13.jpg" alt="...">
-                                    <a href="#" class="blog-cat btn v6 red">Hotel</a>
-                                    <div class="card-body">
-                                        <h4 class="card-title"><a href="">The world’s most beautiful floral hotels</a></h4>
-                                        <div class="bottom-content">
-                                            <p class="date">Dec 5th , 2018 by <a href="#" class="text-dark">Adam D'Costa</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="card single-blog-item v1 mar-bot-30">
-                                    <img src="images/blog/news_10.jpg" alt="...">
-                                    <a href="#" class="blog-cat btn v6 red">Eat &amp; Drink</a>
-                                    <div class="card-body">
-                                        <h4 class="card-title"><a href="">Upcoming Fairway Food Festival 2019 in Italy</a></h4>
-                                        <div class="bottom-content">
-                                            <p class="date">Dec 5th , 2018 by <a href="#" class="text-dark">Adam D'Costa</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="card single-blog-item v1 mar-bot-30">
-                                    <img src="images/blog/news_12.jpg" alt="...">
-                                    <a href="#" class="blog-cat btn v6 red">Travel</a>
-                                    <div class="card-body">
-                                        <h4 class="card-title"><a href="">Beauty of Singapore through the eyes of Kalyra</a></h4>
-                                        <div class="bottom-content">
-                                            <p class="date">Mar 12th , 2019 by <a href="#" class="text-dark">Adam D'Costa</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            </div>-->
+                            
+                            
+                            
                         </div>
                         <!--pagination starts-->
                         <div class="post-nav nav-res pad-top-20 pad-bot-60">

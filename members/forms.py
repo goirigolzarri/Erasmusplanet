@@ -1,5 +1,5 @@
-from descuentosApp.models import Country
-from django.contrib.auth.forms import UserCreationForm
+from descuentosApp.models import Country, University
+from django.contrib.auth.forms import UserChangeForm, UserCreationForm
 
 from members.models import User
 from django import forms
@@ -75,6 +75,47 @@ class CreateUserForm(UserCreationForm):
 			'course': forms.TextInput(attrs={'class':'form-control ', 'placeholder': 'Course...'}),
 			'company': forms.TextInput(attrs={'class':'form-control ', 'placeholder': 'Company...'}),
 			'password1': forms.PasswordInput(),
+
+		
+		}
+
+university_choices = University.objects.all().values_list('name', 'name')
+university_list = []
+
+for uni in university_choices:
+	university_list.append(uni)
+
+class EditUserForm(UserChangeForm):
+	
+	
+	class Meta:
+		model = User
+		fields = ['username', 'first_name', 'last_name', 'date' , 'gender' ,'country', 'phone', 'studentType', 'cityOrigin1',
+		 'cityDestination1', 'cityDestination2', 'cityDestination3', 'universityOrigin', 'universityDestination', 'studies', 'email', 'course', 'company']
+		
+			  
+
+		widgets ={
+			
+            'cityDestination1': forms.Select(choices=city_list, attrs={'class':'form-control '}),
+			'cityDestination2': forms.Select(choices=city_list, attrs={'class':'form-control '}),
+			'cityDestination3': forms.Select(choices=city_list, attrs={'class':'form-control '}),
+			'cityOrigin1': forms.Select(choices=city_list, attrs={'class':'form-control '}),
+			'universityOrigin': forms.Select(choices=university_list,attrs={'class':'form-control '}),
+			'studentType': forms.TextInput(attrs={'class':'form-control ', 'value': '', 'type': 'hidden'}),
+			'universityDestination': forms.Select(choices=university_list,attrs={'class':'form-control '}),
+			'country': forms.Select(choices=country_list, attrs={'class':'form-control ', 'default':False}),
+			'gender': forms.Select(choices=gender_list, attrs={'class':'form-control '}),
+			'first_name': forms.TextInput(attrs={'class':'form-control ', 'placeholder': 'First name...'}),
+			'last_name': forms.TextInput(attrs={'class':'form-control ', 'placeholder': 'Last name...'}),
+			'date': forms.DateInput(attrs={'class':'form-control ', 'type' :'date', 'placeholder': 'Birthday...'}),
+			'username': forms.TextInput(attrs={'class':'form-control ', 'placeholder': 'Username...'}),
+			'email': forms.EmailInput(attrs={'class':'form-control ', 'placeholder': 'Email...'}),
+			'phone': forms.TextInput(attrs={'class':'form-control ', 'placeholder': 'Phone number...'}),
+			'studies': forms.TextInput(attrs={'class':'form-control ', 'placeholder': 'Studies...'}),
+			'course': forms.TextInput(attrs={'class':'form-control ', 'placeholder': 'Course...'}),
+			'company': forms.TextInput(attrs={'class':'form-control ', 'placeholder': 'Company...'}),
+			
 
 		
 		}

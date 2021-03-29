@@ -1,9 +1,10 @@
 from descuentosApp.models import Country
 from django.shortcuts import render, redirect
-from django.views import generic
-from django.contrib.auth.forms import UserCreationForm
+from django.views.generic import *
+from django.contrib.auth.forms import *
 from django.urls import reverse_lazy
-from .forms import SignUpForm, CreateUserForm
+from .forms import *
+from .models import User
 from django.contrib.auth  import authenticate, login, logout
 
 
@@ -11,7 +12,7 @@ from django.contrib.auth  import authenticate, login, logout
 
 
 
-class NewUserRegistrationView(generic.CreateView):
+class NewUserRegistrationView(CreateView):
 	
     form_class = CreateUserForm
     model = Country
@@ -22,7 +23,7 @@ class NewUserRegistrationView(generic.CreateView):
 
 def Login(request):
 
-    form_class = UserCreationForm()
+  
     if request.method == 'POST':
 
         if request.POST.get('submit') == 'sign_in':
@@ -57,8 +58,28 @@ def Login(request):
 
  
 
-class NewUserRegistrationView2(generic.CreateView):
+class NewUserRegistrationView2(CreateView):
     
     form_class = CreateUserForm
     template_name = 'registration/registration2.html'
     success_url = reverse_lazy('login')
+
+
+def UserProfile(request):
+
+    return render(request, 'profile/userProfile.html')
+
+
+class EditProfile(UpdateView):
+
+    form_class = EditUserForm
+    template_name = 'profile/edit_profile.html'
+    success_url = reverse_lazy('base') #METER PLANTILLA DE SUCCESFULL EDIT.
+    
+    
+
+    def get_object(self):
+        return self.request.user
+
+
+    

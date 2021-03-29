@@ -98,13 +98,11 @@ class Guia(DetailView):
 
 
 
-def UserProfile(request):
-
-    return render(request, 'userProfile.html')
-
-
-
 
 def Tienda(request):
 
     return render(request, 'tienda.html')
+
+def Carrito(request):
+
+    return render(request, 'carrito.html')
