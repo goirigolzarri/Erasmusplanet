@@ -106,3 +106,7 @@ def Tienda(request):
 def Carrito(request):
 
     return render(request, 'carrito.html')
+
+def Contacto(request):
+
+	return render(request, 'contacto.html')

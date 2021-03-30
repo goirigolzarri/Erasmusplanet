@@ -48,25 +48,25 @@
                                     <div class="container">
                                         <ul class="site-menu js-clone-nav d-none d-lg-block menu">
                                             <li>
-                                                <a href="https://www.students.rent/" target="_blank">
-                                                    <span class="hide">
-                                                        Alojamiento
-                                                    </span>
-                                                    <span>
-                                                        <img src="{%static 'images/menu/homeIcon.png' %}" width="30" height="30" class="imgResponsive">
-                                                    </span>
-                                                </a>
+                                              <a href="https://www.students.rent/" target="_blank">
+                                                  <span class="hide">
+                                                      Alojamiento
+                                                  </span>
+                                                  <span>
+                                                      <img src="{%static 'images/menu/homeIcon.png' %}" width="30" height="30" class="imgResponsive">
+                                                  </span>
+                                              </a>
                                             </li>
 
                                             <li>
-                                                <a href="https://www.what2do.click/" target="_blank">
-                                                    <span class="hide">
-                                                        Ocio
-                                                    </span>
-                                                    <span>
-                                                        <img src="{%static 'images/menu/ocio.png' %}" width="30" height="30" class="imgResponsive">
-                                                    </span>
-                                                </a>
+                                              <a href="https://www.what2do.click/" target="_blank">
+                                                  <span class="hide">
+                                                      Ocio
+                                                  </span>
+                                                  <span>
+                                                      <img src="{%static 'images/menu/ocio.png' %}" width="30" height="30" class="imgResponsive">
+                                                  </span>
+                                              </a>
                                             </li>
                                 <!--           <li>
                                                     <a href="#">
@@ -90,14 +90,24 @@
                                                     </a>
                                             </li>-->
                                             <li>
-                                                    <a href="{% url 'Tienda' %}">
-                                                        <span class="hide">
-                                                            Tienda
-                                                        </span>
-                                                        <span>
-                                                            <img src="{%static 'images/menu/tienda.png' %}" width="30" height="30" class="imgResponsive">
-                                                        </span>
-                                                    </a>
+                                              <a href="{% url 'Tienda' %}">
+                                                  <span class="hide">
+                                                      Shop
+                                                  </span>
+                                                  <span>
+                                                      <img src="{%static 'images/menu/tienda.png' %}" width="30" height="30" class="imgResponsive">
+                                                  </span>
+                                              </a>
+                                            </li>
+                                            <li>
+                                              <a href="{% url 'Contacto' %}">
+                                                  <span class="hide">
+                                                      Contact
+                                                  </span>
+                                                  <span>
+                                                      <img src="{%static 'images/menu/tienda.png' %}" width="30" height="30" class="imgResponsive">
+                                                  </span>
+                                              </a>
                                             </li>
 
                                             <li class="d-lg-none">
@@ -132,6 +142,7 @@
                                 <div class="add-list float-right">
                                     <a class="btn v3 botonAzul botonAcceso" href="{% url 'login' %}">Log in</a>
                                 </div>
+
 
                                 {% endif %}
                             </div>

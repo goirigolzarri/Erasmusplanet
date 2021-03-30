@@ -17,5 +17,6 @@ urlpatterns = [
     
     path('tienda/', views.Tienda, name='Tienda'),
 	path('carrito/', views.Carrito, name='Carrito'),
+	path('contacto/', views.Contacto, name='Contacto'),
 
 ]
