@@ -112,6 +112,14 @@
     margin-bottom: 25px;
 }
 
+.agotado {
+    color: #D7DBDD;
+}
+
+.productoSeleccionado {
+    font-weight: bold;
+}
+
 
 /* ESTILOS DEL FORMULARIO DE REGISTRO */
 
