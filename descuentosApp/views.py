@@ -110,3 +110,7 @@ def Carrito(request):
 def Contacto(request):
 
 	return render(request, 'contacto.html')
+
+def Propuestaguia(request):
+
+	return render(request, 'Propuestaguia.html')

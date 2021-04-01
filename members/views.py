@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from descuentosApp.models import Country
 from django.shortcuts import render, redirect
 from django.views.generic import *
@@ -6,6 +7,7 @@ from django.urls import reverse_lazy
 from .forms import *
 from .models import User
 from django.contrib.auth  import authenticate, login, logout
+from django.contrib.auth.views import PasswordChangeView
 
 
 
@@ -64,7 +66,7 @@ class NewUserRegistrationView2(CreateView):
     template_name = 'registration/registration2.html'
     success_url = reverse_lazy('login')
 
-
+@login_required
 def UserProfile(request):
 
     return render(request, 'profile/userProfile.html')
@@ -82,4 +84,10 @@ class EditProfile(UpdateView):
         return self.request.user
 
 
+
+class PasswordChangeView(PasswordChangeView):
+
+    form_class = ChangePassword
+    template_name = 'perfil/change_password.html'
+    succes_url = reverse_lazy('Index')
     

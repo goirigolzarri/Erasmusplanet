@@ -1,5 +1,5 @@
 from descuentosApp.models import Country, University
-from django.contrib.auth.forms import UserChangeForm, UserCreationForm
+from django.contrib.auth.forms import PasswordChangeForm, UserChangeForm, UserCreationForm
 
 from members.models import User
 from django import forms
@@ -119,3 +119,16 @@ class EditUserForm(UserChangeForm):
 
 		
 		}
+
+
+
+# Form para cambiar la contra
+class ChangePassword(PasswordChangeForm):
+
+    old_password =  forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control', 'type': 'password', 'placeholder': '*****'})),
+    new_password1 =  forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control', 'type': 'password', 'placeholder': '*****'})),
+    new_password2 =  forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control', 'type': 'password', 'placeholder': '*****'})),
+
+    class Meta:
+        model = User
+        fields = ['old_password', 'new_password1', 'new_password1' ]
