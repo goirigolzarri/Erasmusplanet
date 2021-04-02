@@ -120,6 +120,10 @@
     font-weight: bold;
 }
 
+.noMargenTallaYColor {
+    margin-top: 0px !important;
+}
+
 
 /* ESTILOS DEL FORMULARIO DE REGISTRO */
 

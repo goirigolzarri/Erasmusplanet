@@ -114,3 +114,7 @@ def Contacto(request):
 def Propuestaguia(request):
 
 	return render(request, 'Propuestaguia.html')
+
+def Producto(request):
+
+	return render(request,  'producto.html') 
