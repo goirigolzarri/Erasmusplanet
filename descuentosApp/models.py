@@ -96,3 +96,4 @@ class Producto(models.Model):
 	talla = models.CharField(max_length=10, choices=TALLA_CHOICES, null=True, default='')
 	COLORES_CHOICES = (('1', 'Rojo'), ('2', 'Blanco'), ('3', 'Negro'), ('4', 'Azul'))
 	color = models.CharField(max_length=10, choices=COLORES_CHOICES, null=True, default='') 
+

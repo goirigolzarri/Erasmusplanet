@@ -8,8 +8,8 @@ from django.contrib.auth.decorators import login_required
 urlpatterns = [
 
 
-	path('register/', NewUserRegistrationView.as_view(), name='UserRegistrationView'),
-	path('register2/', NewUserRegistrationView2.as_view(), name='UserRegistrationView2'),
+	path('register/', views.NewUserRegistrationView, name='UserRegistrationView'),
+	
 
 	path('login/', views.Login, name='Login'),
 	path('userprofile/', views.UserProfile, name='UserProfile'), 
@@ -17,6 +17,8 @@ urlpatterns = [
 	path('password/', login_required(PasswordChangeView.as_view(template_name = 'profile/change_password.html')), name='ChangePassword'),
    # path('register/', views.Register, name='Register'),
 
+	# Validate Email
+	path('activate/<uidb64>/<token>', Verification.as_view(), name='ActivateAcount' ),
 
 
 	#Reseteo de la contra via email: 

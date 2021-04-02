@@ -1,358 +1,81 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
 {%load static%}
-{% load i18n %}
 
-<!DOCTYPE html>
-<html lang="en">
-
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <title>Erasmus Planet</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/stylesExt.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/plugin.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/plugin.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/switcher/skin-purple.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/dashboard.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/perfect-scrollbar.css' %}">
-
-    <link rel="icon" type="image/png" href="{%static 'images/EPCircular.ico'%}" with="32" height="32">
-
-</head>
-
-  <body>
-
-      <!--Page Wrapper starts-->
-      <div class="page-wrapper fixed-footer">
-          <!--header starts-->
-          <header class="header transparent scroll-hide">
-              <!--Main Menu starts-->
-              <div class="site-navbar-wrap v1 headerColor">
-                  <div class="container">
-                      <div class="site-navbar">
-                          <div class="row align-items-center">
-                              <div class="col-xl-3 col-md-3 col-6">
-                                  <a class="navbar-brand logoEP" href="{% url 'base' %}"><img src="{%static 'images/EPCircularBlanco.png' %}" alt="logo" class="img-fluid"></a>
-                              </div>
-                              <div class="col-xl-9 col-md-9 col-6">
-                                  <nav class="site-navigation float-left">
-                                      <div class="container">
-                                          <ul class="site-menu js-clone-nav d-none d-lg-block menu">
-                                              <li>
-                                                  <a href="https://www.students.rent/" target="_blank">
-                                                        <span class="hide">
-                                                            Alojamiento
-                                                        </span>
-                                                        <span>
-                                                            <!--<i class="ion-ios-home icofont-2x" aria-hidden="true"></i>-->
-                                                            <img src="{%static 'images/menu/homeIcon.png' %}" width="30" height="30" class="imgResponsive">
-                                                        </span>
-                                                  </a>
-                                              </li>
-
-                                              <li>
-                                                  <a href="https://www.what2do.click/" target="_blank">
-                                                  <span class="hide">
-                                                    Ocio
-                                                  </span>
-                                                  <span>
-                                                    <img src="{%static 'images/menu/ocio.png' %}" width="30" height="30" class="imgResponsive">
-                                                  </span>
-                                                  </a>
-                                              </li>
-                                   <!--           <li>
-                                                    <a href="#">
-                                                        <span class="hide">
-                                                        Red Social
-                                                        </span>
-                                                        <span>
-                                                            <img src="{%static 'images/menu/redSocial.png' %}" width="30" height="30" class="imgResponsive">
-                                                        </span>
-                                                    </a>
-                                              </li>-->
-                                              
-                                          <!--    <li>
-                                                    <a href="{% url 'Descuentos' %}">
-                                                        <span class="hide">
-                                                            Descuentos
-                                                        </span>
-                                                        <span>
-                                                            <img src="{%static 'images/menu/discount.png' %}" width="30" height="30" class="imgResponsive">
-                                                        </span>
-                                                    </a>
-                                              </li>-->
-
-                                              <li class="d-lg-none">
-                                                  asd
-                                              </li>
-                                          </ul>
-                                      </div>
-                                  </nav>
-
-                                  <!-- ICONO MENÚ RESPONSIVE -->
-                                  <div class="d-lg-none sm-right">
-                                      <a href="#" class="mobile-bar js-menu-toggle">
-                                          <span class="ion-android-menu"></span>
-                                      </a>
-                                  </div>
-                                  <!--  -->
-                              <!--    {% if user.is_authenticated %}
-
-                                  <div class="add-list float-right">
-                                      <a class="btn v8" href="{% url 'logout' %}">Salir</a>
-                                  </div>
-
-                                  {%if user.is_superuser %}
-                                  <div class="add-list float-right">
-                                      <a class="btn v8" href="{% url 'Admin' %}">Admin</a>
-                                  </div>
-
-                                  {% endif %}
-                                  {%else%}
-
-                                  <div class="add-list float-right">
-                                      <a class="btn v8" href="{% url 'login' %}">Entrar</a>
-                                  </div>
-
-                                  {% endif %}-->
-                              </div>
-                          </div>
-                      </div>
-                      <!--mobile-menu starts -->
-                      <div class="site-mobile-menu">
-                          <div class="site-mobile-menu-header">
-                              <div class="site-mobile-menu-close  js-menu-toggle">
-                                  <span class="ion-ios-close-empty"></span>
-                              </div>
-                          </div>
-                          <div class="site-mobile-menu-body"></div>
-                      </div>
-                      <!--mobile-menu ends-->
-                  </div>
-              </div>
-              <!--Main Menu ends-->
-          </header>
           
 
-          <!--Add Listing starts-->
-        <div class="list-details-section section-padding add_list pad-top-90">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <ul class="nav nav-tabs list-details-tab">
-                            <li class="nav-item active">
-                                <a data-toggle="tab" href="#informacionGeneral" class="noSubrayadoEnlace">Información general</a>
-                                
-                            </li>
-                            <li class="nav-item ">
-                                <a data-toggle="tab" href="#comoLlegar" class="noSubrayadoEnlace">Como llegar</a>
-                            </li>
-                            <li class="nav-item">
-                                <a data-toggle="tab" href="#alojamiento" class="noSubrayadoEnlace">Alojamiento</a>
-                            </li>
-                            <li class="nav-item">
-                                <a data-toggle="tab" href="#ocio" class="noSubrayadoEnlace">Ocio</a>
-                            </li>
-                            <li class="nav-item">
-                                <a data-toggle="tab" href="#divisas" class="noSubrayadoEnlace">Divisas</a>
-                            </li>
-                            <li class="nav-item">
-                                <a data-toggle="tab" href="#banco" class="noSubrayadoEnlace">Banco y SIM</a>
-                            </li>
-                            <li class="nav-item">
-                                <a data-toggle="tab" href="#dondeComprar" class="noSubrayadoEnlace">Donde comprar</a>
-                            </li>
-                        </ul>
-                        <div class="tab-content mar-tb-30 add_list_content">
-                            <div class="tab-pane fade show active" id="informacionGeneral">
-                                <h4>Información General</h4>   
-                                <img src="{{guide.imagen_informacion_general.url}}" >
-                                {{guide.informacion_general | safe}}
-                            </div>
-                            <div class="tab-pane fade" id="comoLlegar">
-                                <h4>Como llegar</h4>
-                                {{guide.como_llegar | safe}}
-                            </div>
-                            <div class="tab-pane fade" id="alojamiento">
-                                <h4>Alojamiento</h4>
-                                {{guide.alojamiento | safe}}
-                            </div>
-                            <div class="tab-pane fade" id="ocio">
-                                <h4>Ocio</h4>
-                                {{guide.ocio | safe}}
-                            </div>
-                            <div class="tab-pane fade" id="divisas">
-                                <h4>Divisas</h4>
-                                {{guide.divisas | safe}}
-                            </div>
-                            <div class="tab-pane fade" id="banco">
-                                <h4>Banco</h4>
-                                {{guide.banco_sim | safe}}
-                            </div>
-                            <div class="tab-pane fade" id="dondeComprar">
-                                <h4>Donde Comprar</h4>
-                                {{guide.donde_comprar | safe}}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--Add Listing ends-->
-        <!-- Scroll to top starts-->
-        <span class="scrolltotop"><i class="ion-arrow-up-c"></i></span>
-        <!-- Scroll to top ends-->
-    </div>
+<!--Add Listing starts-->
+<div class="list-details-section section-padding add_list pad-top-90">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-12">
+              <ul class="nav nav-tabs list-details-tab">
+                  <li class="nav-item active">
+                      <a data-toggle="tab" href="#informacionGeneral" class="noSubrayadoEnlace">Información general</a>
+                      
+                  </li>
+                  <li class="nav-item ">
+                      <a data-toggle="tab" href="#comoLlegar" class="noSubrayadoEnlace">Como llegar</a>
+                  </li>
+                  <li class="nav-item">
+                      <a data-toggle="tab" href="#alojamiento" class="noSubrayadoEnlace">Alojamiento</a>
+                  </li>
+                  <li class="nav-item">
+                      <a data-toggle="tab" href="#ocio" class="noSubrayadoEnlace">Ocio</a>
+                  </li>
+                  <li class="nav-item">
+                      <a data-toggle="tab" href="#divisas" class="noSubrayadoEnlace">Divisas</a>
+                  </li>
+                  <li class="nav-item">
+                      <a data-toggle="tab" href="#banco" class="noSubrayadoEnlace">Banco y SIM</a>
+                  </li>
+                  <li class="nav-item">
+                      <a data-toggle="tab" href="#dondeComprar" class="noSubrayadoEnlace">Donde comprar</a>
+                  </li>
+              </ul>
+              <div class="tab-content mar-tb-30 add_list_content">
+                  <div class="tab-pane fade show active" id="informacionGeneral">
+                      <h4>Información General</h4>   
+                     
+                      {{guide.informacion_general | safe}}
+                  </div>
+                  <div class="tab-pane fade" id="comoLlegar">
+                      <h4>Como llegar</h4>
+                      {{guide.como_llegar | safe}}
+                  </div>
+                  <div class="tab-pane fade" id="alojamiento">
+                      <h4>Alojamiento</h4>
+                      {{guide.alojamiento | safe}}
+                  </div>
+                  <div class="tab-pane fade" id="ocio">
+                      <h4>Ocio</h4>
+                      {{guide.ocio | safe}}
+                  </div>
+                  <div class="tab-pane fade" id="divisas">
+                      <h4>Divisas</h4>
+                      {{guide.divisas | safe}}
+                  </div>
+                  <div class="tab-pane fade" id="banco">
+                      <h4>Banco</h4>
+                      {{guide.banco_sim | safe}}
+                  </div>
+                  <div class="tab-pane fade" id="dondeComprar">
+                      <h4>Donde Comprar</h4>
+                      {{guide.donde_comprar | safe}}
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<!--Add Listing ends-->
+<!-- Scroll to top starts-->
+<span class="scrolltotop"><i class="ion-arrow-up-c"></i></span>
+<!-- Scroll to top ends-->
+</div>
      
-      <!--Footer Starts-->
-      <div class="footer-wrapper no-pad-tb footer-fixed v1" style="background-image: url(images/bg/footer-bg-1.png)">
-          <div class="overlay op-1"></div>
-          <div class="footer-top-area section-padding">
-              <div class="container">
-                  <div class="row nav-folderized">
-                      <div class="col-lg-3 col-md-12">
-                          <div class="footer-logo">
-                              <a href="base.html"> <img class="logoEP" src="/static/images/EPCircular.png" alt="logo"></a>
-                              <div class="company-desc">
-                                  <p>
-                                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio excepturi nam totam sequi, ipsam consequatur repudiandae libero illum.
-                                  </p>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="col-lg-3 col-md-12">
-                          <div class="footer-content nav">
-                              <h2 class="title">Helpful Links</h2>
-                              <ul class="list">
-                                  <li><a class="link-hov style2" href="#">Login</a></li>
-                                  <li><a class="link-hov style2" href="#">My Account</a></li>
-                                  <li><a class="link-hov style2" href="#">Add Listing</a></li>
-                                  <li><a class="link-hov style2" href="#">Privacy policy</a></li>
-                              </ul>
-                          </div>
-                      </div>
-                      <div class="col-lg-3 col-md-12">
-                          <div class="footer-content nav">
-                              <h2 class="title">Category</h2>
-                              <ul class="list">
-                                  <li><a class="link-hov style2" href="#">Shop</a></li>
-                                  <li><a class="link-hov style2" href="#">Travel</a></li>
-                                  <li><a class="link-hov style2" href="#">Sport</a></li>
-                                  <li><a class="link-hov style2" href="#">Restaurant</a></li>
-                              </ul>
-                          </div>
-                      </div>
-                      <div class="col-lg-3 col-md-12">
-                          <div class="footer-content nav">
-                              <h2 class="title">Contact us</h2>
-                              <ul class="list footer-list">
-                                  <li>
-                                      <div class="contact-info">
-                                          <div class="icon">
-                                              <i class="ion-ios-location"></i>
-                                          </div>
-                                          <div class="text">13th North Ave, Florida, USA</div>
-                                      </div>
-                                  </li>
-                                  <li>
-                                      <div class="contact-info">
-                                          <div class="icon">
-                                              <i class="ion-email"></i>
-                                          </div>
-                                          <div class="text"><a href="#">info@listagram.com</a></div>
-                                      </div>
-                                  </li>
-                                  <li>
-                                      <div class="contact-info">
-                                          <div class="icon">
-                                              <i class="ion-ios-telephone"></i>
-                                          </div>
-                                          <div class="text">+44 078 767 595</div>
-                                      </div>
-                                  </li>
-                              </ul>
-                              <ul class="social-buttons style2">
-                                  <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                                  <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-                                  <li><a href="#"><i class="ion-social-pinterest"></i></a></li>
-                                  <li><a href="#"><i class="ion-social-youtube"></i></a></li>
-                                  <li><a href="#"><i class="ion-social-dribbble"></i></a></li>
-                              </ul>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="footer-bottom-area">
-              <div class="container">
-                  <div class="row">
-                      <div class="col-md-8 offset-md-2 text-center">
-                          <p>&copy; 2020 Erasmus Planet. Todos los derechos reservados.</p>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-      <!--Footer ends-->
-      <!-- VENTANA MODAL DE DESCUENTOS -->
 
-      <div class="modal fade" id="coupon_wrap">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-              <div class="modal-content">
-                  <div class="modal-header">
-                      <h4 class="modal-title" id="myModalLabel">Get a Coupon</h4>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="ion-ios-close-empty"></i></span></button>
-                  </div>
-                  <div class="modal-body">
-                      <div class="modal-coupon-code">
-                          <div class="store-content">
-                              <div class="text">
-                                  Stores :
-                                  <span> La Poma ,</span>
-                                  <span>Gucci</span>
-                              </div>
-                              <div class="store-content">Cashback : <span>25% cashback </span></div>
-                              <div class="store-content">Valid till : <span>25-5-2019 </span></div>
-                              <div class="cashback-text">
-                                  <p>Cashback will be added in your wallet in next 5 Minute of your purchase.</p>
-                              </div>
-                          </div>
-                          <div class="coupon-code"
-                                <h5>
-                                    Coupon Code: <span class="coupon-code-wrapper">
-
-                                        12345
-                                    </span>
-                                </h5>
-                            </div>
-                      </div>
-                  </div>
-                  <div class="coupon-bottom">
-                      <div class="float-left"><a href="single-listing-one.html" class="btn v1">Go to Deal</a></div>
-                      <button type="button" class="btn v1 float-right" data-dismiss="modal">Close</button>
-                  </div>
-              </div>
-          </div>
-      </div>
-
-
-
-      <!---->
-      <script src="https://kit.fontawesome.com/yourcode.js"></script>
-      <!--plugin js-->
-      <script src="{% static 'js/plugin.js' %}"></script>
-      <!--google maps-->
-      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_8C7p0Ws2gUu7wo0b6pK9Qu7LuzX2iWY&amp;libraries=places&amp;callback=initAutocomplete"></script>
-      <!--Main js-->
-      <script src="{% static 'js/main.js'%}"></script>
-
-
-  </body>
-
-    
- </html>
+{% endblock %}
+ 
