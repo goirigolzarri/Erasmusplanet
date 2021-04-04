@@ -27,7 +27,7 @@ SECRET_KEY = 'k1-_p(z6g)c8#&1kqh^a^pix@m9xy2at88!(+_0u9stm$g@-e0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['erasmus-planet.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -43,12 +43,15 @@ INSTALLED_APPS = [
     'ckeditor',
     'jquery',
     'members',
-    'import_export'
+    'import_export',
+    'tienda',
+    'adminErasmus',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',

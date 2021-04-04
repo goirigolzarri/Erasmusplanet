@@ -33,6 +33,8 @@ urlpatterns = [
 	path('', include('descuentosApp.urls')),
     path('members/', include('django.contrib.auth.urls')),
     path('members/', include('members.urls')),
+    path('shop/', include('tienda.urls')),
+    path('staff/', include('adminErasmus.urls')),
 
     
 

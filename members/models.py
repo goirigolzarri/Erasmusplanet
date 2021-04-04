@@ -13,11 +13,12 @@ class User(AbstractUser):
     
     date = models.DateField(default="2020-01-01")
     
-    GENDER_CHOICES = (('M', 'Male'), ('F', 'Female'), ('U', 'Unisex'))
+    GENDER_CHOICES = (('M', 'Male'), ('F', 'Female'), ('U', 'Prefer not to say'))
     gender = models.CharField(max_length=20, choices=GENDER_CHOICES, null=False, default=False)
 
     country =  models.ForeignKey(Country, on_delete=models.CASCADE, default="SPAIN")
     phone = models.IntegerField(null=True, )
+    prefix = models.IntegerField(null=True )
     STUDENT_CHOICES = (('1', 'Bachelor'), ('2', 'Au Pair'), ('3', 'Master'), ('4', 'Internship'))
     studentType = models.CharField(max_length=10, choices=STUDENT_CHOICES, null=True, default='')
     cityOrigin1 =  models.CharField(max_length=10, blank=True, null=True)

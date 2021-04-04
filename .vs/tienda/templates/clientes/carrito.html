@@ -1,0 +1,165 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+{%load static%}
+
+{% load i18n %}
+
+<!--Breadcrumb section starts-->
+        <div class="breadcrumb-section" style="background-image: url(images/breadcrumb/breadcrumb-3.jpg)">
+            <div class="overlay op-5"></div>
+            <div class="container">
+                <div class="row align-items-center  pad-top-80">
+                    <div class="col-md-6 col-12">
+                        <div class="breadcrumb-menu">
+                            <h2 class="page-title">Listings</h2>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <div class="breadcrumb-menu text-right sm-left">
+                            <ul>
+                                <li class="active"><a href="#">Home</a></li>
+                                <li><a href="#">Listings</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Breadcrumb section ends-->
+        <!--Listing Filter starts-->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-12">
+                    <div class="list-details-wrap">
+                        <div id="#" class="list-details-section mar-top-75">
+                            <h4 class="mar-bot-40">Shop list</h4>
+                            <div class="room-type-wrapper">
+                                <div class="room-type-item">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <a href="{%static 'images/category/hotel/single-room-1.jpg'%}" data-lightbox="single-1">
+                                                <img src="{%static 'images/category/hotel/single-room-1.jpg'%}" alt="...">
+                                            </a>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="feature-left float-left">
+                                                        <h3>Nombre del producto</h3>
+                                                        <p>Color | Talla S </span>
+                                                        </p>
+                                                        
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="feature-right float-right">
+                                                        <span class="price-amt">$80</span>
+                                                    
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="room-type-item">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <a href="images/category/hotel/single-room-2.jpg" data-lightbox="single-1">
+                                                <img src="images/category/hotel/single-room-2.jpg" alt="...">
+                                            </a>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="feature-left float-left">
+                                                        <h3>Deluxe Room</h3>
+                                                        <p>Max : <span> 3 Persons</span>
+                                                        </p>
+                                                        <div class="facilities-list">
+                                                            <ul>
+                                                                <li><i class="icofont-wifi"></i><span>Free WiFi</span></li>
+                                                                <li><i class="icofont-bathtub"></i><span>1 Bathroom</span></li>
+                                                                <li><i class="icofont-energy-air"></i><span>Air conditioner</span></li>
+                                                                <li><i class="icofont-monitor"></i><span> Tv Inside</span></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-12">
+
+                    <div class="sidebar-widget mar-top-75">
+                        <div class="coupon-widget" style="background-image: url(images/category/coupon/coupon-bg-1.jpg);">
+                            <div class="overlay op-5"></div>
+                            <a href="#" class="coupon-top">
+                                <span class="coupon-link-icon"></span>
+                                <h3>Book Now &amp; get 20% discount</h3>
+                                <div class="daily-deals-wrap v1">
+                                    <!-- countdown start -->
+                                    <div class="countdown-deals text-center" data-countdown="2019/12/01"></div>
+                                    <!-- countdown end -->
+                                </div>
+                            </a>
+                            <div class="coupon-bottom">
+                                <p>Coupon Code</p>
+                                <div class="coupon-code">DL76T</div>
+                            </div>
+                            <div class="coupon-bottom">
+                                <button class="btn v3">Apply</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="listing-sidebar">
+                        <div class="sidebar-widget info mar-top-75">
+                            <h3>Shop</h3>
+                            <div class="row">                               
+                                <div class="col-md-12 mar-bot-15">
+                                    <div class="book-amount">
+                                        <div class="input-group">
+                                            <ul>
+                                                <li>Camiseta 80€ Talla S</li>
+                                                <li>Camiseta 80€ Talla S</li>
+                                                <li>Camiseta 80€ Talla S</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">                               
+                                <div class="col-md-12 mar-bot-15">
+                                    <div class="book-amount">
+                                        <div class="input-group">
+                                            Total: precio €
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="book-btn text-center">
+                                <a href="booking.html">Buy</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Listing Filter ends-->
+
+<!-- Scroll to top starts-->
+<span class="scrolltotop"><i class="ion-arrow-up-c"></i></span>
+<!-- Scroll to top ends-->
+ 
+{% endblock %}
+

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <h1>Hello, world!</h1>
+
+
+
+
+
+    <form method="POST">
+      {% csrf_token %}
+
+      {{ form.username.label }}
+      {{ form.username }}
+      {{ form.first_name.label }}
+      {{ form.first_name }}
+      {{ form.last_name.label }}
+      {{ form.last_name }}
+      {{form.gender.label}}
+      {{ form.gender }}
+      {{ form.date.label }}
+      {{ form.date }}
+      {{form.country.label}}
+      {{ form.country }}
+      {{ form.email.label }}
+      {{ form.email }}
+      {{ form.phone_prefix.label }}
+      {{ form.phone_prefix }}
+      {{ form.phone.label }}
+      {{ form.phone }}
+      {{form.password1.label}}
+      {{ form.password1 }}
+      {{form.password2.label}}
+      {{ form.password2 }}
+      {{form.studentType.label}}
+      {{ form.studentType }}
+      {{ form.studies.label }}
+      {{ form.studies }}
+      {{form.cityOrigin1.label}}
+      {{ form.cityOrigin1 }}
+      {{form.cityDestination1.label}}
+      {{ form.cityDestination1 }}
+      {{form.cityDestination2.label}}
+      {{ form.cityDestination2 }}
+      {{form.cityDestination3.label}}
+      {{ form.cityDestination3 }}
+      {{ form.universityOrigin.label }}
+      {{ form.universityOrigin }}
+      {{ form.universityDestination.label }}
+      {{ form.universityDestination }}
+      {{ form.course.label }}
+      {{ form.course }}
+      {{ form.company.label }}
+      {{ form.company }}
+
+
+
+      <button type="submit" class="btn btn-secondary">Register</button>
+
+    </form>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
