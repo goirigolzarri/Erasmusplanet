@@ -2,6 +2,16 @@
     font-family: Poppins !important;
 }
 
+.imgLoginRegistro {
+    width: 110px;
+    height: 100px;
+}
+
+.centrado {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .logoEP {
     width: 50px !important;
 }
@@ -55,6 +65,11 @@
 .botonAzul:hover {
     background-color: white !important;
     color: #3699FF !important;
+}
+
+.fondoAzul {
+    background: #3699FF !important;
+    border-color: #3699FF !important;
 }
 
 .imagenIcono {
@@ -120,6 +135,10 @@
     font-weight: bold;
 }
 
+.posicionFlecha:before {
+    padding-top: 7px !important;
+}
+
 
 /* ESTILOS DEL FORMULARIO DE REGISTRO */
 
@@ -177,6 +196,10 @@ input {
 
 .botonAcceso {
     margin-top: 20px;
+}
+
+.noEnlace {
+    text-decoration: none !important;
 }
 
 

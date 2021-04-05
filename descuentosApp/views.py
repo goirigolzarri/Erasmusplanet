@@ -148,5 +148,12 @@ def Contacto(request):
 
 def Propuestaguia(request):
 
-	
 	return render(request, 'propuestaguia.html')
+
+def PrivacyPolicy(request):
+
+	return render (request, 'privacyPolicy.html')
+
+def Faq(request):
+
+	return render (request, 'faq.html')

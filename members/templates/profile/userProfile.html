@@ -32,10 +32,7 @@
                                             <div class="edit-profile-photo text-center mt-3">
                                                 <img src="{%static 'images/clients/reviewer-4.png'%}" alt="">
                                             </div>
-                                            <li>
-                                                <a href="{% url 'ChangePassword' %}" class="btn v3">Change password
-                                                </a>
-                                            </li>
+                                            
                                         </div>
                                         <div class="col-md-12">
                                             <div class="my-profile">
@@ -74,8 +71,11 @@
                                                         <span> {{user.get_studentType_display}}</span>
                                                     </li>
                                                     <li>
-                                                        <a href="{% url 'EditUserProfile'%}" class="btn v3">Edit profile</a>
+                                                        <a href="{% url 'EditUserProfile'%}" class="btn v3 botonAzul">Edit profile</a>
+                                                        <a href="{% url 'ChangePassword' %}" class="btn v3 botonAzul">Change password
+                                                        </a>
                                                     </li>
+                                                    
                                                 </ul>
                                                 
                                             </div>

@@ -1,102 +1,20 @@
-﻿{%load static%}
-{% load i18n %}
+﻿{% extends 'index.html' %}
 
-<!DOCTYPE html>
-<html dir="ltr" lang="es-ES">
+{% block content %}
 
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <title>Erasmus Planet | Login</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Updates and statistics" />
-    <meta name="author" content="LionCoders" />
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/stylesExt.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/plugin.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/plugin.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/switcher/skin-blue.css' %}">
-
-    <link rel="icon" type="image/png" href="{%static 'images/EPCircular.ico'%}" with="32" height="32">
-</head>
-
-<body>
-    <!--Page Wrapper starts-->
-    <div class="page-wrapper">
-        <!--header starts-->
-        <header class="header transparent scroll-hide">
-            <!--Main Menu starts-->
-            <div class="site-navbar-wrap v1 headerColor">
-                <div class="container">
-                    <div class="site-navbar">
-                        <div class="row align-items-center">
-                            <div class="col-xl-3 col-md-3 col-6">
-                                <a class="navbar-brand logoEP" href="{% url 'base' %}"><img src="{%static 'images/EPCircularBlanco.png' %}" alt="logo" class="img-fluid"></a>
-                            </div>
-                            <div class="col-xl-9 col-md-9 col-6">
-                                <nav class="site-navigation float-left">
-                                    <div class="container">
-                                        <ul class="site-menu js-clone-nav d-none d-lg-block">
-                                            <li>
-                                                <a href="{%url 'Alojamiento' %}">Alojamiento</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Red Social</a>
-                                            </li>
-                                            <li>
-                                                <a href="https://www.what2do.click/" target="_blank">Ocio</a>                                              
-                                            </li>
-                                            <li>
-                                                <a href="{% url 'Descuentos' %}">Descuentos</a>
-                                            </li>  
-                                            
-                                            <li class="d-lg-none">
-                                                asd
-                                            </li>
-                                        </ul>                                                        
-                                    </div>
-                                </nav>
-
-                                <!-- ICONO MENÚ RESPONSIVE -->
-                                <div class="d-lg-none sm-right">
-                                    <a href="#" class="mobile-bar js-menu-toggle">
-                                        <span class="ion-android-menu"></span>
-                                    </a>
-                                </div>
-                                <!--  -->
-
-                            
-                            </div>
-                        </div>   
-                    </div>
-                    <!--mobile-menu starts -->
-                    <div class="site-mobile-menu">
-                        <div class="site-mobile-menu-header">
-                            <div class="site-mobile-menu-close  js-menu-toggle">
-                                <span class="ion-ios-close-empty"></span>
-                            </div>
-                        </div>
-                        <div class="site-mobile-menu-body"></div>
-                    </div>
-                    <!--mobile-menu ends-->
-                </div>
-            </div>
-            <!--Main Menu ends-->
-        </header>
+{%load static%}
+   
         <!--User Login section starts-->
         <div class="user-login-section section-padding bg-fixed">
             <div class="container margenTop50">
                 <div class="row">
                     <div class="col-md-10 offset-md-1  text-center">
                         <div class="login-wrapper">
-                        <div class="imgLogo">
-                            <img src="{% static 'images/EPCircularTexto.png' %}">
+                        <div class="imgLogo centrado">
+                            <img src="{% static 'images/logo/logoNoTexto.png' %}" class="imgLoginRegistro">
                         </div>
                         <div class="textoDegradado">
-                            <h3 class="margen50">Log in</h3>
+                            <h3 class="margen50 text-center">Log in</h3>
                         </div>
                             <div class="ui-dash tab-content">
                                 <div class="tab-pane fade show active" id="login" role="tabpanel">
@@ -137,112 +55,6 @@
         <!-- Scroll to top starts-->
         <span class="scrolltotop"><i class="ion-arrow-up-c"></i></span>
         <!-- Scroll to top ends-->
-    </div>
-    <!--Page Wrapper ends-->
-    <!--Footer Starts-->
-    <div class="footer-wrapper no-pad-tb v2">
-        <div class="footer-top-area section-padding">
-            <div class="container">
-                <div class="row nav-folderized">
-                    <div class="col-lg-3 col-md-12">  
-                        <div class="footer-logo">
-                            <a href="index.html"> <img class="logoEP" src="{% static 'images/EPCircular.png'%}" alt="logo"></a>
-                            <div class="company-desc">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio excepturi nam totam sequi, ipsam consequatur repudiandae libero illum.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-12">
-                        <div class="footer-content nav">
-                            <h2 class="title">Helpful Links</h2>
-                            <ul class="list">
-                                <li><a class="link-hov style2" href="#">Login</a></li>
-                                <li><a class="link-hov style2" href="#">My Account</a></li>
-                                <li><a class="link-hov style2" href="#">Add Listing</a></li>
-                                <li><a class="link-hov style2" href="#">Privacy policy</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-12">
-                        <div class="footer-content nav">
-                            <h2 class="title">Category</h2>
-                            <ul class="list">
-                                <li><a class="link-hov style2" href="#">Shop</a></li>
-                                <li><a class="link-hov style2" href="#">Travel</a></li>
-                                <li><a class="link-hov style2" href="#">Sport</a></li>
-                                <li><a class="link-hov style2" href="#">Restaurant</a></li>
-
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-12">
-                        <div class="footer-content nav">
-                            <h2 class="title">Contact us</h2>
-                            <ul class="list footer-list">
-                                <li>
-                                    <div class="contact-info">
-                                        <div class="icon">
-                                            <i class="ion-ios-location"></i>
-                                        </div>
-                                        <div class="text">13th North Ave, Florida, USA</div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="contact-info">
-                                        <div class="icon">
-                                            <i class="ion-email"></i>
-                                        </div>
-                                        <div class="text"><a href="#">info@listagram.com</a></div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="contact-info">
-                                        <div class="icon">
-                                            <i class="ion-ios-telephone"></i>
-                                        </div>
-                                        <div class="text">+44 078 767 595</div>
-                                    </div>
-                                </li>
-                            </ul>
-                            <ul class="social-buttons style2">
-                                <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                                <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-                                <li><a href="#"><i class="ion-social-pinterest"></i></a></li>
-                                <li><a href="#"><i class="ion-social-youtube"></i></a></li>
-                                <li><a href="#"><i class="ion-social-dribbble"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom-area">
-                         
-                                        
-                <ul class="additional-link">
-                    <li><a href="#">Terms &amp; Condition</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="login.html">Login</a></li>
-                </ul>                  
-               
-            
-        </div>
-    </div>
-    <!--Footer ends-->
     
-    <!--Scripts starts-->
-
-    <!--plugin js-->
-    <script src="{% static 'js/plugin.js' %}"></script>
-    <!--google maps-->
- 
-    <!--Main js-->
-    <script src="{% static 'js/main.js' %}"></script>
-    <!-- Register js -->
-    <script src="{% static 'js/register.js' %}"></script>
-    <!--Scripts ends-->
-</body>
-
-</html>
+    <!--Footer Starts-->
+{% endblock %}

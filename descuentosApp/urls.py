@@ -18,6 +18,8 @@ urlpatterns = [
  
 	path('contacto/', views.Contacto, name='Contacto'),
 	path('propuesta_guia/', views.Propuestaguia, name='Propuestaguia'),
+	path('privacyPolicy/', views.PrivacyPolicy, name='PrivacyPolicy'),
+	path('faq/', views.Faq, name='Faq')
 
 
 ]
