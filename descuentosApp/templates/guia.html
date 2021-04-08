@@ -5,22 +5,21 @@
 
 {%load static%}
 <!--Breadcrumb section starts-->
-        <div class="breadcrumb-section" style="background-image: url(images/breadcrumb/breadcrumb-2.jpg)">
+        <div class="breadcrumb-section cabeceraPagina">
             <div class="overlay op-5"></div>
             <div class="container">
-                <div class="row align-items-center  pad-top-80">
+                <div class="row align-items-center  pad-top-50">
                     <div class="col-md-6 col-12">
                         <div class="breadcrumb-menu">
-                            <h2 class="page-title">{{guide.city}}</h2>
+                            <h1 class="page-title">{{guide.city}}</h1>
                         </div>
-                    </div>
-                    
+                    </div>   
                 </div>
             </div>
         </div>
         <!--Breadcrumb section ends-->
         <!--Add Listing starts-->
-        <div class="list-details-section section-padding add_list pad-top-90">
+        <div class="list-details-section section-padding add_list pad-top-30">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -79,6 +78,37 @@
                                 {{guide.donde_comprar | safe}}
                             </div>
                         </div>
+                        
+                    </div>
+                </div>
+                <div class="row">
+
+                <div class="col-md-12">
+                        <div class="team-wrapper swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide single-team-member text-center">
+                                    <img src="{%static 'images/team/team-member-1.jpg'%}" alt="Image">
+                                    
+                                </div>
+                                <div class="swiper-slide single-team-member text-center">
+                                    <img src="{%static 'images/team/team-member-2.jpg'%}" alt="Image">
+                                    
+                                </div>
+                                <div class="swiper-slide single-team-member text-center">
+                                    <img src="{%static 'images/team/team-member-3.jpg'%}" alt="Image">
+                                    
+                                </div>
+                                <div class="swiper-slide single-team-member text-center">
+                                    <img src="{%static 'images/team/team-member-4.jpg'%}" alt="Image">
+                                    
+                                </div>
+                                <div class="swiper-slide single-team-member text-center">
+                                    <img src="{%static 'images/team/team-member-5.jpg'%}" alt="Image">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slider-btn v1 team-next"><i class="ion-arrow-right-c posicionFlecha"></i></div>
+                        <div class="slider-btn v1 team-prev"><i class="ion-arrow-left-c posicionFlecha"></i></div>
                     </div>
                 </div>
             </div>

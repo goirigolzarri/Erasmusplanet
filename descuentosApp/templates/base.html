@@ -116,17 +116,19 @@
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <div class="popular-item mar-bot-30">
                             <div class="single-place">
-                                <img class="single-place-image" src="{%static 'images/category/places/place-1.jpg'%}" alt="place-image">
-                                <div class="single-place-content">
-                                    <h2 class="single-place-title">
-                                        <a href="grid-fullwidth-map.html">{{guide.city}}</a>
-                                    </h2>
-                                    <ul class="single-place-list">
-                                        <li><span>5</span> Cities</li>
-                                        <li><span>255</span> Listing</li>
-                                    </ul>
-                                    <a class="btn v3 explore-place botonAzul" href="{% url 'Guia' guide.pk %}">Go to Guide</a>
-                                </div>
+                                <a href="{% url 'Guia' guide.pk %}">
+                                    <img class="single-place-image" src="{%static 'images/category/places/place-1.jpg'%}" alt="place-image">
+                                    <div class="single-place-content">
+                                        <h2 class="single-place-title">
+                                            <a href="grid-fullwidth-map.html">{{guide.city}}</a>
+                                        </h2>
+                                        <ul class="single-place-list">
+                                            <li><span>5</span> Cities</li>
+                                            <li><span>255</span> Listing</li>
+                                        </ul>
+                                        <a class="btn v3 explore-place botonAzul" href="{% url 'Guia' guide.pk %}">Go to Guide</a>
+                                    </div>
+                                </a>
                             </div>
                         </div>
                     </div>
