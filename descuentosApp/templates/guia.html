@@ -25,8 +25,7 @@
                     <div class="col-md-12">
                         <ul class="nav nav-tabs list-details-tab">
                             <li class="nav-item active">
-                                <a data-toggle="tab" href="#informacionGeneral" class="noSubrayadoEnlace">Información general</a>
-                                
+                                <a data-toggle="tab" href="#informacionGeneral" class="noSubrayadoEnlace">Información general</a>    
                             </li>
                             <li class="nav-item ">
                                 <a data-toggle="tab" href="#comoLlegar" class="noSubrayadoEnlace">Como llegar</a>
@@ -47,11 +46,32 @@
                                 <a data-toggle="tab" href="#dondeComprar" class="noSubrayadoEnlace">Donde comprar</a>
                             </li>
                         </ul>
+                        
                         <div class="tab-content mar-tb-30 add_list_content">
                             <div class="tab-pane fade show active" id="informacionGeneral">
-                                <h4>Información General</h4>   
+                                
                                
-                                {{guide.informacion_general | safe}}
+                                <div class="about-section section-padding pad-bot-90">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="about-text res-box">
+                                                    
+                                                    <h2>Información General</h2>
+                                                    <p>{{guide.informacion_general | safe}}</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="about-img mar-top-10">
+                                                    <img src="{%static 'images/about/about.png'%}" alt="...">
+                                                </div>
+                                                
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                             <div class="tab-pane fade" id="comoLlegar">
                                 <h4>Como llegar</h4>
@@ -115,7 +135,7 @@
         </div>
         <!--Add Listing ends-->
         <!-- Scroll to top starts-->
-        <span class="scrolltotop"><i class="ion-arrow-up-c"></i></span>
+        <span class="scrolltotop fondoFlecha"><i class="ion-arrow-up-c posicionFlecha"></i></span>
         <!-- Scroll to top ends-->
     
      

@@ -34,7 +34,7 @@
 }
 
 .headerColor {
-    background-color: #3699FF !important;
+    background-color: #78bbb8 !important;
     padding: 0px 0px !important;
 }
 
@@ -57,19 +57,23 @@
     background: none !important;
 }
 
-.botonAzul {
-    background-color: #3699FF !important;
+.botonEP {
+    background-color: #78bbb8 !important;
     color: white !important;
 }
 
-.botonAzul:hover {
+.botonEP:hover {
     background-color: white !important;
-    color: #3699FF !important;
+    color: #78bbb8 !important;
 }
 
-.fondoAzul {
-    background: #3699FF !important;
-    border-color: #3699FF !important;
+.fondoEP {
+    background: #78bbb8 !important;
+    border-color: #78bbb8 !important;
+}
+
+.fondoBotonEP {
+    background-color: #55BBD9 !important;
 }
 
 .imagenIcono {
@@ -101,25 +105,25 @@
 
 .enlaceContrasenya {
     text-decoration: none !important;
-    color: #088dff;
+    color: #78bbb8;
 }
 
 .enlaceContrasenya:hover {
     text-decoration: none !important;
-    color: #6ae;
+    color: #78bbb8;
 }
 
 .textoDegradado {
-    color: #6ae;
+    color: #78bbb8;
 }
 
 .fuenteBoton {
-    background: #6ae !important;
+    background: #78bbb8 !important;
     color: white !important;
 }
 
 .fuenteBoton:hover {
-    color: #6ae !important;
+    color: #78bbb8 !important;
     background: white !important;
 }
 
@@ -137,6 +141,18 @@
 
 .posicionFlecha:before {
     padding-top: 7px !important;
+}
+
+.fondoFlecha {
+    background-color: #78bbb8 !important;
+}
+
+.fondoGuia {
+    background-image: url('/static/images/bg/bgGuia.png');
+}
+
+.fondoTarjetaGuia {
+    background-color: #BB9E78 !important;
 }
 
 
@@ -209,6 +225,15 @@ input {
 .cabeceraPagina {
     height: 200px;
     padding-top: 40px;
+}
+
+.imgIconosMenu {
+    width: 22px !important;
+    height: 20px !important;
+}
+
+.textoTarjetaGuia {
+    padding-bottom: 15px !important;
 }
 
 
@@ -344,7 +369,7 @@ button:hover {
 }
 
 @media screen and (max-width: 767px) {
-    .botonAzul {
+    .botonEP {
         float: right;
     }
 }

@@ -130,19 +130,19 @@
                                 {% if user.is_authenticated %}
 
                                 <div class="add-list float-right">
-                                    <a class="btn v3 botonAcceso fondoAzul" href="{% url 'UserProfile' %}">                                     
-                                        <img src="{%static 'images/menu/user.png'%}" width="30" height="30" class="imgResponsive">                                                   
+                                    <a class="btn v3 botonAcceso botonEP" href="{% url 'UserProfile' %}">                                     
+                                        <span class="imgResponsive imgIconosMenu">User</span>                                                   
                                     </a>
 
-                                    <a class="btn v3 fondoAzul botonAcceso" href="{% url 'logout' %}">
-                                        <img src="{%static 'images/menu/logout.png'%}" width="30" height="30" class="imgResponsive">
+                                    <a class="btn v3 botonEP botonAcceso" href="{% url 'logout' %}">
+                                        <span class="imgResponsive imgIconosMenu">Log out</span>
                                     </a>
                                 </div>
 
                                 {%if user.is_superuser %}
                                 <div class="add-list float-right">
-                                    <a class="btn v3 fondoAzul botonAcceso" href="{% url 'Admin' %}">
-                                        <img src="{%static 'images/menu/admin.png'%}" width="30" height="30" class="imgResponsive">
+                                    <a class="btn v3 botonEP botonAcceso" href="{% url 'Admin' %}">
+                                        <span class="imgResponsive imgIconosMenu">Admin</span>
                                     </a>
                                 </div>
 
@@ -150,14 +150,14 @@
                                 {%else%} 
 
                                 <div class="add-list float-right">
-                                    <a class="btn v3 fondoAzul botonAcceso" href="{% url 'UserRegistrationView' %}">
-                                        <img src="{%static 'images/menu/userRegister.png'%}" width="30" height="30" class="imgResponsive">
+                                    <a class="btn v3 botonEP botonAcceso" href="{% url 'UserRegistrationView' %}">
+                                        <span class="imgResponsive imgIconosMenu">Sign in</span>
                                     </a>
                                 </div>
 
                                 <div class="add-list float-right">
-                                    <a class="btn v3 fondoAzul botonAcceso" href="{% url 'login' %}">
-                                        <img src="{%static 'images/menu/login.png'%}" width="40" height="40" class="imgResponsive">
+                                    <a class="btn v3 botonEP botonAcceso" href="{% url 'login' %}">
+                                        <span class="imgResponsive imgIconosMenu">Log in</span>
                                     </a>
                                 </div>
 
@@ -256,7 +256,7 @@
                               </ul>
                               <ul class="social-buttons style2">
                                   <li><a href="https://www.instagram.com/erasmus.planet/" target="_blank"><i class="ion-social-instagram iconoFooter"></i></a></li>
-                                  
+                                  <!--<li><a href="#" target="_blank"><i class="ion-social-facebook iconoFooter"></i></a></li>-->
                               </ul>
                           </div>
                       </div>

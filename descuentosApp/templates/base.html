@@ -33,7 +33,7 @@
 
                             <div class="col-lg-2 col-md-2 col-12">
                                 <div class="submit_btn text-right md-right">
-                                    <button class="btn v3 mar-right-5 botonAzul" type="submit"><i class="ion-ios-search" aria-hidden="true"></i>Look for</button>
+                                    <button class="btn v3 mar-right-5 botonEP" type="submit"><i class="ion-ios-search" aria-hidden="true"></i>Look for</button>
                                 </div>
                             </div>
                         </div>
@@ -61,7 +61,7 @@
                               <div class="testimonial-img text-center">
                                   <img src="static/images/clients/client_1.jpg" alt="...">
                               </div>
-                              <div class="testimonial-content text-center">
+                              <div class="testimonial-content text-center fondoTarjetaGuia">
                                   <ul class="product-rating">
                                       <li><i class="ion-android-star"></i></li>
                                       <li><i class="ion-android-star"></i></li>
@@ -117,16 +117,16 @@
                         <div class="popular-item mar-bot-30">
                             <div class="single-place">
                                 <a href="{% url 'Guia' guide.pk %}">
-                                    <img class="single-place-image" src="{%static 'images/category/places/place-1.jpg'%}" alt="place-image">
+                                    <img class="single-place-image" src="{%static 'images/ciudad/bilbao.jpg'%}" alt="place-image">
                                     <div class="single-place-content">
-                                        <h2 class="single-place-title">
+                                        <h2 class="single-place-title textoTarjetaGuia">
                                             <a href="grid-fullwidth-map.html">{{guide.city}}</a>
                                         </h2>
-                                        <ul class="single-place-list">
+                                        <!--<ul class="single-place-list">
                                             <li><span>5</span> Cities</li>
                                             <li><span>255</span> Listing</li>
-                                        </ul>
-                                        <a class="btn v3 explore-place botonAzul" href="{% url 'Guia' guide.pk %}">Go to Guide</a>
+                                        </ul>-->
+                                    
                                     </div>
                                 </a>
                             </div>
@@ -232,7 +232,7 @@
         <!--Partner section ends-->
 
   <!-- Scroll to top starts-->
-<span class="scrolltotop"><i class="ion-arrow-up-c posicionFlecha"></i></span>
+<span class="scrolltotop fondoFlecha"><i class="ion-arrow-up-c posicionFlecha"></i></span>
 <!-- Scroll to top ends-->
 
 <!--Page Wrapper ends-->
