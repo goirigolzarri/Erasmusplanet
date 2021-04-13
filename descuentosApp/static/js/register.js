@@ -13,6 +13,7 @@ function showTab(n) {
     }
     if (n == (x.length - 1)) {
         document.getElementById("nextBtn").innerHTML = "Sign up";
+
     } else {
         document.getElementById("nextBtn").innerHTML = "Next";
     }

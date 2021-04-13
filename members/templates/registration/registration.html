@@ -54,28 +54,36 @@
 
                                     <div class="row mar-top-20">
 
-                                        <div class="col-xl-12 col-sm-12 margenBotonNext">
+                                        <div class="col-xl-4 col-sm-12 margenBotonNext">
 
                                             {{ form.gender.label }}
                                             {{ form.gender }}
 
                                         </div>
 
-                                        <div class="col-xl-12 col-sm-12 margenBotonNext">
+                                        <div class="col-xl-4 col-sm-12 margenBotonNext">
                                             <label for="" class="label">Date of birth</label>
                                             <div class="control has-icons-left">                                            
                                             {{ form.date }}
                                             </div>
                                         </div>
-                                    </div>
 
-
-                                    <div class="col-xl-14 col-sm-14 margenBotonNext">
+                                        <div class="col-xl-4 col-sm-14 margenBotonNext">
                                         Country {{ form.country }}
                                         <span class="icon is-small is-left">
                                             <i class="fa transgender-alt"></i>
                                         </span>
                                     </div>
+
+                                    </div>
+
+
+                                    <!-- <div class="col-xl-14 col-sm-14 margenBotonNext">
+                                        Country {{ form.country }}
+                                        <span class="icon is-small is-left">
+                                            <i class="fa transgender-alt"></i>
+                                        </span>
+                                    </div> -->
 
 
                                 </div>
@@ -186,7 +194,7 @@
                                             <div class="row">
 
                                                 <div class="col-xl-3 col-sm-12">
-                                                    <button class="btn v3 botonAzul" type="button" id=1
+                                                    <button class="btn v3 botonEP" type="button" id=1
                                                         data-toggle="collapse" data-target="#academic"
                                                         aria-expanded="true" aria-controls="collapseExample"
                                                         onclick="recogeID(this.id), Hide()">
@@ -195,7 +203,7 @@
                                                 </div>
 
                                                 <div class="col-xl-3 col-sm-12">
-                                                    <button class="btn v3 botonAzul" type="button" id=2
+                                                    <button class="btn v3 botonEP" type="button" id=2
                                                         data-toggle="collapse" data-target="#aupair"
                                                         aria-expanded="true" aria-controls="collapseExample"
                                                         onclick="recogeID(this.id), Hide()">
@@ -204,7 +212,7 @@
                                                 </div>
 
                                                 <div class="col-xl-3 col-sm-12">
-                                                    <button class="btn v3 botonAzul" type="button" id=3
+                                                    <button class="btn v3 botonEP" type="button" id=3
                                                         data-toggle="collapse" data-target="#master"
                                                         aria-expanded="true" aria-controls="collapseExample"
                                                         onclick="recogeID(this.id), Hide()">
@@ -213,7 +221,7 @@
                                                 </div>
 
                                                 <div class="col-xl-3 col-sm-12">
-                                                    <button class="btn v3 botonAzul" type="button" id=4
+                                                    <button class="btn v3 botonEP" type="button" id=4
                                                         data-toggle="collapse" data-target="#practices"
                                                         aria-expanded="true" aria-controls="collapseExample"
                                                         onclick="recogeID(this.id), Hide()">
@@ -222,113 +230,88 @@
                                                 </div>
 
                                             </div>
-
-                                            <!-- <div class="row">
-                                                    <div class="collapse mar-top-20" id="academic">
-                                                        <div class="card card-body">
-                                                            Academic
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="collapse mar-top-20" id="aupair">
-                                                        <div class="card card-body">
-                                                            Au pair
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="collapse mar-top-20" id="master">
-                                                        <div class="card card-body">
-                                                            Master
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="collapse mar-top-20" id="practices">
-                                                        <div class="card card-body">
-                                                            Pracices
-                                                        </div>
-                                                    </div>
-                                                </div> -->
                                         </div>
                                     </div>
 
+                                    
 
+                                        <div class="row margenBotonNext mar-top-35">
+                                            <div class="col-xl-6 col-sm-12">
+                                                <label for="" class="label">Hometown</label>
+                                                <div class="control has-icons-left">
+                                                {{ form.cityOrigin1 }}
+                                                </div>
+                                            </div>
+                                            <div id="cityDestination1Div" class="col-xl-6 col-sm-12">
+                                                <label for="" class="label">Destination city</label>
+                                                <div class="control has-icons-left">
+                                                {{ form.cityDestination1 }}
+                                                </div>
+                                            </div>
 
+                                        </div>
 
+                                        <div class="row mar-top-25">
 
-                                    <div class="row margenBotonNext mar-top-35">
-                                        <div class="col-xl-6 col-sm-12">
-                                            <label for="" class="label">Hometown</label>
-                                            <div class="control has-icons-left">
-                                            {{ form.cityOrigin1 }}
+                                            <div id="cityDestination2Div" class="col-xl-6 col-sm-12">
+                                                <label for="" class="label">Second option destination city</label>
+                                                <div class="control has-icons-left">  
+                                                {{ form.cityDestination2 }}
+                                                </div>
+                                            </div>
+                                            <div id="cityDestination3Div" class="col-xl-6 col-sm-12">
+                                                <label for="" class="label">Third option destination city</label>
+                                                <div class="control has-icons-left">  
+                                                {{ form.cityDestination3 }}
+                                                </div>
                                             </div>
                                         </div>
-                                        <div id="cityDestination1Div" class="col-xl-6 col-sm-12">
-                                            <label for="" class="label">Destination city</label>
-                                            <div class="control has-icons-left">
-                                            {{ form.cityDestination1 }}
+
+                                        <div class="row mar-top-25">
+                                            <div id="universityOriginDiv" class="col-xl-6 col-sm-12">
+                                                <label for="" class="label">Hometown university</label>
+                                                <div class="control has-icons-left">  
+                                                {{ form.universityOrigin }}
+                                                </div>
+                                            </div>
+                                            <div id="universityDestinationDiv" class="col-xl-6 col-sm-12">
+                                                <label for="" class="label">Destination university</label>
+                                                <div class="control has-icons-left">
+                                                {{ form.universityDestination }}
+                                                </div>
                                             </div>
                                         </div>
 
-                                    </div>
-
-                                    <div class="row mar-top-25">
-
-                                        <div id="cityDestination2Div" class="col-xl-6 col-sm-12">
-                                            <label for="" class="label">Second option destination city</label>
-                                            <div class="control has-icons-left">  
-                                            {{ form.cityDestination2 }}
+                                        <div class="row mar-top-25">
+                                            <div id="courseDiv" class="col-xl-6 col-sm-12">
+                                                {{ form.course.label }}{{ form.course }}
+                                            </div>
+                                            <div id="studiesDiv" class="col-xl-6 col-sm-12">
+                                                {{ form.studies.label }}{{ form.studies }}
                                             </div>
                                         </div>
-                                        <div id="cityDestination3Div" class="col-xl-6 col-sm-12">
-                                            <label for="" class="label">Third option destination city</label>
-                                            <div class="control has-icons-left">  
-                                            {{ form.cityDestination3 }}
+
+                                        <div class="row mar-top-25 mar-bot-35">
+                                            <div id="companyDiv" class="col-xl-6 col-sm-12">
+                                                {{ form.company.label }}{{ form.company }}
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <div class="row mar-top-25">
-                                        <div id="universityOriginDiv" class="col-xl-6 col-sm-12">
-                                            <label for="" class="label">Hometown university</label>
-                                            <div class="control has-icons-left">  
-                                            {{ form.universityOrigin }}
-                                            </div>
-                                        </div>
-                                        <div id="universityDestinationDiv" class="col-xl-6 col-sm-12">
-                                            <label for="" class="label">Destination university</label>
-                                            <div class="control has-icons-left">
-                                            {{ form.universityDestination }}
-                                            </div>
-                                        </div>
-                                    </div>
+                                        
+                                        
 
-                                    <div class="row mar-top-25">
-                                        <div id="courseDiv" class="col-xl-6 col-sm-12">
-                                            {{ form.course.label }}{{ form.course }}
-                                        </div>
-                                        <div id="studiesDiv" class="col-xl-6 col-sm-12">
-                                            {{ form.studies.label }}{{ form.studies }}
-                                        </div>
-                                    </div>
-
-                                    <div class="row mar-top-25 mar-bot-35">
-                                        <div id="companyDiv" class="col-xl-6 col-sm-12">
-                                            {{ form.company.label }}{{ form.company }}
-                                        </div>
-                                    </div>
-
-
-                                    <button type="submit" class="btn btn-secondary">Register</button>
-
+                                    
                                 </div>
 
                                 <div class="mar-top-35" style="overflow:auto;">
 
-                                    <button type="button" id="prevBtn" class="btn v3 float-left botonAtras"
+                                    <button type="button" id="prevBtn" class="btn v3 float-left botonAtras "
                                         onclick="nextPrev(-1)">Return</button>
-                                    <button type="button" id="nextBtn" class="btn v3 float-right botonAzul"
+                                    <button type="button" id="nextBtn" class="btn v3 float-right botonEP"
                                         onclick="nextPrev(1), Prefix()">Next</button>
+     
                                 </div>
+                                <button type="submit" class="btn btn-secondary">Register</button>
                         </div>
 
 
@@ -343,7 +326,7 @@
 
                         <div class="mt-4">
                             <div class="mar-top-40 res-box text-left">Already have an account? <a
-                                    class="btn v8 float-right botonAzul" href="{% url 'Login' %}" class="ml-2">Log
+                                    class="btn v8 float-right botonEP" href="{% url 'Login' %}" class="ml-2">Log
                                     in</a>
                             </div>
                         </div>

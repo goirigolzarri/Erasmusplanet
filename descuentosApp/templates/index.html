@@ -20,7 +20,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/dashboard.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/perfect-scrollbar.css' %}">
 
-    <link rel="icon" type="image/png" href="{%static 'images/EPCircular.ico'%}" with="32" height="32">
+    <link rel="icon" type="image/png" href="{%static 'images/favicon.ico'%}" with="32" height="32">
 
 </head>
 
@@ -113,9 +113,44 @@
                                               </a>
                                             </li>
 
-                                            <li class="d-lg-none">
-                                                
-                                            </li>
+                                            {% if user.is_authenticated %}
+
+                                                <li class="d-lg-none">
+                                                    <a href="{% url 'UserProfile' %}">                                     
+                                                        <span class="responsiveAcceso">My profile</span>                                                   
+                                                    </a>
+                                                </li>
+
+                                                <li class="d-lg-none">
+                                                    <a href="{% url 'logout' %}">
+                                                    <span class="responsiveAcceso">Log out</span>
+                                                    </a>
+                                                </li>
+
+                                                {%if user.is_superuser %}
+
+                                                <li class="d-lg-none decoracionResponsive">
+                                                    <a href="{% url 'Admin' %}">
+                                                    <span class="responsiveAcceso">Admin</span>
+                                                    </a>
+                                                </li>
+
+                                                {% endif %}
+                                                {%else%}
+
+                                                <li class="d-lg-none">
+                                                    <a href="{% url 'UserRegistrationView' %}">
+                                                    <span class="responsiveAcceso">Sign in</span>
+                                                    </a>
+                                                </li>
+
+                                                <li class="d-lg-none">
+                                                    <a href="{% url 'login' %}">
+                                                    <span class="responsiveAcceso">Log in</span>
+                                                    </a>
+                                                </li>
+
+                                            {% endif %}
                                         </ul>
                                     </div>
                                 </nav>
@@ -131,18 +166,18 @@
 
                                 <div class="add-list float-right">
                                     <a class="btn v3 botonAcceso botonEP" href="{% url 'UserProfile' %}">                                     
-                                        <span class="imgResponsive imgIconosMenu">User</span>                                                   
+                                        <span class="textoAcceso">My profile</span>                                                   
                                     </a>
 
                                     <a class="btn v3 botonEP botonAcceso" href="{% url 'logout' %}">
-                                        <span class="imgResponsive imgIconosMenu">Log out</span>
+                                        <span class="textoAcceso">Log out</span>
                                     </a>
                                 </div>
 
                                 {%if user.is_superuser %}
                                 <div class="add-list float-right">
                                     <a class="btn v3 botonEP botonAcceso" href="{% url 'Admin' %}">
-                                        <span class="imgResponsive imgIconosMenu">Admin</span>
+                                        <span class="textoAcceso">Admin</span>
                                     </a>
                                 </div>
 
@@ -151,18 +186,20 @@
 
                                 <div class="add-list float-right">
                                     <a class="btn v3 botonEP botonAcceso" href="{% url 'UserRegistrationView' %}">
-                                        <span class="imgResponsive imgIconosMenu">Sign in</span>
+                                        <span class="textoAcceso">Sign in</span>
                                     </a>
                                 </div>
 
                                 <div class="add-list float-right">
                                     <a class="btn v3 botonEP botonAcceso" href="{% url 'login' %}">
-                                        <span class="imgResponsive imgIconosMenu">Log in</span>
+                                        <span class="textoAcceso">Log in</span>
                                     </a>
                                 </div>
+                                
 
 
                                 {% endif %}
+                                
                             </div>
                         </div>
                     </div>
@@ -203,7 +240,7 @@
                               </div>
                           </div>
                       </div>
-                      <div class="col-lg-3 col-md-12">
+                      <div class="col-lg-2 col-md-12">
                           <div class="footer-content nav">
                               <h2 class="title">Helpful Links</h2>
                               <ul class="list">
@@ -220,7 +257,7 @@
                               </ul>
                           </div>
                       </div>
-                      <div class="col-lg-3 col-md-12">
+                      <div class="col-lg-2 col-md-12">
                           <div class="footer-content nav">
                               <h2 class="title">Category</h2>
                               <ul class="list">
@@ -230,11 +267,24 @@
                               </ul>
                           </div>
                       </div>
+                      <div class="col-lg-2 col-md-12">
+                          <div class="footer-content nav">
+                              <h2 class="title">Payment</h2>
+                              <ul class="list">
+                                  <li>                                   
+                                    <span class="colorPayment">PayPal</span>                                    
+                                  </li>
+
+                                  <li>
+                                    <span class="colorPayment">Credit card</span>
+                                  </li>
+                              </ul>
+                          </div>
+                      </div>
                       <div class="col-lg-3 col-md-12">
                           <div class="footer-content nav">
                               <h2 class="title">Contact us</h2>
-                              <ul class="list footer-list">
-                                
+                              <ul class="list footer-list">                                
                                   <li>
                                       <div class="contact-info">
                                           <div class="icon">
@@ -260,6 +310,7 @@
                               </ul>
                           </div>
                       </div>
+                      
                   </div>
               </div>
           </div>

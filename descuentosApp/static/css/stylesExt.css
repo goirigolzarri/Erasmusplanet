@@ -34,7 +34,7 @@
 }
 
 .headerColor {
-    background-color: #78bbb8 !important;
+    background-color: #6ae !important;
     padding: 0px 0px !important;
 }
 
@@ -58,13 +58,13 @@
 }
 
 .botonEP {
-    background-color: #78bbb8 !important;
+    background-color: #6ae !important;
     color: white !important;
+    border-color: #6ae !important;
 }
 
-.botonEP:hover {
-    background-color: white !important;
-    color: #78bbb8 !important;
+.textoAcceso {
+    color: white !important;
 }
 
 .fondoEP {
@@ -120,11 +120,13 @@
 .fuenteBoton {
     background: #78bbb8 !important;
     color: white !important;
+    border-color: #78bbb8 !important;
 }
 
 .fuenteBoton:hover {
     color: #78bbb8 !important;
     background: white !important;
+    border-color: #78bbb8 !important;
 }
 
 .titulo {
@@ -144,15 +146,33 @@
 }
 
 .fondoFlecha {
-    background-color: #78bbb8 !important;
+    background-color: #6ae !important;
 }
 
 .fondoGuia {
     background-image: url('/static/images/bg/bgGuia.png');
 }
 
-.fondoTarjetaGuia {
-    background-color: #BB9E78 !important;
+.separador {
+    border-top: 3px solid #78bbb8 !important;
+}
+
+.backgroundFooter {
+    background-color: #78bbb8 !important;
+}
+
+.imagenFooter {
+    width: 20;
+    height: 25;
+}
+
+.imagenFooterTarjeta {
+    width: 30;
+    height: 20;
+}
+
+.colorPayment {
+    color: #555555 !important;
 }
 
 
@@ -206,8 +226,15 @@ input {
 }
 
 .botonAtras {
-    background-color: #f91942 !important;
+    background-color: #BB9E78 !important;
     color: white !important;
+    border-color: #BB9E78 !important;
+}
+
+.botonAtras:hover {
+    background-color: white !important;
+    color: #BB9E78 !important;
+    border-color: #BB9E78 !important;
 }
 
 .botonAcceso {
@@ -225,11 +252,6 @@ input {
 .cabeceraPagina {
     height: 200px;
     padding-top: 40px;
-}
-
-.imgIconosMenu {
-    width: 22px !important;
-    height: 20px !important;
 }
 
 .textoTarjetaGuia {
