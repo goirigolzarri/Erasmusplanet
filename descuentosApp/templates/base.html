@@ -3,8 +3,14 @@
 {% block content %}
 
 {%load static%}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=3">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-          <!--Hero section starts-->
+<!--Hero section starts-->
 <div class="video-area v1" style="height: 60vh !important;">
     <div class="video-container" style="height: 60vh !important;">
         <div class="overlay op-5"></div>
@@ -13,7 +19,7 @@
         <div id="video-wrapper"></div>
         <a class="player" data-property="{videoURL:'https://youtu.be/GDGB68VD5DE'}"></a>
 
-    
+
         <div class="container video-content">
             <div class="row">
                 <div class="col-md-12 text-center">
@@ -28,96 +34,105 @@
                     <form class="hero__form v2 mar-bot-30" autocomplete="off">
                         <div class="row">
                             <div class="col-lg-10 col-md-10 col-12">
-                                <input class="hero__form-input custom-select no-border noFlechaInput formularioResponsive" autocomplete="off" name="search" id="search" placeholder="What city or university are you looking for?">
+                                <input
+                                    class="hero__form-input custom-select no-border noFlechaInput formularioResponsive"
+                                    autocomplete="off" name="search" id="tags"
+                                    placeholder="What city or university are you looking for?">
                             </div>
 
                             <div class="col-lg-2 col-md-2 col-12">
                                 <div class="submit_btn text-right md-left">
-                                    <button class="btn v3 mar-right-5 botonEP" type="submit"><i class="ion-ios-search" aria-hidden="true"></i>Look for</button>
+                                    <button class="btn v3 mar-right-5 botonEP" type="submit"><i class="ion-ios-search"
+                                            aria-hidden="true"></i>Look for</button>
                                 </div>
                             </div>
                         </div>
                     </form>
+                <!--    <form class="d-flex">
+                        <input class="form-control me-2" id="tags" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>--> 
                 </div>
             </div>
         </div>
     </div>
-</div>    
+</div>
 
-  {% if not query %}
+{% if not query %}
 
-    <div class="hero-client-section pad-bot-90 section-padding RESPONSIVE">
-      <div class="container">
-          <div class="row">
-              <div class="col-md-8 offset-md-2 text-center">
-                  <h2 class="titulo">CITIES</h2>
-              </div>
-              <div class="col-md-12 mar-bot-60">
-                  <div class="testimonial-wrapper swiper-container">
-                        <!-- Tarjetas de guias -->
-                        <div class="swiper-wrapper">
+<div class="hero-client-section pad-bot-90 section-padding RESPONSIVE">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2 text-center">
+                <h2 class="titulo">CITIES</h2>
+            </div>
+            <div class="col-md-12 mar-bot-60">
+                <div class="testimonial-wrapper swiper-container">
+                    <!-- Tarjetas de guias -->
+                    <div class="swiper-wrapper">
                         {% for guia in guiasTarjetas %}
-                          <div class="swiper-slide single-testimonial-item">
-                              <div class="testimonial-img text-center">
-                                  <img src="static/images/clients/client_1.jpg" alt="...">
-                              </div>
-                              <div class="testimonial-content text-center">
-                                  <ul class="product-rating">
-                                      <li><i class="ion-android-star"></i></li>
-                                      <li><i class="ion-android-star"></i></li>
-                                      <li><i class="ion-android-star"></i></li>
-                                      <li><i class="ion-android-star-half"></i></li>
-                                      <li><i class="ion-android-star-half"></i></li>
-                                  </ul>
-                                  <h5>{{guia.city}}</h5>
-                                  <span>{{guia.title}}</span>
-                                  <p>{{guia.body | safe}}</p>
-                              </div>
-                          </div>
+                        <div class="swiper-slide single-testimonial-item">
+                            <div class="testimonial-img text-center">
+                                <img src="static/images/clients/client_1.jpg" alt="...">
+                            </div>
+                            <div class="testimonial-content text-center">
+                                <ul class="product-rating">
+                                    <li><i class="ion-android-star"></i></li>
+                                    <li><i class="ion-android-star"></i></li>
+                                    <li><i class="ion-android-star"></i></li>
+                                    <li><i class="ion-android-star-half"></i></li>
+                                    <li><i class="ion-android-star-half"></i></li>
+                                </ul>
+                                <h5>{{guia.city}}</h5>
+                                <span>{{guia.title}}</span>
+                                <p>{{guia.body | safe}}</p>
+                            </div>
+                        </div>
                         {% endfor %}
-                      </div>
-                      <!-- FIN TARJETA GUIA-->
-                  </div>
-                  <div class="client-pagination"></div>
-              </div>
-          </div>
-      </div>
+                    </div>
+                    <!-- FIN TARJETA GUIA-->
+                </div>
+                <div class="client-pagination"></div>
+            </div>
+        </div>
     </div>
-     <!--Hero section ends-->
-    {% else %}
-    <br />
-    <!-- BLOQUE SI NO ENCUENTRA LA CIUDAD INTRODUCIDA -->
-    {% if not guides %}
-    <!--error  start-->
-    <div class="error-section section-padding mar-top-20 pad-bot-20">
-      <div class="container">
-          <div class="row">
-              <div class="col-md-6 offset-md-3  error-text text-center">
-                  <div class="error-content">
-                      <i class="ion-sad-outline"></i>
-                      <h4>We don't have your guide yet</h4>
-                      <p>Write your guide and <a href="{% url 'Propuestaguia' %}">upload to Erasmus Planet.</a></p>
-                  </div>
-              </div>
-          </div>
-      </div>
-    </div>  
-    <!--error ends-->
-    {%  else %}
-    {%for guide in guides %}
-      
-    <div class="jumbotron justify-content-center mar-top-55" style="background: white; border-radius: 0px;"> 
-    
-      <div class="item-wrapper">
-          <div class="tab-content">
-              <div id="grid-view" class="tab-pane active  product-grid">
-                  <div class="row">
-                  
+</div>
+<!--Hero section ends-->
+{% else %}
+<br />
+<!-- BLOQUE SI NO ENCUENTRA LA CIUDAD INTRODUCIDA -->
+{% if not guides %}
+<!--error  start-->
+<div class="error-section section-padding mar-top-20 pad-bot-20">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3  error-text text-center">
+                <div class="error-content">
+                    <i class="ion-sad-outline"></i>
+                    <h4>We don't have your guide yet</h4>
+                    <p>Write your guide and <a href="{% url 'Propuestaguia' %}">upload to Erasmus Planet.</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--error ends-->
+{% else %}
+{%for guide in guides %}
+
+<div class="jumbotron justify-content-center mar-top-55" style="background: white; border-radius: 0px;">
+
+    <div class="item-wrapper">
+        <div class="tab-content">
+            <div id="grid-view" class="tab-pane active  product-grid">
+                <div class="row">
+
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <div class="popular-item mar-bot-30">
                             <div class="single-place">
                                 <a href="{% url 'Guia' guide.pk %}">
-                                    <img class="single-place-image" src="{%static 'images/ciudad/bilbao.jpg'%}" alt="place-image">
+                                    <img class="single-place-image" src="{%static 'images/ciudad/bilbao.jpg'%}"
+                                        alt="place-image">
                                     <div class="single-place-content">
                                         <h2 class="single-place-title textoTarjetaGuia">
                                             <a href="grid-fullwidth-map.html">{{guide.city}}</a>
@@ -126,14 +141,14 @@
                                             <li><span>5</span> Cities</li>
                                             <li><span>255</span> Listing</li>
                                         </ul>-->
-                                    
+
                                     </div>
                                 </a>
                             </div>
                         </div>
                     </div>
 
-                      <!--<div class="col-xl-4 col-md-12">
+                    <!--<div class="col-xl-4 col-md-12">
                           <div class="trending-place-item">
                             
                               <div class="trending-title-box">
@@ -179,23 +194,23 @@
                               </div>
                           </div>
                       </div>-->
-                  </div>
-              </div>
-          </div>
-      </div>
-    
-
+                </div>
+            </div>
+        </div>
     </div>
 
-  <!-- -->
 
-    {% endfor %}
-    {% endif %}
-    {% endif %}
+</div>
 
-    <!--Partner section starts-->
-    <!-- COLABORADORES -->
-    <!-- 
+<!-- -->
+
+{% endfor %}
+{% endif %}
+{% endif %}
+
+<!--Partner section starts-->
+<!-- COLABORADORES -->
+<!-- 
         <div class="partner-section style1 pad-top-60 pad-bot-110">
             <div class="container">
                 <div class="row">
@@ -229,13 +244,28 @@
             </div>
         </div>
         -->
-        <!--Partner section ends-->
+<!--Partner section ends-->
 
-  <!-- Scroll to top starts-->
+<!-- Scroll to top starts-->
 <span class="scrolltotop fondoFlecha"><i class="ion-arrow-up-c posicionFlecha"></i></span>
 <!-- Scroll to top ends-->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<!--Autocomplete-->
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+    $( function() {
+        
+    $( "#tags" ).autocomplete({
+        source: "{% url 'autosuggest' %}",
+        minLength: 3 
+    });
+} );
+
+</script>
+
 
 <!--Page Wrapper ends-->
 {% endblock %}
-
-

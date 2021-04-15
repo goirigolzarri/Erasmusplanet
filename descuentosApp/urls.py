@@ -1,11 +1,13 @@
 from django.urls import path
 from . import views
 from django.contrib.auth.decorators import login_required
+from .views import autosuggest
 
 
 urlpatterns = [
 
 	path('',views.base, name='base'),
+	path('index/',views.index, name='index'),
 	path('city-list/', views.CityList, name='CityList'),
 	path('descuentos/', views.Descuentos, name='Descuentos'),
 	path('alojamiento/', views.Alojamiento, name='Alojamiento'), 
@@ -19,7 +21,8 @@ urlpatterns = [
 	path('contacto/', views.Contacto, name='Contacto'),
 	path('propuesta_guia/', views.Propuestaguia, name='Propuestaguia'),
 	path('privacyPolicy/', views.PrivacyPolicy, name='PrivacyPolicy'),
-	path('faq/', views.Faq, name='Faq')
+	path('faq/', views.Faq, name='Faq'),
+	path('autosuggest/', autosuggest, name='autosuggest')
 
 
 ]

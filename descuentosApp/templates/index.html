@@ -374,7 +374,64 @@
       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_8C7p0Ws2gUu7wo0b6pK9Qu7LuzX2iWY&amp;libraries=places&amp;callback=initAutocomplete"></script>
       <!--Main js-->
       <script type="text/javascript" src="{% static 'js/main.js'%}"></script>
-      <script type="text/javascript" src="{% static 'js/autocomplete.js'%}"></script>
+      
+      <script type="text/javascript" src="{% static 'js/cart.js'%}"></script>
+
+    <script type="text/javascript">
+
+        var user = '{{request.user}}'
+
+        function getToken(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = cookies[i].trim();
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+        var csrftoken = getToken('csrftoken');
+
+
+
+
+
+
+        
+        function getCookie(name) {
+            // Split cookie string and get all individual name=value pairs in an array
+            var cookieArr = document.cookie.split(";");
+
+
+            //Loop through the array elements
+                for (var i = 0; i < cookieArr.length; i++) {
+                    var cookiePair = cookieArr[i].split("=");
+                    if(name == cookiePair[0].trim()){
+                        return decodeURIComponent(cookiePair[1]);
+                    }
+                   
+                }
+            
+            return null;
+        }
+        var cart = JSON.parse(getCookie('cart'))
+        
+        if(cart == undefined){
+
+            cart = {}
+            console.log('Cart was created!')
+            document.cookie = 'cart=' + JSON.stringify(cart) + ";domain=;path=/"
+
+        }
+        console.log('Cart:', cart) 
+
+    </script>
 
 
   </body>

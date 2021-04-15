@@ -28,6 +28,7 @@ from .utils import token_generator
 
 
 def NewUserRegistrationView(request):
+    error = False
     form = CreateUserForm()
     if request.method == 'POST':
 
@@ -35,29 +36,39 @@ def NewUserRegistrationView(request):
         if form.is_valid():
             instance = form.save(commit=False)
             instance.is_active = False
-            instance.save()
+            edadintro = instance.date
+            edad = instance.calcularEdad(edadintro)
 
-            
-
-            # Email
-            email_subject = 'Activate your account'
-            # Path a la ventana
-
-            uidb64 = urlsafe_base64_encode(force_bytes(instance.pk))
-
-            domain = get_current_site(request).domain
-            link = reverse('ActivateAcount', kwargs = {'uidb64': uidb64, 'token': token_generator.make_token(instance)})
-            activate_url = 'http://'+domain+link
-            email_body = 'Hola' + instance.username + 'please, use this link to validate your email\n' + activate_url
-            email = EmailMessage(
-                email_subject, 
-                email_body,
-                'noreply@semycolon.com', 
-                [instance.email],
+            if (edad > 18):
                 
-            )
-            email.send(fail_silently=True)
-    context = {'form': form}
+                instance.save()
+
+                
+
+                # Email
+                email_subject = 'Activate your account'
+                # Path a la ventana
+
+                uidb64 = urlsafe_base64_encode(force_bytes(instance.pk))
+
+                domain = get_current_site(request).domain
+                link = reverse('ActivateAcount', kwargs = {'uidb64': uidb64, 'token': token_generator.make_token(instance)})
+                activate_url = 'http://'+domain+link
+                email_body = 'Hola' + instance.username + 'please, use this link to validate your email\n' + activate_url
+                email = EmailMessage(
+                    email_subject, 
+                    email_body,
+                    'noreply@semycolon.com', 
+                    [instance.email],
+                    
+                )
+                email.send(fail_silently=True)
+
+                return redirect ('base')
+            else: 
+                error = True
+
+    context = {'form': form, 'error': error}
     return render (request, 'registration/registration.html', context)
 
 

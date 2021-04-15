@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.views.generic.edit import DeleteView
 from .models import Guide, City
 from django.urls import reverse
@@ -9,6 +9,8 @@ from django.db.models import Q
 from .forms import AñadirGuia, ContactForm, EditarGuia
 from django.template.loader import get_template
 from django.core.mail import EmailMessage
+from tienda.models import *
+
 
 
 # Create your views here.
@@ -97,10 +99,6 @@ class Guia(DetailView):
 	template_name = 'guia.html'
 
 
-
-
-
-
 def Contacto(request):
 
 	form = ContactForm()
@@ -136,10 +134,7 @@ def Contacto(request):
             )
 			email.send()
 			
-			return redirect('Contacto')
-
-
-
+			return redirect('base')
 
 
 
@@ -152,8 +147,38 @@ def Propuestaguia(request):
 
 def PrivacyPolicy(request):
 
-	return render (request, 'privacyPolicy.html')
+	return render(request, 'privacyPolicy.html')
 
 def Faq(request):
 
-	return render (request, 'faq.html')
+	return render(request, 'faq.html')
+
+
+def index(request):
+
+	if request.user.is_authenticated:
+		logged_in_user = request.user
+		order, created = Order.objects.get_or_create(pedido_de=logged_in_user, complete = False)
+		items = order.orderitem_set.all()
+		cartItems = order.get_cart_items
+		
+	else:
+		items = []
+		order = {'get_cart_total': 0, 'get_cart_items': 0}
+		cartItems = order['get_cart_items']
+
+	
+
+	context = {'items': items, 'order': order, 'cartItems': cartItems}
+
+	return context
+
+def autosuggest(request):
+	print(request.GET)
+	query_original = request.GET.get('term')
+	queryset = Guide.objects.filter(title__icontains=query_original)
+	print(queryset)
+	mylist= []
+	mylist += [x.title for x in queryset]
+	print(mylist)
+	return JsonResponse(mylist,safe=False)

@@ -1,9 +1,10 @@
+from datetime import date 
 from django.db import models
 from django.db.models.fields import NullBooleanField
 from django.urls.base import reverse
 
 from descuentosApp.models import Country, Province, City, University, Guide
-
+from django.core.validators import RegexValidator
 
 from django.contrib.auth.models import AbstractUser
 
@@ -12,11 +13,18 @@ from django.contrib.auth.models import AbstractUser
 class User(AbstractUser):
     
     date = models.DateField(default="2020-01-01")
-    
-    GENDER_CHOICES = (('M', 'Male'), ('F', 'Female'), ('U', 'Prefer not to say'))
-    gender = models.CharField(max_length=20, choices=GENDER_CHOICES, null=False, default=False)
 
-    country =  models.ForeignKey(Country, on_delete=models.CASCADE, default="SPAIN")
+    date_inicio = models.CharField(max_length=8, default="")
+    
+    date_fin = models.CharField(max_length=8, default="")
+    
+    GENDER_CHOICES = (('M', 'Male'), ('F', 'Female'), ('U', 'Unisex'))
+    gender = models.CharField(max_length=20, choices=GENDER_CHOICES, null=False)
+
+    COURSE_CHOICES = (('Primero', '1'), ('Segundo', '2'), ('Tercero', '3'), ('Cuarto', '4'), ('Quinto', '5'), ('Sexto', '6'))
+    course = models.CharField(max_length=7, choices=COURSE_CHOICES, blank=True, null=True)
+
+    country =  models.ForeignKey(Country, on_delete=models.CASCADE)
     phone = models.IntegerField(null=True, )
     prefix = models.IntegerField(null=True )
     STUDENT_CHOICES = (('1', 'Bachelor'), ('2', 'Au Pair'), ('3', 'Master'), ('4', 'Internship'))
@@ -28,34 +36,18 @@ class User(AbstractUser):
     universityOrigin =  models.CharField(max_length=50,null= True, blank=True)
     universityDestination =  models.CharField(max_length=50, null=True, blank=True)
     studies =  models.CharField(max_length=50, null=True, blank=True)
-    course =  models.CharField(max_length=50, null= True, blank=True)
+    #course =  models.CharField(max_length=50, null= True, blank=True)
     company = models.CharField(max_length=50,null= True, blank=True)
 
+    def calcularEdad(self, edadintroducida):
+        hoy = date.today()
+        edad = hoy.year - edadintroducida.year - ((hoy.month, hoy.day) < (edadintroducida.month, edadintroducida.day))
 
+        return edad
     def get_absolute_url(self):
     #return reverse('article-detail', args=(str(self.id)))
      return reverse('base')
 
-    # def studenttypefunction(self):
-    #     if self.studentType == 1:
-    #         self.company = ''
-
-    #     if self.studentType == 2:
-    #         self.universityOrigin = ''
-    #         self.universityDestination = ''
-    #         self.course = ''
-    #         self.studies = ''
-    #         self.company = ''
-            
-    #     if self.studentType == 3:
-    #         self.course = ''
-    #         self.company = ''
-        
-    #     if self.studentType == 2:
-    #         self.universityOrigin = ''
-    #         self.universityDestination = ''
-    #         self.course = ''
-    #         self.studies = ''
-        
-    #     self.save()
-
+    def __str__(self):
+        return self.username
+   

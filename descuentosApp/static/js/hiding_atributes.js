@@ -1,3 +1,5 @@
+const { nodeName } = require("jquery");
+
 function recogeID(clickID){ 
 
     document.getElementById("id_studentType").value = clickID;
@@ -140,6 +142,20 @@ function recogeID(clickID){
         document.getElementById("id_universityDestination").removeAttribute("required");
         
     }
+}
+
+function showHide(checked) {
+    
+    //check = document.getElementById("box1");
+    if (checked == true) {
+        //document.getElementById("cityDestination2Div").style.display ='block';
+        $("#cityDestination2Div").fadeIn();
+        $("#cityDestination3Div").fadeIn();
+    } 
+    else{
+        $("#cityDestination2Div").fadeOut();
+        $("#cityDestination3Div").fadeOut();
+    }   
 }
 
 

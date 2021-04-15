@@ -20,15 +20,16 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/dashboard.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/perfect-scrollbar.css' %}">
 
-    <link rel="icon" type="image/png" href="{%static 'images/EPCircular.ico'%}" with="32" height="32">
+    <link rel="icon" type="image/png" href="{%static 'images/favicon.ico'%}" with="32" height="32">
 
 </head>
 
   <body>
-
+<!--
     <div class="preloader js-preloader">
         <img src="{% static 'images/EPCircular.gif'%}" alt="..." class="logoEPGif">
     </div>
+    -->
     <!--Preloader ends-->
     <!--Page Wrapper starts-->
     <div class="page-wrapper fixed-footer">
@@ -41,13 +42,15 @@
                     <div class="site-navbar">
                         <div class="row align-items-center">
                             <div class="col-xl-3 col-md-3 col-6">
-                                <a class="navbar-brand logoEP" href="{% url 'base' %}"><img src="{%static 'images/logo/logoBlancoEP.png' %}" alt="logo" class="img-fluid"></a>
+                                <a class="navbar-brand logoEP" href="{% url 'base' %}">
+                                    <img src="{%static 'images/logo/logoBlancoEP.png' %}" alt="logo" class="img-fluid">
+                                </a>
                             </div>
                             <div class="col-xl-9 col-md-9 col-6">
                                 <nav class="site-navigation float-left">
                                     <div class="container">
                                         <ul class="site-menu js-clone-nav d-none d-lg-block menu">
-                                            <li>
+                                            <!--<li>
                                               <a href="https://www.students.rent/" target="_blank">
                                                   <span class="hide">
                                                       Alojamiento
@@ -67,7 +70,7 @@
                                                       <img src="{%static 'images/menu/ocio.png' %}" width="30" height="30" class="imgResponsive">
                                                   </span>
                                               </a>
-                                            </li>
+                                            </li>-->
                                 <!--           <li>
                                                     <a href="#">
                                                         <span class="hide">
@@ -110,9 +113,44 @@
                                               </a>
                                             </li>
 
-                                            <li class="d-lg-none">
-                                                
-                                            </li>
+                                            {% if user.is_authenticated %}
+
+                                                <li class="d-lg-none">
+                                                    <a href="{% url 'UserProfile' %}">                                     
+                                                        <span class="responsiveAcceso">My profile</span>                                                   
+                                                    </a>
+                                                </li>
+
+                                                <li class="d-lg-none">
+                                                    <a href="{% url 'logout' %}">
+                                                    <span class="responsiveAcceso">Log out</span>
+                                                    </a>
+                                                </li>
+
+                                                {%if user.is_superuser %}
+
+                                                <li class="d-lg-none decoracionResponsive">
+                                                    <a href="{% url 'Admin' %}">
+                                                    <span class="responsiveAcceso">Admin</span>
+                                                    </a>
+                                                </li>
+
+                                                {% endif %}
+                                                {%else%}
+
+                                                <li class="d-lg-none">
+                                                    <a href="{% url 'UserRegistrationView' %}">
+                                                    <span class="responsiveAcceso">Sign in</span>
+                                                    </a>
+                                                </li>
+
+                                                <li class="d-lg-none">
+                                                    <a href="{% url 'login' %}">
+                                                    <span class="responsiveAcceso">Log in</span>
+                                                    </a>
+                                                </li>
+
+                                            {% endif %}
                                         </ul>
                                     </div>
                                 </nav>
@@ -127,28 +165,41 @@
                                 {% if user.is_authenticated %}
 
                                 <div class="add-list float-right">
-                                    <a class="btn v3 botonAzul botonAcceso" href="{% url 'UserProfile' %}">Mi perfil</a>
-                                    <a class="btn v3 botonAzul botonAcceso" href="{% url 'logout' %}">Log out</a>
+                                    <a class="btn v3 botonAcceso botonEP" href="{% url 'UserProfile' %}">                                     
+                                        <span class="textoAcceso">My profile</span>                                                   
+                                    </a>
+
+                                    <a class="btn v3 botonEP botonAcceso" href="{% url 'logout' %}">
+                                        <span class="textoAcceso">Log out</span>
+                                    </a>
                                 </div>
 
                                 {%if user.is_superuser %}
                                 <div class="add-list float-right">
-                                    <a class="btn v3 botonAzul botonAcceso" href="{% url 'Admin' %}">Admin</a>
+                                    <a class="btn v3 botonEP botonAcceso" href="{% url 'Admin' %}">
+                                        <span class="textoAcceso">Admin</span>
+                                    </a>
                                 </div>
 
                                 {% endif %}
                                 {%else%} 
 
                                 <div class="add-list float-right">
-                                    <a class="btn v3 botonAzul botonAcceso" href="{% url 'UserRegistrationView' %}">Register</a>
+                                    <a class="btn v3 botonEP botonAcceso" href="{% url 'UserRegistrationView' %}">
+                                        <span class="textoAcceso">Sign in</span>
+                                    </a>
                                 </div>
 
                                 <div class="add-list float-right">
-                                    <a class="btn v3 botonAzul botonAcceso" href="{% url 'login' %}">Log in</a>
+                                    <a class="btn v3 botonEP botonAcceso" href="{% url 'login' %}">
+                                        <span class="textoAcceso">Log in</span>
+                                    </a>
                                 </div>
+                                
 
 
                                 {% endif %}
+                                
                             </div>
                         </div>
                     </div>
@@ -189,35 +240,57 @@
                               </div>
                           </div>
                       </div>
-                      <div class="col-lg-3 col-md-12">
+                      <div class="col-lg-2 col-md-12">
                           <div class="footer-content nav">
                               <h2 class="title">Helpful Links</h2>
                               <ul class="list">
-                                  <li><a class="link-hov style2" href="#">Login</a></li>
-                                  <li><a class="link-hov style2" href="#">My Account</a></li>
-                                  <li><a class="link-hov style2" href="#">Privacy policy</a></li>
+                                  <li>
+                                  <a class="link-hov style2 noEnlace" href="{% url 'login' %}">Login</a>
+                                  </li>
+                                  {% if user.is_authenticated %}
+                                    <li>
+                                    <a class="link-hov style2 noEnlace" href="{% url 'UserProfile' %}">My Account</a>
+                                    </li>
+                                  {% endif %}
+                                  <li><a class="link-hov style2 noEnlace" href="{% url 'PrivacyPolicy' %}">Privacy policy</a></li>
+                                   <li><a class="link-hov style2 noEnlace" href="{% url 'Faq' %}">FAQ</a></li>
                               </ul>
                           </div>
                       </div>
-                      <div class="col-lg-3 col-md-12">
+                      <div class="col-lg-2 col-md-12">
                           <div class="footer-content nav">
                               <h2 class="title">Category</h2>
                               <ul class="list">
-                                  <li><a class="link-hov style2" href="#">Shop</a></li>
+                                  <li>
+                                  <a class="link-hov style2 noEnlace" href="{% url 'Tienda' %}">Shop</a>
+                                  </li>
+                              </ul>
+                          </div>
+                      </div>
+                      <div class="col-lg-2 col-md-12">
+                          <div class="footer-content nav">
+                              <h2 class="title">Payment</h2>
+                              <ul class="list">
+                                  <li>                                   
+                                    <span class="colorPayment">PayPal</span>                                    
+                                  </li>
+
+                                  <li>
+                                    <span class="colorPayment">Credit card</span>
+                                  </li>
                               </ul>
                           </div>
                       </div>
                       <div class="col-lg-3 col-md-12">
                           <div class="footer-content nav">
                               <h2 class="title">Contact us</h2>
-                              <ul class="list footer-list">
-                                
+                              <ul class="list footer-list">                                
                                   <li>
                                       <div class="contact-info">
                                           <div class="icon">
                                               <i class="ion-email"></i>
                                           </div>
-                                          <div class="text"><a href="#">info@erasmusplanet.com</a></div>
+                                          <div class="text"><a href="mailto:info@erasmusplanet.com" class="noEnlace">info@erasmusplanet.com</a></div>
                                       </div>
                                   </li>
                                   <li>
@@ -225,16 +298,19 @@
                                           <div class="icon">
                                               <i class="ion-ios-telephone"></i>
                                           </div>
-                                          <div class="text">+34 697 96 26 71</div>
+                                          <div class="text">
+                                            <a href="tel:+34697962671" class="noEnlace">+34 697 96 26 71</a>
+                                            </div>
                                       </div>
                                   </li>
                               </ul>
                               <ul class="social-buttons style2">
-                                  <li><a href="https://www.instagram.com/erasmus.planet/" target="_blank"><i class="ion-social-instagram"></i></a></li>
-                                  
+                                  <li><a href="https://www.instagram.com/erasmus.planet/" target="_blank"><i class="ion-social-instagram iconoFooter"></i></a></li>
+                                  <!--<li><a href="#" target="_blank"><i class="ion-social-facebook iconoFooter"></i></a></li>-->
                               </ul>
                           </div>
                       </div>
+                      
                   </div>
               </div>
           </div>
@@ -242,7 +318,7 @@
               <div class="container">
                   <div class="row">
                       <div class="col-md-8 offset-md-2 text-center">
-                          <p><span id="fecha"></span>&nbsp;&copy; Erasmus Planet. Todos los derechos reservados.</p>
+                          <p><span id="fecha"></span>&nbsp;&copy; Erasmus Planet. All rights reserved.</p>
                       </div>
                   </div>
               </div>
@@ -250,7 +326,7 @@
       </div> 
       <!--Footer ends-->
       <!-- VENTANA MODAL DE DESCUENTOS -->
-
+<!--
       <div class="modal fade" id="coupon_wrap">
           <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
@@ -289,7 +365,7 @@
               </div>
           </div>
       </div>
-
+-->
       <!---->
       <!--<script src="https://kit.fontawesome.com/yourcode.js"></script>-->
       <!--plugin js-->
@@ -298,7 +374,64 @@
       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_8C7p0Ws2gUu7wo0b6pK9Qu7LuzX2iWY&amp;libraries=places&amp;callback=initAutocomplete"></script>
       <!--Main js-->
       <script type="text/javascript" src="{% static 'js/main.js'%}"></script>
-      <script type="text/javascript" src="{% static 'js/autocomplete.js'%}"></script>
+      
+      <script type="text/javascript" src="{% static 'js/cart.js'%}"></script>
+
+    <script type="text/javascript">
+
+        var user = '{{request.user}}'
+
+        function getToken(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = cookies[i].trim();
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+        var csrftoken = getToken('csrftoken');
+
+
+
+
+
+
+        
+        function getCookie(name) {
+            // Split cookie string and get all individual name=value pairs in an array
+            var cookieArr = document.cookie.split(";");
+
+
+            //Loop through the array elements
+                for (var i = 0; i < cookieArr.length; i++) {
+                    var cookiePair = cookieArr[i].split("=");
+                    if(name == cookiePair[0].trim()){
+                        return decodeURIComponent(cookiePair[1]);
+                    }
+                   
+                }
+            
+            return null;
+        }
+        var cart = JSON.parse(getCookie('cart'))
+        
+        if(cart == undefined){
+
+            cart = {}
+            console.log('Cart was created!')
+            document.cookie = 'cart=' + JSON.stringify(cart) + ";domain=;path=/"
+
+        }
+        console.log('Cart:', cart) 
+
+    </script>
 
 
   </body>
