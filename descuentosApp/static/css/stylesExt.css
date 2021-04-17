@@ -63,6 +63,22 @@
     border-color: #6ae !important;
 }
 
+.botonGeneral {
+    background-color: #6ae !important;
+    color: white !important;
+    border-color: #6ae !important;
+}
+
+.botonGeneral:hover {
+    background-color: white !important;
+    color: #6ae !important;
+    border-color: #6ae !important;
+}
+
+.textoEP {
+    color: #6ae !important;
+}
+
 .textoAcceso {
     color: white !important;
 }
@@ -110,10 +126,6 @@
 
 .enlaceContrasenya:hover {
     text-decoration: none !important;
-    color: #78bbb8;
-}
-
-.textoDegradado {
     color: #78bbb8;
 }
 
@@ -222,19 +234,19 @@ input {
 }
 
 .alturaInput {
-    height: calc(2.25rem + 2px) !important;
+    height: 22px !important;
 }
 
 .botonAtras {
-    background-color: #BB9E78 !important;
+    background-color: #f91942 !important;
     color: white !important;
-    border-color: #BB9E78 !important;
+    border-color: #f91942 !important;
 }
 
 .botonAtras:hover {
     background-color: white !important;
-    color: #BB9E78 !important;
-    border-color: #BB9E78 !important;
+    color: #f91942 !important;
+    border-color: #f91942 !important;
 }
 
 .botonAcceso {
@@ -256,6 +268,10 @@ input {
 
 .textoTarjetaGuia {
     padding-bottom: 15px !important;
+}
+
+.textoExplicativoReg {
+    font-size: 13px !important;
 }
 
 
