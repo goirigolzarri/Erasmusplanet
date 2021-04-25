@@ -19,6 +19,80 @@
         </div>
         <!--Breadcrumb section ends-->
         <!--Add Listing starts-->
+
+        <div class="list-details-section section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12">
+
+                        <div id="list-menu" class="list_menu">
+                            <ul class="list-details-tab fixed_nav">
+                                <li class="nav-item active"><a href="#informacionGeneral" class="active noSubrayadoEnlace">Información general</a></li>
+                                <li class="nav-item"><a href="#comoLlegar" class="noSubrayadoEnlace">Como llegar</a></li>
+                                <li class="nav-item"><a href="#alojamiento" class="noSubrayadoEnlace">Alojamiento</a></li>
+                                <li class="nav-item"><a href="#ocio" class="noSubrayadoEnlace">Ocio</a></li>
+                                <li class="nav-item"><a href="#divisas" class="noSubrayadoEnlace">Divisas</a></li>
+                                <li class="nav-item"><a href="#banco" class="noSubrayadoEnlace">Banco y SIM</a></li>
+                                <li class="nav-item"><a href="#dondeComprar" class="noSubrayadoEnlace">Donde comprar</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="list-details-wrap">
+                            <div id="informacionGeneral" class="list-details-section">
+                                <h4>Información general</h4>
+                                <div class="overview-content">
+                                    <p>{{guide.informacion_general | safe}}</p>
+                                </div>
+                            </div>
+
+                            <div id="comoLlegar" class="list-details-section">
+                                <h4>Como llegar</h4>
+                                <div class="overview-content">
+                                    <p>{{guide.como_llegar | safe}}</p>
+                                </div>
+                            </div>
+
+                            <div id="alojamiento" class="list-details-section">
+                                <h4>Alojamiento</h4>
+                                <div class="overview-content">
+                                    <p>{{guide.alojamiento | safe}}</p>
+                                </div>
+                            </div>
+s
+                            <div id="ocio" class="list-details-section">
+                                <h4>Ocio</h4>
+                                <div class="overview-content">
+                                    <p>{{guide.ocio | safe}}</p>
+                                </div>
+                            </div>
+
+                            <div id="divisas" class="list-details-section">
+                                <h4>Divisas</h4>
+                                <div class="overview-content">
+                                    <p>{{guide.divisas | safe}}</p>
+                                </div>
+                            </div>
+
+                            <div id="banco" class="list-details-section">
+                                <h4>Banco y SIM</h4>
+                                <div class="overview-content">
+                                    <p>{{guide.banco_sim | safe}}</p>
+                                </div>
+                            </div>
+
+                            <div id="dondeComprar" class="list-details-section">
+                                <h4>Donde comprar</h4>
+                                <div class="overview-content">
+                                    <p>{{guide.donde_comprar | safe}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!--
         <div class="list-details-section section-padding add_list pad-top-30">
             <div class="container">
                 <div class="row">
@@ -133,6 +207,7 @@
                 </div>
             </div>
         </div>
+        -->
         <!--Add Listing ends-->
         <!-- Scroll to top starts-->
         <span class="scrolltotop fondoFlecha"><i class="ion-arrow-up-c posicionFlecha"></i></span>

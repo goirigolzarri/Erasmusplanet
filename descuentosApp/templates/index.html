@@ -43,7 +43,7 @@
                         <div class="row align-items-center">
                             <div class="col-xl-3 col-md-3 col-6">
                                 <a class="navbar-brand logoEP" href="{% url 'base' %}">
-                                    <img src="{%static 'images/logo/logoBlancoEP.png' %}" alt="logo" class="img-fluid">
+                                    <img src="{%static 'images/menu/logoMenuVacio.png' %}" alt="logo" class="img-fluid">
                                 </a>
                             </div>
                             <div class="col-xl-9 col-md-9 col-6">
@@ -112,6 +112,7 @@
                                                   </span>
                                               </a>
                                             </li>
+                                            
 
                                             {% if user.is_authenticated %}
 
@@ -278,6 +279,11 @@
                                   <li>
                                     <span class="colorPayment">Credit card</span>
                                   </li>
+
+                                  <li>
+                                  <a class="btn v1" data-toggle="modal" data-target="#emailVerification">
+                                                    Get Coupon
+                                                </a></li>
                               </ul>
                           </div>
                       </div>
@@ -326,7 +332,7 @@
       </div> 
       <!--Footer ends-->
       <!-- VENTANA MODAL DE DESCUENTOS -->
-<!--
+
       <div class="modal fade" id="coupon_wrap">
           <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
@@ -365,8 +371,38 @@
               </div>
           </div>
       </div>
--->
+
       <!---->
+
+      <!-- MODAL DE ENVIO VERIFICACIÓN EMAIL -->
+
+        <div class="modal fade" id="emailVerification">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h4 class="modal-title" id="myModalLabel">E-mail verification</h4>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="ion-ios-close-empty"></i></span></button>
+                  </div>
+                  <div class="modal-body">
+                      <div class="modal-coupon-code">
+                          <div class="store-content">
+                              <div class="text">
+                              Te hemos enviado un e-mail para la verificación de tu perfil.
+                            </div>
+                          </div>
+                          
+                      </div>
+                  </div>
+                  <div class="coupon-bottom">
+                      
+                      <button type="button" class="btn v3 float-right botonGeneral" data-dismiss="modal">Close</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- -->
+
       <!--<script src="https://kit.fontawesome.com/yourcode.js"></script>-->
       <!--plugin js-->
       <script type="text/javascript" src="{% static 'js/plugin.js'%}"></script>

@@ -14,6 +14,7 @@
                     <div class="imgLogo centrado">
                         <img src="{% static 'images/logo/logoNoTexto.png' %}" class="imgLoginRegistro">
                     </div>
+                    
                     <div class="textoEP">
                         <h3 class="margen50">Register</h3>
                     </div>
@@ -144,7 +145,7 @@
                                     <div class="row mar-top-35">
 
                                         <div class="col-xl-6 col-sm-6 margenBotonNext">
-                                            <label for="" class="label">Username</label>
+                                            <label for="" class="label float-left">Username</label>
                                             <div class="input-group input-group-lg input-group">
                                         
                                                 {{ form.username }}
@@ -154,7 +155,7 @@
                                         </div>
 
                                         <div class="col-xl-6 col-sm-6 margenBotonNext">
-                                            <label for="" class="label">Email</label>
+                                            <label for="" class="label float-left">Email</label>
                                             <div class="input-group input-group-lg input-group">
                                                 
                                                 {{ form.email }}
@@ -169,7 +170,7 @@
                                     <div class="row mar-top-20 col-xl-12">
 
                                         <div class="field col-xl-3 col-sm-12">
-                                            <div class="control has-icons-left  margenBotonNext">
+                                            <div class="control has-icons-left margenBotonNext">
                                                 <label>Prefix</label>
                                                 <div class="input-group input-group-solid">
                                                     <div class="input-group-prepend">
@@ -226,7 +227,7 @@
 
                                 <!-- PASO 3 -->
                                 <div class="tab">
-                                
+
                                     <div class="row margenBotonNext mar-top-15">
                                         <div class="col-xl-12 col-sm-12">
                                             <label for="" class="label">
@@ -814,6 +815,37 @@
     </div>
 </div>
 
+
+<!-- MODAL DE ENVIO VERIFICACIÓN EMAIL -->
+
+        <div class="modal fade" id="emailVerification" role="dialog">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h4 class="modal-title" id="myModalLabel">E-mail verification</h4>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="ion-ios-close-empty"></i></span></button>
+                  </div>
+                  <div class="modal-body">
+                      <div class="modal-coupon-code">
+                          <div class="store-content">
+                              <div class="text">
+                              Te hemos enviado un e-mail para la verificación de tu perfil.
+                            </div>
+                          </div>
+                          
+                      </div>
+                  </div>
+                  <div class="coupon-bottom">
+                      
+                      <button type="button" class="btn v3 float-right botonGeneral" data-dismiss="modal">Close</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- -->
+
+
 <!--User login section ends-->
 <!--Login section ends-->
 <!-- Scroll to top starts-->
@@ -821,6 +853,8 @@
 <!-- Scroll to top ends-->
 
 <!--Page Wrapper ends-->
+
+
 
 
 <!--Main js-->
