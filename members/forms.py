@@ -50,6 +50,7 @@ STUDENT_CHOICES = (('1', 'Bachelor'), ('2', 'Au Pair'), ('3', 'Master'), ('4', '
 
 class CreateUserForm(UserCreationForm):
 	
+	
 	class Meta:
 		model = User
 		fields = ['username', 'first_name', 'last_name', 'date' , 'date_inicio', 'date_fin', 'gender' ,'country', 'phone', 'prefix', 'studentType', 'cityOrigin1',
@@ -71,18 +72,18 @@ class CreateUserForm(UserCreationForm):
 			'universityDestination': forms.Select(attrs={'class':'form-control '}),
 			'country': forms.Select(choices=country_list, attrs={'class':'form-control '}),
 			'gender': forms.Select(choices=gender_list, attrs={'class':'form-control '}),
-			'first_name': forms.TextInput(attrs={'class':'form-control'}),
+			'first_name': forms.TextInput(attrs={'class':'form-control '}),
 			'last_name': forms.TextInput(attrs={'class':'form-control '}),
 			'date': forms.DateInput(attrs={'class':'form-control ', 'type' :'date'}),
 			'username': forms.TextInput(attrs={'class':'form-control '}),
-			'email': forms.EmailInput(attrs={'class':'form-control '}),
+			'email': forms.EmailInput(attrs={'class':'form-control ', 'placeholder': 'name@example.com'}),
 			'prefix': forms.TextInput(attrs={'class':'form-control ', 'placeholder': '+34'}),
 			'phone': forms.TextInput(attrs={'class':'form-control '}),
 			'studies': forms.TextInput(attrs={'class':'form-control ', 'placeholder': 'Example: Business Administration'}),
 			'course': forms.Select(choices=course_list, attrs={'class':'form-control '}),
 			'company': forms.TextInput(attrs={'class':'form-control '}),
-			'date_inicio': forms.TextInput(attrs={'class':'form-control '}),
-			'date_fin': forms.TextInput(attrs={'class':'form-control '}),
+			'date_inicio': forms.TextInput(attrs={'class':'form-control ', 'placeholder': '05/2021'}),
+			'date_fin': forms.TextInput(attrs={'class':'form-control ', 'placeholder': '12/2021'}),
 			
 
 		

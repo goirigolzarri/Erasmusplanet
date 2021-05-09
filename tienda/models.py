@@ -17,6 +17,23 @@ class ColorProducto(models.Model):
 	def __str__(self):
 		return self.name
 
+class Tallas(models.Model):
+
+	name = models.CharField(max_length=15)
+
+	def __str__(self):
+		return self.name
+
+class Bandera(models.Model):
+
+	foto = models.ImageField(null=True, blank=True, upload_to="images/", default='images/default.png')
+	name = models.CharField(max_length=15)
+
+	def __str__(self):
+		return self.name
+
+
+
 
 
 
@@ -30,14 +47,12 @@ class Product(models.Model):
 	name = models.CharField(max_length=30, null=False, blank=False, default='Producto Erasmus Planet')
 	codigo = models.CharField(max_length=10, null=False, blank=False)
 	precio = models.FloatField(default=10.00)
-	detalles = models.CharField(max_length=50, null=True)
-	bandera = models.CharField(max_length=20)
-	TALLA_CHOICES = (('1', 'XS'), ('2', 'S'), ('3', 'M'), ('4', 'L'), ('5', 'XL'), ('6', 'XXL'))
-	talla = models.CharField(max_length=10, choices=TALLA_CHOICES, null=True, default='')
-	bandera = models.CharField(null=True, max_length=30)
-	fecha = models.CharField(null= True, blank=True,  max_length=20)
-	color = models.ForeignKey(ColorProducto, on_delete=models.CASCADE, default='') 
+	detalles = models.CharField(max_length=50, null=True) 
 	categoria = models.ForeignKey(CategoriaProducto, on_delete=models.SET_NULL, null = True)
+	colores = models.ManyToManyField('ColorProducto', related_name='products')
+	tallas = models.ManyToManyField('Tallas', related_name='products')
+	bandera = models.ManyToManyField('Bandera', related_name='products')
+	
 	
 	
 	def get_absolute_url(self):
@@ -118,12 +133,18 @@ class Order(models.Model):
 
 
 
+
+
 class OrderItem(models.Model):
 	product = models.ForeignKey(Product, on_delete=models.SET_NULL, blank=True, null=True)
 	order = models.ForeignKey(Order, on_delete=models.SET_NULL, blank=True, null=True)
 	quantity = models.IntegerField(default=0, null=True, blank=True)
 	date_added = models.DateTimeField(auto_now_add=True)
-
+	
+	talla = models.CharField(null= True, blank=True,  max_length=20)
+	bandera = models.CharField(null=True, max_length=30)
+	fecha = models.CharField(null= True, blank=True,  max_length=20)
+	color = models.CharField(null= True, blank=True,  max_length=20)
 
 	@property
 	def get_total(self):

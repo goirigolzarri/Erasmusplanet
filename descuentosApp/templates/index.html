@@ -20,7 +20,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/dashboard.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/perfect-scrollbar.css' %}">
 
-    <link rel="icon" type="image/png" href="{%static 'images/favicon.ico'%}" with="32" height="32">
+    <link rel="icon" type="image/png" href="{%static 'images/EPCircular.ico'%}" with="32" height="32">
 
 </head>
 
@@ -46,14 +46,14 @@
                                     <img src="{%static 'images/menu/logoMenuVacio.png' %}" alt="logo" class="img-fluid">
                                 </a>
                             </div>
-                            <div class="col-xl-9 col-md-9 col-6">
+                            <div class="col-xl-10 col-md-9 col-6">
                                 <nav class="site-navigation float-left">
                                     <div class="container">
                                         <ul class="site-menu js-clone-nav d-none d-lg-block menu">
-                                            <!--<li>
-                                              <a href="https://www.students.rent/" target="_blank">
+                                            <li>
+                                              <a href="{% url 'api' %}" target="_blank">
                                                   <span class="hide">
-                                                      Alojamiento
+                                                      Accommodations
                                                   </span>
                                                   <span>
                                                       <img src="{%static 'images/menu/homeIcon.png' %}" width="30" height="30" class="imgResponsive">
@@ -61,7 +61,7 @@
                                               </a>
                                             </li>
 
-                                            <li>
+                                       <!--    <li>
                                               <a href="https://www.what2do.click/" target="_blank">
                                                   <span class="hide">
                                                       Ocio
@@ -82,20 +82,21 @@
                                                     </a>
                                             </li>-->
                                             
-                                        <!--    <li>
+                                            <li>
                                                     <a href="{% url 'Descuentos' %}">
                                                         <span class="hide">
-                                                            Descuentos
+                                                            Discount
                                                         </span>
                                                         <span>
                                                             <img src="{%static 'images/menu/discount.png' %}" width="30" height="30" class="imgResponsive">
                                                         </span>
                                                     </a>
-                                            </li>-->
+                                            </li>
+                                            
                                             <li>
                                               <a href="{% url 'Tienda' %}">
                                                   <span class="hide">
-                                                      Shop
+                                                    {% blocktrans %} Shop {% endblocktrans %}
                                                   </span>
                                                   <span>
                                                       <img src="{%static 'images/menu/tienda.png' %}" width="30" height="30" class="imgResponsive">
@@ -112,7 +113,7 @@
                                                   </span>
                                               </a>
                                             </li>
-                                            
+											
 
                                             {% if user.is_authenticated %}
 
@@ -225,114 +226,114 @@
              
     </div>
 
-      <!--Footer Starts -->
-      <div class="footer-wrapper no-pad-tb footer-fixed v1">
-          <div class="overlay op-1"></div>
-          <div class="footer-top-area section-padding">
-              <div class="container">
-                  <div class="row nav-folderized">
-                      <div class="col-lg-3 col-md-12">
-                          <div class="footer-logo">
-                              <a href="#"> <img class="logoFooter" src="{%static 'images/logo/logoCompletoEP.png'%}" alt="logo"></a>
-                              <div class="company-desc">
-                                  <p>
-                                      
-                                  </p>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="col-lg-2 col-md-12">
-                          <div class="footer-content nav">
-                              <h2 class="title">Helpful Links</h2>
-                              <ul class="list">
-                                  <li>
-                                  <a class="link-hov style2 noEnlace" href="{% url 'login' %}">Login</a>
-                                  </li>
-                                  {% if user.is_authenticated %}
+           <!--Footer Starts -->
+           <div class="footer-wrapper no-pad-tb footer-fixed v1">
+            <div class="overlay op-1"></div>
+            <div class="footer-top-area section-padding">
+                <div class="container">
+                    <div class="row nav-folderized">
+                        <div class="col-lg-3 col-md-12">
+                            <div class="footer-logo">
+                                <a href="#"> <img class="logoFooter" src="{%static 'images/logo/logoCompletoEP.png'%}" alt="logo"></a>
+                                <div class="company-desc">
+                                    <p>
+                                        
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-12">
+                            <div class="footer-content nav">
+                                <h2 class="title">Helpful Links</h2>
+                                <ul class="list">
                                     <li>
-                                    <a class="link-hov style2 noEnlace" href="{% url 'UserProfile' %}">My Account</a>
+                                    <a class="link-hov style2 noEnlace" href="{% url 'login' %}">Login</a>
                                     </li>
-                                  {% endif %}
-                                  <li><a class="link-hov style2 noEnlace" href="{% url 'PrivacyPolicy' %}">Privacy policy</a></li>
-                                   <li><a class="link-hov style2 noEnlace" href="{% url 'Faq' %}">FAQ</a></li>
-                              </ul>
-                          </div>
-                      </div>
-                      <div class="col-lg-2 col-md-12">
-                          <div class="footer-content nav">
-                              <h2 class="title">Category</h2>
-                              <ul class="list">
-                                  <li>
-                                  <a class="link-hov style2 noEnlace" href="{% url 'Tienda' %}">Shop</a>
-                                  </li>
-                              </ul>
-                          </div>
-                      </div>
-                      <div class="col-lg-2 col-md-12">
-                          <div class="footer-content nav">
-                              <h2 class="title">Payment</h2>
-                              <ul class="list">
-                                  <li>                                   
-                                    <span class="colorPayment">PayPal</span>                                    
-                                  </li>
-
-                                  <li>
-                                    <span class="colorPayment">Credit card</span>
-                                  </li>
-
-                                  <li>
-                                  <a class="btn v1" data-toggle="modal" data-target="#emailVerification">
-                                                    Get Coupon
-                                                </a></li>
-                              </ul>
-                          </div>
-                      </div>
-                      <div class="col-lg-3 col-md-12">
-                          <div class="footer-content nav">
-                              <h2 class="title">Contact us</h2>
-                              <ul class="list footer-list">                                
-                                  <li>
-                                      <div class="contact-info">
-                                          <div class="icon">
-                                              <i class="ion-email"></i>
-                                          </div>
-                                          <div class="text"><a href="mailto:info@erasmusplanet.com" class="noEnlace">info@erasmusplanet.com</a></div>
-                                      </div>
-                                  </li>
-                                  <li>
-                                      <div class="contact-info">
-                                          <div class="icon">
-                                              <i class="ion-ios-telephone"></i>
-                                          </div>
-                                          <div class="text">
-                                            <a href="tel:+34697962671" class="noEnlace">+34 697 96 26 71</a>
+                                    {% if user.is_authenticated %}
+                                      <li>
+                                      <a class="link-hov style2 noEnlace" href="{% url 'UserProfile' %}">My Account</a>
+                                      </li>
+                                    {% endif %}
+                                    <li><a class="link-hov style2 noEnlace" href="{% url 'PrivacyPolicy' %}">Privacy policy</a></li>
+                                     <li><a class="link-hov style2 noEnlace" href="{% url 'Faq' %}">FAQ</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-12">
+                            <div class="footer-content nav">
+                                <h2 class="title">Category</h2>
+                                <ul class="list">
+                                    <li>
+                                    <a class="link-hov style2 noEnlace" href="{% url 'Tienda' %}">Shop</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-12">
+                            <div class="footer-content nav">
+                                <h2 class="title">Payment</h2>
+                                <ul class="list">
+                                    <li>                                   
+                                      <span class="colorPayment">PayPal</span>                                    
+                                    </li>
+  
+                                    <li>
+                                      <span class="colorPayment">Credit card</span>
+                                    </li>
+  
+                                    <li>
+                                    <a class="btn v1" data-toggle="modal" data-target="#emailVerification">
+                                                      Get Coupon
+                                                  </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-12">
+                            <div class="footer-content nav">
+                                <h2 class="title">Contact us</h2>
+                                <ul class="list footer-list">                                
+                                    <li>
+                                        <div class="contact-info">
+                                            <div class="icon">
+                                                <i class="ion-email"></i>
                                             </div>
-                                      </div>
-                                  </li>
-                              </ul>
-                              <ul class="social-buttons style2">
-                                  <li><a href="https://www.instagram.com/erasmus.planet/" target="_blank"><i class="ion-social-instagram iconoFooter"></i></a></li>
-                                  <!--<li><a href="#" target="_blank"><i class="ion-social-facebook iconoFooter"></i></a></li>-->
-                              </ul>
-                          </div>
-                      </div>
-                      
-                  </div>
-              </div>
-          </div>
-          <div class="footer-bottom-area">
-              <div class="container">
-                  <div class="row">
-                      <div class="col-md-8 offset-md-2 text-center">
-                          <p><span id="fecha"></span>&nbsp;&copy; Erasmus Planet. All rights reserved.</p>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div> 
-      <!--Footer ends-->
+                                            <div class="text"><a href="mailto:info@erasmusplanet.com" class="noEnlace">hello@erasmusplanet.com</a></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="contact-info">
+                                            <div class="icon">
+                                                <i class="ion-ios-telephone"></i>
+                                            </div>
+                                            <div class="text">
+                                              <a href="tel:+34697962671" class="noEnlace">+34 697 96 26 71</a>
+                                              </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <ul class="social-buttons style2">
+                                    <li><a href="https://www.instagram.com/erasmus.planet/" target="_blank"><i class="ion-social-instagram iconoFooter"></i></a></li>
+                                    <!--<li><a href="#" target="_blank"><i class="ion-social-facebook iconoFooter"></i></a></li>-->
+                                </ul>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 offset-md-2 text-center">
+                            <p><span id="fecha"></span>&nbsp;&copy; Erasmus Planet. All rights reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <!--Footer ends-->
       <!-- VENTANA MODAL DE DESCUENTOS -->
-
+<!--
       <div class="modal fade" id="coupon_wrap">
           <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
@@ -371,38 +372,8 @@
               </div>
           </div>
       </div>
-
+-->
       <!---->
-
-      <!-- MODAL DE ENVIO VERIFICACIÓN EMAIL -->
-
-        <div class="modal fade" id="emailVerification">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-              <div class="modal-content">
-                  <div class="modal-header">
-                      <h4 class="modal-title" id="myModalLabel">E-mail verification</h4>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="ion-ios-close-empty"></i></span></button>
-                  </div>
-                  <div class="modal-body">
-                      <div class="modal-coupon-code">
-                          <div class="store-content">
-                              <div class="text">
-                              Te hemos enviado un e-mail para la verificación de tu perfil.
-                            </div>
-                          </div>
-                          
-                      </div>
-                  </div>
-                  <div class="coupon-bottom">
-                      
-                      <button type="button" class="btn v3 float-right botonGeneral" data-dismiss="modal">Close</button>
-                  </div>
-              </div>
-          </div>
-      </div>
-
-      <!-- -->
-
       <!--<script src="https://kit.fontawesome.com/yourcode.js"></script>-->
       <!--plugin js-->
       <script type="text/javascript" src="{% static 'js/plugin.js'%}"></script>
@@ -410,7 +381,7 @@
       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_8C7p0Ws2gUu7wo0b6pK9Qu7LuzX2iWY&amp;libraries=places&amp;callback=initAutocomplete"></script>
       <!--Main js-->
       <script type="text/javascript" src="{% static 'js/main.js'%}"></script>
-      
+      <script type="text/javascript" src="{% static 'js/autocomplete.js'%}"></script>
       <script type="text/javascript" src="{% static 'js/cart.js'%}"></script>
 
     <script type="text/javascript">

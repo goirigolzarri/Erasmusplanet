@@ -35,7 +35,7 @@
         <div class="row">
             <div class="col-lg-7 col-md-12">
                 <div class="add_list_content">
-                    <h4> <i class="ion-ios-information-outline"></i> Personal Information :</h4>
+                    <h4> <i class="ion-ios-information-outline"></i> Personal Information</h4>
                    
                         <div class="row">
                             <form method="POST" id="form">
@@ -54,6 +54,9 @@
                                             <input id="email" name="email" type="text" class="form-control filter-input">
                                         </div>
                                     </div>
+
+                                    <h4> <i class="ion-ios-information-outline"></i> Shipping address</h4>
+
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="fname">Adress</label>
@@ -86,31 +89,7 @@
                                 </div>
                             </form>
                             <div class="col-md-12">
-                                <div class="payment-options">
-                                    <h4> <i class="icofont-pay"></i>Payment Method :</h4>
-                                    <label class="custom-checkbox">
-                                        <input type="radio" name="bank-transfer">
-                                        <span class="sm-heading">Direct Bank Transfer</span>
-                                    </label>
-                                    <div class="alert-general no-border mar-bot-0">
-                                        <div class="alert-text">
-                                            <p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won’t be shipped until the funds have cleared in our account.</p>
-                                        </div>
-                                    </div>
-                                    <label class="custom-checkbox">
-                                        <input type="radio" name="bank-transfer">
-                                        <span class="sm-heading">Credit card</span>
-                                        <span class="card-options"><img src="{% static 'images/payment/payment-1.png' %}" alt="..."></span>
-                                        <span class="card-options pad-right-5"><img src="images/payment/payment-2.png" alt="..."></span>
-                                        <span class="card-options pad-right-5"><img src="images/payment/payment-3.png" alt="..."></span>
-
-                                    </label>
-                                    <label class="custom-checkbox">
-                                        <input type="radio" name="bank-transfer">
-                                        <span class="sm-heading">Paypal</span>
-                                        <span class="card-options"><img src="{% static 'images/payment/payment-2.png' %}" alt="..."></span>
-                                    </label>
-                                </div>
+                                <div id="paypal-button-container"></div>
                             </div>
                         </div>
                     </form>
@@ -171,7 +150,39 @@
 
 <!-- Scroll to top starts-->
 <span class="scrolltotop"><i class="ion-arrow-up-c"></i></span>
+<script src="https://www.paypal.com/sdk/js?client-id=Abvk8Y-bfvMoUq285FUEnEL5H9AcG_WsfBT5I6w14ipmgX_WrgCxBH5oaqGsnhjRiYzeUzNPl6O37tcn&currency=EUR"></script>
+<script>
+    var total = parseFloat("{{order.get_cart_total}}").toFixed(2)
+    // Render the PayPal button into #paypal-button-container
+    paypal.Buttons({
 
+        style: {
+            color:  'blue',
+            shape:  'pill',
+            label:  'pay',
+            height: 40
+        },
+        createOrder: function(data, actions){
+            return actions.order.create({
+
+                purchase_units: [{
+                    amount:{
+                        value: total
+                    
+                    }
+                }]
+
+
+            });
+
+        },
+        onApprove: function(data, actions){
+            return actions.order.capture().then(function(details){
+                submitFormData()
+            });
+        }
+    }).render('#paypal-button-container');
+</script>
 
 <script type="text/javascript">
     var total = parseFloat("{{order.get_cart_total}}")
@@ -243,6 +254,7 @@
     }
 
 </script>
+
 <!-- Scroll to top ends-->
 
 {% endblock %}

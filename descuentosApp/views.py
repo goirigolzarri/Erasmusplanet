@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse, JsonResponse
+from django.http import HttpResponse
 from django.views.generic.edit import DeleteView
 from .models import Guide, City
 from django.urls import reverse
@@ -10,9 +10,10 @@ from .forms import AñadirGuia, ContactForm, EditarGuia
 from django.template.loader import get_template
 from django.core.mail import EmailMessage
 from tienda.models import *
-
-
-
+from django.http import JsonResponse
+import requests
+import json
+from django.core.paginator import Paginator
 # Create your views here.
 
 
@@ -54,20 +55,20 @@ def CityList(request):
 
 def Descuentos(request):
 
-    return render(request, 'descuentos.html')
+	return render(request, 'descuentos.html')
 
 
 def Alojamiento(request):
 
-    return render(request, 'alojamiento.html')
+	return render(request, 'alojamiento.html')
 
 
 def AdminSite(request):
 
-    guides = Guide.objects.all()
-    context = {'guides': guides}
+	guides = Guide.objects.all()
+	context = {'guides': guides}
 
-    return render(request, 'admin.html', context)
+	return render(request, 'admin.html', context)
 
 
 class AddGuide(CreateView):
@@ -126,12 +127,12 @@ def Contacto(request):
 			content = template.render(context)
 
 			email = EmailMessage(
-                "Contact Page / " + subject,
-                content,
-                "Erasmus Planet" +'',
-                ['erasmuusplanet@gmail.com'],
-                headers = {'Reply-To': email }
-            )
+				"Contact Page / " + subject,
+				content,
+				"Erasmus Planet" +'',
+				['erasmuusplanet@gmail.com'],
+				headers = {'Reply-To': email }
+			)
 			email.send()
 			
 			return redirect('base')
@@ -173,6 +174,29 @@ def index(request):
 
 	return context
 
+
+def api(request):
+
+	response = requests.get('http://cdn.housinganywhere.com/feeds/happyerasmusbilbao/happyerasmusbilbao.json')
+	api = response.json()
+	count = api['count']
+	print(count)
+	data = api['listings']
+	#total = len(data)
+	#print(total)
+	#context = {'data':data, 'count':count}
+
+
+	paginator = Paginator(data, 25)
+	page_number = request.GET.get('page')
+	page_obj = paginator.get_page(page_number)
+
+	
+
+
+	return render(request , 'api.html', {'page_obj': page_obj})
+
+	
 def autosuggest(request):
 	print(request.GET)
 	query_original = request.GET.get('term')
@@ -182,3 +206,9 @@ def autosuggest(request):
 	mylist += [x.title for x in queryset]
 	print(mylist)
 	return JsonResponse(mylist,safe=False)
+
+# def api(request):
+# 	file = open(r'C:\Users\Asier\Documents\GitHub\ErasmusLocal\swagger.json')
+# 	data = file.read()
+# 	file.close()
+# 	return JsonResponse(data, safe=False)

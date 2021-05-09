@@ -23,19 +23,10 @@ class Country(models.Model):
 
 
 
-class Province(models.Model):
-	country = models.ForeignKey(Country, on_delete=models.CASCADE)
-	name = models.CharField(max_length=50)
-
-
-
-	def __str__(self):
-
-		return self.name
 
 
 class City(models.Model):
-	province = models.ForeignKey(Province, on_delete=models.CASCADE)
+	country = models.ForeignKey(Country, on_delete=models.CASCADE)
 	name = models.CharField(max_length=30)
 
 
@@ -61,10 +52,9 @@ class University(models.Model):
 
 
 class Guide(models.Model):
-
+	
 	city = models.ForeignKey(City, on_delete=models.CASCADE)
 	title = models.CharField(max_length=50, default='')
-	imagen_informacion_general = models.ImageField(null=True, blank=True, upload_to="images/")
 	informacion_general = RichTextField(blank=True)
 	como_llegar = RichTextField(blank=True)
 	comida = RichTextField(blank=True, default = '')
@@ -73,6 +63,14 @@ class Guide(models.Model):
 	divisas = RichTextField(blank=True)
 	banco_sim = RichTextField(blank=True)
 	donde_comprar = RichTextField(blank=True)
+	foto = models.ImageField(null=True, blank=True, upload_to="images/", default='images/default.png')
+	foto2 = models.ImageField(null=True, blank=True, upload_to="images/", default='images/default.png')
+	foto3 = models.ImageField(null=True, blank=True, upload_to="images/", default='images/default.png')
+	foto4 = models.ImageField(null=True, blank=True, upload_to="images/", default='images/default.png')
+	foto5 = models.ImageField(null=True, blank=True, upload_to="images/", default='images/default.png')
+	foto6 = models.ImageField(null=True, blank=True, upload_to="images/", default='images/default.png')
+	foto7 = models.ImageField(null=True, blank=True, upload_to="images/", default='images/default.png')
+	
 
 	def __str__(self):
 

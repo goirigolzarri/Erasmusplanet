@@ -55,6 +55,10 @@ def updateItem(request):
 	data = json.loads(request.body)
 	productId = data['productId']
 	action = data['action']
+	color = data['color']
+	talla = data['talla']
+	bandera = data['bandera']
+	fecha = data['fecha']
 	print('Action:', action)
 	print('Product:', productId)
 
@@ -65,7 +69,7 @@ def updateItem(request):
 	customer, created = Customer.objects.get_or_create(user=logged_in_user)
 	order, created = Order.objects.get_or_create(pedido_de=customer, complete = False)
 
-	orderItem, created = OrderItem.objects.get_or_create(order=order, product=product)
+	orderItem, created = OrderItem.objects.get_or_create(order=order, product=product, color=color, talla=talla, bandera=bandera, fecha=fecha)
 
 
 
@@ -73,8 +77,16 @@ def updateItem(request):
 		orderItem.quantity = (orderItem.quantity + 1)
 	elif action == 'remove':
 		orderItem.quantity = (orderItem.quantity -1)
-
+			
+	
 	orderItem.save()
+
+	if action == 'delete':
+		print('borrar')
+		orderItem.delete()
+	
+
+
 	if orderItem.quantity <= 0:
 		orderItem.delete()
 
@@ -125,3 +137,5 @@ def processOrder(request):
 
 	print('Data:', request.body)
 	return JsonResponse('Payment submitted..', safe=False)
+
+

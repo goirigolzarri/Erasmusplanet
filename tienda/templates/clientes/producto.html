@@ -43,13 +43,10 @@
                 <div class="widget">
                     <div class="form-group filter-group">
                         <h4>Size</h4>    
-                        <select class="filter-input noMargenTallaYColor" id="option-select">
-                            <option>XS</option>
-                            <option>S</option>
-                            <option>M</option>
-                            <option>L</option>
-                            <option>XL</option>
-                            <option>XXL</option>
+                        <select id="talla{{product.id}}" class="form-control">
+                            {% for tallas in product.tallas.all %}
+                            <option value="{{tallas.name}}">{{tallas.name}}</option>
+                            {% endfor %}
                         </select>
                     </div>
                 </div>
@@ -59,16 +56,32 @@
                 <div class="widget">
                     <div class="form-group filter-group">
                         <h4>Color</h4>    
-                        <select class="filter-input noMargenTallaYColor" id="option-select">
-                            <option>Black</option>
-                            <option>White</option>
-                            <option>Blue</option>
-                            <option>Red</option>
-                            <option>Green</option>
-                            <option>Yellow</option>
+                        <select id="color{{product.id}}" class="form-control">
+                            {% for color in product.colores.all %}
+                            <option value="{{color.name}}">{{color.name}}</option>
+                            {% endfor %}
                         </select>
                     </div>
                 </div>
+
+                <div class="widget">
+                    <div class="form-group filter-group">
+                        <h4>Bandera</h4>    
+                        <select id="bandera{{product.id}}" class="form-control">
+                            {% for bandera in product.bandera.all %}
+                            <option value="{{bandera.name}}"><img src="{{bandera.foto.url}}">{{bandera.name}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="widget">
+                    <div class="form-group filter-group">
+                        <h4>Fecha</h4>    
+                       <input id="fecha{{product.id}}" class="editable"> </input>
+                    </div>
+                </div>
+              
                 
                 <div class="widget">
                 <button data-product={{product.id}} data-action="add" class="btn v3 botonAzul add-btn update-cart">Add to cart</button>

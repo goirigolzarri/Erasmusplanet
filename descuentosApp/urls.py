@@ -22,7 +22,8 @@ urlpatterns = [
 	path('propuesta_guia/', views.Propuestaguia, name='Propuestaguia'),
 	path('privacyPolicy/', views.PrivacyPolicy, name='PrivacyPolicy'),
 	path('faq/', views.Faq, name='Faq'),
-	path('autosuggest/', autosuggest, name='autosuggest')
+	path('api/', views.api, name='api'),
+    path('autosuggest/', autosuggest, name='autosuggest')
 
 
 ]

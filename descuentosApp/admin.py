@@ -9,15 +9,18 @@ from import_export.admin import ImportExportModelAdmin
 
 
 class CountryAdmin(ImportExportModelAdmin):
-    pass
+	pass
 
+class GuideAdmin(ImportExportModelAdmin):
+	pass
+class CityAdmin(ImportExportModelAdmin):
+	pass
 
 admin.site.register(User)
 admin.site.register(Country, CountryAdmin)
-admin.site.register(Province)
-admin.site.register(City)
+admin.site.register(City, CityAdmin)
 admin.site.register(University)
-admin.site.register(Guide)
+admin.site.register(Guide, GuideAdmin)
 
 
 
@@ -35,5 +38,7 @@ admin.site.register(Order)
 admin.site.register(OrderItem)
 admin.site.register(ShippingAddress)
 admin.site.register(CategoriaProducto)
+admin.site.register(Tallas)
+admin.site.register(Bandera)
 
 

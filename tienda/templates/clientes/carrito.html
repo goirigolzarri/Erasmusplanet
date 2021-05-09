@@ -13,12 +13,15 @@
                 <div class="row align-items-center  pad-top-80">
                     <div class="col-md-6 col-12">
                         <div class="breadcrumb-menu">
-                            <h2 class="page-title">Cart</h2>
+                            <h2 class="page-title">Listings</h2>
                         </div>
                     </div>
                     <div class="col-md-6 col-12">
                         <div class="breadcrumb-menu text-right sm-left">
-                            
+                            <ul>
+                                <li class="active"><a href="#">Home</a></li>
+                                <li><a href="#">Listings</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -27,6 +30,7 @@
         <!--Breadcrumb section ends-->
         <!--Listing Filter starts-->
         <div class="container">
+            
             <div class="row">
                 <div class="col-lg-8 col-md-12">
                     <div class="list-details-wrap">
@@ -46,16 +50,26 @@
                                                 <div class="col-md-6">
                                                     <div class="feature-left float-left">
                                                         <h3>{{item.product.name}}</h3>
-                                                        <p>{{item.product.color}} | Talla {{item.product.get_talla_display}} </span>
+                        
+                                                        <br>
+                                                        <span id="color{{product.id}}" value="{{item.color}}">Color: {{item.color}}</span>
+                                                        <br>
+                                                        <span id="talla{{product.id}}" value="{{item.talla}}">Talla: {{item.talla}}</span>
+                                                        <br>
+                                                        <span>Bandera: {{item.bandera}}</span>
+                                                        <br>
+                                                        <span>Fecha: {{item.fecha}}</span>
+                                                        <br>
                                                         </p>
+                                                       
                                                         <p class="text-left align-middle">
-                                                            <button data-product={{item.product.id}} data-action='remove' class="btn v3 botonAzul add-btn update-cart">
+                                                            <button data-product={{item.product.id}} data-talla={{item.talla}} data-color={{item.color}} data-bandera={{item.bandera}} data-fecha={{item.fecha}} data-action='remove' class="btn v3 botonAzul add-btn update-cart">
                                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
                                                                     <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
                                                                   </svg>
                                                             </button>
                                                             <span class="mr-2 font-weight-bolder">{{item.quantity}}</span>
-                                                            <button data-product={{item.product.id}} data-action="add" class="btn v3 botonAzul add-btn update-cart">
+                                                            <button data-product={{item.product.id}} data-talla={{item.talla}} data-color={{item.color}} data-bandera={{item.bandera}} data-fecha={{item.fecha}} data-action="add" class="btn v3 botonAzul add-btn update-cart">
                                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
                                                                     <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
                                                                   </svg>
@@ -65,6 +79,16 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
+                                                    <p class="text-left align-middle">
+                                                        <button data-product={{item.product.id}} data-talla={{item.talla}} data-color={{item.color}} data-bandera={{item.bandera}} data-fecha={{item.fecha}} data-action='delete' class="btn v3 botonAzul add-btn update-cart">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                                                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                                                                <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                                                              </svg>
+                                                        </button>
+
+
+                                                    </p>
                                                     <div class="feature-right float-right">
                                                         <span class="price-amt">{{item.product.precio}}€</span>
                                                         <br>
@@ -106,7 +130,7 @@
                                 <div class="coupon-code">DL76T</div>
                             </div>
                             <div class="coupon-bottom">
-                                <button class="btn v3 botonGeneral">Apply</button>
+                                <button class="btn v3">Apply</button>
                             </div>
                         </div>
                     </div>
@@ -121,6 +145,7 @@
                                             <ul>
                                             {% for item in items %}
                                                 <li>{{item.product.name}} x {{item.quantity}} - {{item.get_total}} €</li>
+                                                
                                             {% endfor %}
                                             </ul>
                                         </div>
@@ -142,7 +167,7 @@
                                 </div>
                             </div>
                             <div class="book-btn text-center">
-                                <a href="{% url 'Checkout' %}" class="btn botonGeneral">Buy</a>
+                                <a href="{% url 'Checkout' %}">Buy</a>
                             </div>
                         </div>
                     </div>
