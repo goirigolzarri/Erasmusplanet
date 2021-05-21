@@ -25,6 +25,19 @@
     width: 200px !important;
 }
 
+.noContent li:first-child:after {
+    content: none !important;
+}
+
+.listaInline li {
+    display: inline !important;
+}
+
+.tamanyoColor {
+    width: 50px !important;
+    height: 50px !important;
+}
+
 .enlaceMenu:hover {
     color: white !important;
     text-decoration: underline !important;
@@ -282,6 +295,33 @@ input {
 .anchoContainer {
     max-width: 90% !important;
 }
+
+.pointer {
+    cursor: pointer;
+}
+
+
+/**** SELECCION TALLA ****/
+
+.custom-checkbox-input {
+    display: none;
+}
+
+.custom-checkbox-text {
+    padding: 10px;
+    background-color: #F2F2F2;
+    color: #555;
+    cursor: pointer;
+    user-select: none;
+}
+
+.custom-checkbox-input:checked~.custom-checkbox-text {
+    background-color: #6AE;
+    color: white;
+}
+
+
+/***********************/
 
 
 /* Mark input boxes that gets an error on validation: */
