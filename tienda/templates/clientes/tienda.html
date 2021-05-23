@@ -73,7 +73,7 @@
                                             <img class="single-place-image" src="{{product.fotoURL}}" alt="place-image">
                                             <div class="single-place-content">
                                                 <h2 class="single-place-title">
-                                                    <a href="grid-fullwidth-map.html">{{product.name}}</a>
+                                                    <a href="{% url 'ProductDetail' product.pk %}" class="noEnlace">{{product.name}}</a>
                                                 </h2>
                                                 <ul class="single-place-list noContent">
                                                     <li><span>{{product.precio}}</span> €</li>

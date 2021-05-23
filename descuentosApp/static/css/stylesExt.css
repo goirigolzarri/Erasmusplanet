@@ -300,6 +300,14 @@ input {
     cursor: pointer;
 }
 
+.noEnlace {
+    text-decoration: none;
+}
+
+.noEnlace:hover {
+    color: #ffffff;
+}
+
 
 /**** SELECCION TALLA ****/
 

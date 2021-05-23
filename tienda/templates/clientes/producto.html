@@ -90,24 +90,14 @@
                 <div class="widget">
                     <div class="form-group filter-group">
                         <h4>Size</h4>   
-                        <!-- 
+                        
                         <select id="talla{{product.id}}" class="form-control">
                             {% for tallas in product.tallas.all %}
                             <option value="{{tallas.name}}">{{tallas.name}}</option>
                             {% endfor %}
-                        </select>-->
+                        </select>
 
-                        <ul class="listaInline">
-                            {%for tallas in product.tallas.all %}
-                            <li>
-                                <label class="custom-checkbox">
-                                    <input type="hidden" name="alarm" value="False" id="talla{{product.id}}"/>
-                                    <input class="custom-checkbox-input" name="" value="" type="checkbox">
-                                    <span class="custom-checkbox-text">{{tallas.name}}</span>
-                                </label>
-                            </li>
-                            {% endfor %}
-                        </ul>
+                    
                     </div>
                 </div>
 
@@ -116,22 +106,13 @@
                 <div class="widget">
                     <div class="form-group filter-group">
                         <h4>Color</h4> 
-                          <!--
+                         
                         <select id="color{{product.id}}" class="form-control">
                             {% for color in product.colores.all %}
                             <option id="{{color.name}}" value="{{color.name}}">{{color.name}}</option>
                             {% endfor %}
                         </select>
                         
-                        <div id="color">
-                            {% for color in product.colores.all %}
-                                <span class="badge badge-pill">{{color.name}}</span>
-                            {% endfor %}
-                        </div>
--->
-                        <span class="badge badge-pill pointer" id="azul">Azul</span>
-                        <span class="badge badge-pill pointer" id="negro">Negro</span>
-
                     </div>
                 </div>
 
