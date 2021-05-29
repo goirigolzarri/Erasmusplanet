@@ -20,9 +20,11 @@
             <div class="col-md-6 col-6">
                 <div class="breadcrumb-menu text-right sm-left">
                     <ul>
-                        <a class="btn v3 botonGeneral botonAcceso" href="{% url 'Carrito' %}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                         
+                        <a class="btn v3 botonAzul botonAcceso" href="{% url 'Carrito' %}"><p>{{cartItems}}</p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
                             <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-                        </svg>  Shopping cart  ({{cartItems}})</a>     
+                        </svg>  Shopping cart  </a>   
+                            
                     </ul>
                 </div>
             </div>
@@ -46,7 +48,7 @@
                     </form>
                 </div>
                 
-                <!-- Tags -->
+            <!--     Tags -->
                 <div class="widget">
                     <h3 class="widget-title">Category</h3>
                     {% for cat in categorias%}
@@ -59,32 +61,53 @@
             </div>
             <!-- left Sidebar ends -->
             <!--Blog post starts-->
-
-            
-
             <div class="col-xl-9 col-md-12 no-pad-lr">
                 <div class="blog-section style1">
                     <div class="container">
                         <div class="row">
-                            {% for product in productos %}
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="popular-item mar-bot-30">
-                                        <div class="single-place">
-                                            <img class="single-place-image" src="{{product.fotoURL}}" alt="place-image">
-                                            <div class="single-place-content">
-                                                <h2 class="single-place-title">
-                                                    <a href="{% url 'ProductDetail' product.pk %}" class="noEnlace">{{product.name}}</a>
-                                                </h2>
-                                                <ul class="single-place-list noContent">
-                                                    <li><span>{{product.precio}}</span> €</li>
-                                                </ul>
-                                                <a class="btn v6 explore-place" href="{% url 'ProductDetail' product.pk %}">View</a>
-                                            </div>
+                       
+                           
+                            <!--    <div class="col-md-6">
+                                <div class="card single-blog-item v1 mar-bot-30">
+                                    <img src="images/blog/news_9.jpg" alt="...">
+                                    <a href="#" class="blog-cat btn v6 red">Travel</a>
+                                    <div class="card-body">
+                                        <h4 class="card-title"><a href="">Top 50 Greatest Street Arts in Paris</a></h4>
+                                        <div class="bottom-content">
+                                            <p class="date">Dec 5th , 2018 by <a href="#" class="text-dark">Adam D'Costa</a></p>
                                         </div>
                                     </div>
                                 </div>
-                            {% endfor %}
-                        </div>  
+                            </div>-->
+                            {% for product in productos %}
+                                <div class="col-md-6">
+                                    <div class="card single-blog-item v1 mar-bot-30">
+                                        <img src="{{product.fotoURL}}">
+                                        <!--  <a href="#" class="blog-cat btn v6 red">Hotel</a>-->
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="feature-left float-left">
+                                                    <h4 class="card-title"><a href="{% url 'ProductDetail' product.pk %}">{{product.name}}</a></h4>
+                                                
+                                                   
+                                                 
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="feature-right float-right">
+                                                    <h4 class="card-title">{{product.precio}} €</h4>
+                                            
+                                                    <div class="clear"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    
+                                </div>
+                                {% endfor %}
+                            
+                        </div>
                         <!--pagination starts-->
                         <div class="post-nav nav-res pad-top-20 pad-bot-60">
                             <div class="row">

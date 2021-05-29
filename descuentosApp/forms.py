@@ -12,7 +12,7 @@ class AñadirGuia(forms.ModelForm):
 
     class Meta:
         model = Guide
-        fields = ('city', 'title', 'informacion_general','como_llegar', 'comida',
+        fields = ('city', 'title', 'imagen_informacion_general', 'informacion_general','como_llegar', 'comida',
          'alojamiento', 'ocio', 'divisas', 'banco_sim', 'donde_comprar')
 
         widgets ={

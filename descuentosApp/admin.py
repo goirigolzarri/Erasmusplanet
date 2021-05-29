@@ -18,6 +18,7 @@ class CityAdmin(ImportExportModelAdmin):
 
 admin.site.register(User)
 admin.site.register(Country, CountryAdmin)
+admin.site.register(Province)
 admin.site.register(City, CityAdmin)
 admin.site.register(University)
 admin.site.register(Guide, GuideAdmin)

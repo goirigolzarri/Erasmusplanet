@@ -3,7 +3,7 @@ from django.db import models
 from django.db.models.fields import NullBooleanField
 from django.urls.base import reverse
 
-from descuentosApp.models import Country, City, University, Guide
+from descuentosApp.models import Country, Province, City, University, Guide
 from django.core.validators import RegexValidator
 
 from django.contrib.auth.models import AbstractUser

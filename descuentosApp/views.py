@@ -177,24 +177,46 @@ def index(request):
 
 def api(request):
 
-	response = requests.get('http://cdn.housinganywhere.com/feeds/happyerasmusbilbao/happyerasmusbilbao.json')
+	response = requests.get('https://storage.googleapis.com/cdn.housinganywhere.com/feeds/happyerasmusbilbao/happyerasmusbilbao-20210552344-1.json')
 	api = response.json()
-	count = api['count']
-	print(count)
+	#count = api['count']
+	#print(count)
 	data = api['listings']
 	#total = len(data)
 	#print(total)
 	#context = {'data':data, 'count':count}
 
 
-	paginator = Paginator(data, 25)
-	page_number = request.GET.get('page')
-	page_obj = paginator.get_page(page_number)
+	#paginator = Paginator(data, 25)
+	#page_number = request.GET.get('page')
+	#page_obj = paginator.get_page(page_number)
 
 	
 
 
-	return render(request , 'api.html', {'page_obj': page_obj})
+	return render(request , 'api.html', {'data': data})
+    
+    
+def apiTickets(request):
+
+	headers = {'Content-Type':'application/json', 'Authorization':'Token KqfEOcJJWSsYmbafLkrLEBR9D7ErzGBO'}
+	params = {'lang': 'es'}
+	response = requests.get('https://api.tiqets.com/v2/products',params=params ,headers=headers)
+	api = response.json()
+	
+	data = api['products']
+
+	
+	#total = len(data)
+	#print(total)
+	#context = {'data':data, 'count':count}
+
+
+	# paginator = Paginator(data, 25)
+	# page_number = request.GET.get('page')
+	# page_obj = paginator.get_page(page_number)
+
+	return render(request , 'apiTickets.html', {'data': data})
 
 	
 def autosuggest(request):
@@ -206,6 +228,18 @@ def autosuggest(request):
 	mylist += [x.title for x in queryset]
 	print(mylist)
 	return JsonResponse(mylist,safe=False)
+
+# def api(request):
+# 	file = open(r'C:\Users\Asier\Documents\GitHub\ErasmusLocal\swagger.json')
+# 	data = file.read()
+# 	file.close()
+# 	return JsonResponse(data, safe=False)
+
+
+
+
+	
+
 
 # def api(request):
 # 	file = open(r'C:\Users\Asier\Documents\GitHub\ErasmusLocal\swagger.json')
